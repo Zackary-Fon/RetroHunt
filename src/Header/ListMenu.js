@@ -1,9 +1,10 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const list = () =>{
-    const tabMenu = [{id:0, name:"Connexion/inscription"}, {id:1, name:"Profil"}]
+    const tabMenu = [{id:0, name:"Connexion/inscription", path:"/ConnectionInscription"}, {id:1, name:"Profil", path:"/Profile"}]
     const result = tabMenu.map((any)=>
-     <li id="li_menu_head" key={any.id}>{any.name}</li>);
+     <li id="li_menu_head" key={any.id}><Link to={any.path}>{any.name}</Link></li>);
      return result;
 }
 
