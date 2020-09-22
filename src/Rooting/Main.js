@@ -8,6 +8,7 @@ const Main = () =>{
             <Route exact path="/" component={Home} />
             <Route path="/ConnectionInscription" component={ConnectionInscription}/>
             <Route path="/Product" component={Product}/>
+            <Route path="/Detail" component={Detail}/>
             <Route path="/Profile" component={Profile}/>
             <Route path="/Search" component={Search}/>
             <Route path="/Legal" component={Legal}/> 
