@@ -1,0 +1,56 @@
+
+.FooterGlobal{
+    display: flex;
+    background-color: grey;
+    justify-content: space-between;
+    width: 100% ;
+    height:auto;
+    top: calc(100vh - 232px);
+    flex-direction: row-reverse;
+ position: absolute;
+}
+
+
+.Footer img{
+    width: 50px;
+    height: auto;
+}
+
+
+.LogoMentions{
+    width:300px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    height: 100%;
+    
+    
+    
+}
+.Afficheur{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin-right: 30px;
+    justify-content: space-between;
+    margin-top: 29px;
+    
+}
+.Mentions{
+    text-align: center;
+    width: 200px;
+    height: auto;
+    color: ivory;
+    text-decoration: lightcoral;
+    margin-top: 35px;
+    font-weight: bold;
+    
+
+    
+}
+.Logo img{
+    width:100px;
+    height: 100px;
+}
+
