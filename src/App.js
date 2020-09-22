@@ -5,7 +5,6 @@ import Footer from './Footer/Footer';
 //AHAHAHAhAHAHAHAHAHAHAHAAH Genre git c'est bien mdr//
 //SALUT HEADER//
 import Header from "./Header/Header"
-import MentionLegale from './Footer/MentionLegale';
 
 function App() {
   return (
