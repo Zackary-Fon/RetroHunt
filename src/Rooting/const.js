@@ -1,10 +1,10 @@
-import ConnectionInscription from "../Pages/ConnectionInscription";
-import Details from "../Pages/Details";
-import Home from "../Pages/Home";
-import Legal from "../Pages/Legal";
-import Product from "../Pages/Product";
-import Profile from "../Pages/Profile";
-import Search from "../Pages/Search";
+import ConnectionInscription from "../Pages/ConnectionInscription/ConnectionInscription";
+import Details from "../Pages/Details/Details";
+import Home from "../Pages/Home/Home";
+import Legal from "../Pages/Legal/Legal";
+import Product from "../Pages/Product/Product";
+import Profile from "../Pages/Profile/Profile";
+import Search from "../Pages/Search/Search";
 
  const tabRoutes = [
 {id:0, name:"Home", path:"/", component:Home},
