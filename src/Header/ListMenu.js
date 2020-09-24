@@ -1,11 +1,18 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import tabRoutes from "../Rooting/const";
 
 const list = () =>{
-    const tabMenu = [{id:0, name:"Connexion/inscription", path:"/ConnectionInscription"}, {id:1, name:"Profil", path:"/Profile"}]
-    const result = tabMenu.map((any)=>
-     <li id="li_menu_head" key={any.id}><Link to={any.path}>{any.name}</Link></li>);
-     return result;
+    const result = tabRoutes.map((any, index)=>{
+    if (index>0 && index<3)
+    {
+    return <li id="li_menu_head" key={any.id}><Link to={any.path}>{any.name}</Link></li>
+   } else {
+       return null
+    }
+    })
+     
+     return result ;
 }
 
 export default list;

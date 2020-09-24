@@ -6,12 +6,12 @@ import MentionLegale from "./MentionLegale";
 import LogoFooter from "./LogoFooter";
 import './Footer.css';
 
-const Footer=(nombre)=>{
+const Footer=()=>{
 
     const icones=[facebook,twitter,linkedin];
 
-    const afficheur=icones.map((any)=>
-    <div className="Footer" key={nombre}><img src={any}/></div>);
+    const afficheur=icones.map((any, index)=>
+    <div className="Footer" key={index}><img src={any} alt="réseaux sociaux"/></div>);
     return (
         <div className="FooterGlobal">
 

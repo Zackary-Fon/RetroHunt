@@ -1,4 +1,4 @@
-import React, {useState, useRef, useLayoutEffect} from 'react';
+import React, { useState } from 'react';
 import './Header.css';
 import menu from '../Images/menu.png';
 import list from './ListMenu';

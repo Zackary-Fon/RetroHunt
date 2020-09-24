@@ -1,20 +1,31 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
-
+import tabRoutes from './const';
 
 const Main = () =>{
-    return (
+       
+    const Routes = () => {
+  const routesResult = tabRoutes.map(route => {
+     console.log(route)
+     if (route.id ===0 ){
+        return <Route key={route.id} exact path={route.path} component={route.component} />
+     } else {
+      return <Route key={route.id} path={route.path} component={route.component} />
+     }
+    })
+console.log(routesResult)
+    return routesResult
+}
+
+    
+    return(
         <div>
             <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/ConnectionInscription" component={ConnectionInscription}/>
-            <Route path="/Product" component={Product}/>
-            <Route path="/Detail" component={Detail}/>
-            <Route path="/Profile" component={Profile}/>
-            <Route path="/Search" component={Search}/>
-            <Route path="/Legal" component={Legal}/> 
+            {Routes()}
             </Switch>
         </div>
     )
 
 }
+
+export default Main;
