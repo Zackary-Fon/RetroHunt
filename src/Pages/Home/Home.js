@@ -1,12 +1,13 @@
 import React from "react";
+import Recent from "./Recent";
+import './Home.css';
 
-
-
-const Home =()=>{
+const Home = () => {
 
     return (
-    <div>
-        Welcome Home
+    <div className="homeBody">
+        <div className="headBody">Welcome Home</div>
+        <Recent/>
         
     </div>);
 }

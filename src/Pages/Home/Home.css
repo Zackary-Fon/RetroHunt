@@ -1,0 +1,29 @@
+.homeBody{
+    height:auto;
+}
+
+.bodyRecent{
+    display:flex;
+    flex-direction: row;
+}
+
+.listArticles{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    flex-wrap: wrap;
+
+}
+.imageIntitule{
+    display:flex;
+    flex-direction: column;
+}
+.imageProduit{
+    height: auto;
+    width: 100%;
+}
+.intituleAnnonce{
+    height:200px;
+    width:200px;
+    font-size: small;
+}

@@ -1,10 +1,10 @@
 import React from "react";
 
 
-const Product = ()=>{
+const Product = () => {
 
     return (<div>
-
+        Produit
     </div>)
 }
 
