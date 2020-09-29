@@ -1,5 +1,4 @@
 import ConnectionInscription from "../Pages/ConnectionInscription/ConnectionInscription";
-import Details from "../Pages/Details/Details";
 import Home from "../Pages/Home/Home";
 import Legal from "../Pages/Legal/Legal";
 import Product from "../Pages/Product/Product";
@@ -16,10 +15,10 @@ const tabRoutes = [
 {id:0, name:"Home", path:"/", component:Home},
 {id:1, name:"Connexion/inscription", path:"/ConnectionInscription", component:ConnectionInscription},
 {id:2, name:"Profil", path:"/Profile", component:Profile},
-{id:3, name:"Product", path:"/Product", component:Product},
-{id:4, name:"Details", path:"/Details", component:Details},
-{id:5, name:"Search", path:"/Search", component:Search},
-{id:6, name:"Legal", path:"/Legal", component:Legal}
+//{id:3, name:"Product", path:"/Product", component:Product},
+{id:3, name:"Product", path:"/Product/:id", component:Product},
+{id:4, name:"Search", path:"/Search", component:Search},
+{id:5, name:"Legal", path:"/Legal", component:Legal}
 ]
 export default tabRoutes;
 

@@ -21,6 +21,7 @@ const Recent = () => {
             <div className="moreRecent">Les dernières annonces</div>
             <ul className="listArticles">{Articles}</ul>
         </div>
+
     )
 }
 export default Recent;

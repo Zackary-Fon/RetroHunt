@@ -13,9 +13,9 @@ const Main = () =>{
       return <Route key={route.id} path={route.path} component={route.component} />
      }
     })
-console.log(routesResult)
+    console.log(routesResult)
     return routesResult
-}
+    }
 
     
     return(
