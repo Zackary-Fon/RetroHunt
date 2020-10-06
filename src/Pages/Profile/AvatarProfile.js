@@ -6,7 +6,7 @@ const AvatarProfile = () => {
   return (
     <div className="avatar">
       <div>
-        <img src={profile} alt="profile" />
+        <img src={profile} alt="profile de bob" />
       </div>
     </div>
   );
