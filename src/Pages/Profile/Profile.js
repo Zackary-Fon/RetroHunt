@@ -8,7 +8,11 @@ const Profile = () => {
 
     return (
     <div>
+<<<<<<< HEAD
         <ProfilePage/>
+=======
+        Profil
+>>>>>>> 5be4aa5ab2ccdc2ab0837d878862c975dec28126
     </div>)
 };
 
