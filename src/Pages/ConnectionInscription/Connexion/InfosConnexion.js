@@ -3,24 +3,29 @@
 import React from "react";
 import BoutonConnexion from "./BoutonConnexion";
 import FieldsConnexion from "./FieldsConnexion";
-import ForgetPassword from "./ForgetPassword";
+import PasswordForget from "./PasswordForget";
 import PasswordConnexion from "./PasswordConnexion";
+import InscriptionForm from "../Inscription/InscriptionForm";
 
 const InfosConnexion = () => {
-  return (
-    <div>
+  return (<div>
       <div>
-        <FieldsConnexion natextfield="" />
+    <div>
+      <h2>Connexion au compte</h2>
+      <div>
+        <FieldsConnexion />
       </div>
       <br />
       <div>
-        <PasswordConnexion natextfield="" />
+        <PasswordConnexion  />
       </div>
       <p>
         <BoutonConnexion />
-        <ForgetPassword/>
+        <PasswordForget/>
       </p>
     </div>
+</div>
+</div>
   );
 };
 

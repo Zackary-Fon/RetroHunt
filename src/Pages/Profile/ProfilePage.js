@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import AvatarProfile from "./AvatarProfile";
 import ButtonProfile from "./ButtonProfile";
 import ProfileName from "./ProfileName";
-//import "Profile,css";
 
 const ProfilePage = ({ Bonjour }) => {
   //const [cours, aller] = useState(true);

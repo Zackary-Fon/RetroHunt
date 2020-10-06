@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const FieldsConnexion = ({ namefield, textfield }) => {
+const FieldsConnexion = () => {
   return (
     <div>
       <label for="name">Pseudo ou Email</label>
