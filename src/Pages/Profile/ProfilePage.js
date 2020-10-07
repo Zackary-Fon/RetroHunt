@@ -12,48 +12,51 @@ import "./Profile.css";
 const ProfilePage = ({ Bonjour }) => {
  
 
-  return (
-    <div className="pageprofile">
+  return (<div>
+    
+    <div className="infos">
 
-            <div className="name-photo">
+          <div className="parentsection">
+                  <div className="section"> Profile  <div className="Photoprofile">
 
-                    <div className="Photoprofile">
                         <AvatarProfile />
                     </div>
-
                     <div class="name-profile">
                       <ProfileName />
                     </div>
-
                     <div className="modifavatar">
                         <ButtonProfile text="Modifier Avatar" />
                       </div>
-
-                      <div className="modifpassword">
+                    </div>
+                  <div className="section">Mes annonces
+                  <div className="modifpassword">
                         <ButtonProfile text="Modifier mot de passe" />
                       </div>
-
-              </div>
-                <div className="mesboutons">
-
-                      <div className="mesannonces">
-                          <ButtonProfile text="Mes annonces" />
-                      </div>
-
                       <div className="creationannonces">
                           <ButtonProfile text="Créer une annonce" />
+                          <div className="mesannonces">
+                          <ButtonProfile text="Mes annonces" />
+                          <div className="creationannonces">
+                          <ButtonProfile text="Créer une annonce" />
+                        </div>
+                        </div>
+                      </div>
                         </div>
 
-
-                        <div className="mesachats">
+                  </div>
+                  <div className="section">MesAchats
+                  <div className="mesachats">
                             <ButtonProfile text="Mes achats" />
                         </div>
+                  </div>
+  
+                </div>     
 
                         <div className="deconnexion">
                           <ButtonProfile text="Déconnexion" />
                         </div>
-              </div>
-    </div>
+                        </div>
+              
   );
 };
 

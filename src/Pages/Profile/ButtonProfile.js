@@ -7,7 +7,7 @@ const ButtonProfile=({text})=>{
 
 
   return <div>
-    <div className="myImages">
+    <div className="bouton">
     <button className="buton" type="submit" value="Envoyer">
       {text}
       </button>
