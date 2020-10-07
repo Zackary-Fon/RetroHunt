@@ -5,7 +5,7 @@ import list from './ListMenu'
 const HeadMenu = () =>{
 
     return (
-    <ul id="head_menu">{list()}</ul>
+    <ul className="head_menu">{list()}</ul>
     )
 }
 export default HeadMenu;

@@ -1,24 +1,41 @@
-#header {
+.header {
     display: flex;
-    background-color: grey;
+    background-color: #7a57d1 ;
     justify-content: space-between;
     width: 100% ;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 1px;
 }
 #logo{
     width:100px;
     height:100px;
 }
-#menu_head{
+.menu_head{
     display:flex;
     position:relative;
     height:100px;
     margin-right:20px;
     align-items:center;
 }
-#li_menu_head{
+.li_menu_head{
     margin:10px;
 }
-#head_menu{
+.li_menu_head a {
+    color :  white;
+}
+a{
+    text-decoration: none;
+}
+.li_menu_head a :hover{
+    border-bottom: 2px, solid;
+    border-color: #ed0cef ;
+}
+.li_menu_head :hover{
+    border-bottom: 2px, solid;
+    border-color: #ed0cef ;
+}
+
+.head_menu{
     list-Style-Type:none;
     display:flex;
     margin:10px;
