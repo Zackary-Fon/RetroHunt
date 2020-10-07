@@ -7,8 +7,9 @@
     letter-spacing: 1px;
 }
 #logo{
-    width:200px;
-    height:200px;
+    width:100%;
+    height:auto;
+    padding: 10px;
 }
 .menu_head{
     display:flex;
@@ -28,8 +29,8 @@ a{
 }
 
 .li_menu_head:hover{
-    border-bottom: 5px, solid;
-    border-color: #ed0cef ;
+    border-bottom: 5px solid;
+    border-color: #5be7c4 ;
 }
 
 .head_menu{
@@ -37,14 +38,19 @@ a{
     display:flex;
     margin:10px;
 }
-#Recherche{
-    margin:10px;
-    margin-Top:-3px;
+.Searching{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchbar{
+    width: 300px;
+    border-radius:10px;
+    padding:5px;
 }
 #Loupe{
     width:20px;
     height:20px;
-    margin-Top:3px;
 }
 .burger{
     display:none;

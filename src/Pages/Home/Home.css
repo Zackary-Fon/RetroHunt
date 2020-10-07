@@ -2,7 +2,7 @@
     height:auto;
 }
 .headBody{
-    color:#5be7c4;
+    color:#8105d8;
     font-family: 'Fredoka One', cursive;
     letter-spacing: 1px;
 }
@@ -27,20 +27,24 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom:30px;
+    margin:30px;
     border-radius:20px;
-    box-shadow: 10px 5px 10px #3b064d;
+    box-shadow: 10px 5px 10px #c543f1;
     overflow: hidden;
-    padding:20px;
-    width:300px;
     background-color: #f5f7fa;
+    width:100% ;
+    max-width: 300px;
 }
 .intituleAnnonce{
     display: flex;
     flex-direction: column;
-    height:350px;
-    width:224px;
     font-size: small;
     align-items: center;
     justify-content: center;
+    padding:20px;
+}
+.PersonPubli{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

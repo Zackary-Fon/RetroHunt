@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../Images/Logo.png';
+import logo_blanc from '../Images/logo_blanc.png';
 import HeadMenu from './Menu';
 import Searchbar from './Searchbar';
 import './Header.css';
@@ -10,7 +10,7 @@ const Header = () => {
     return ( 
     <header className="header">
         <div className="menu_head">
-        <Link to="/"> <img id="logo" src={Logo} alt="Logo"/></Link>
+        <Link to="/"> <img id="logo" src={logo_blanc} alt="Logo"/></Link>
         <HeadMenu/>
         <Searchbar/>
         <Burger/>

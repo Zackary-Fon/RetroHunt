@@ -6,10 +6,10 @@ import Search from "../Pages/Search/Search";
 const Searchbar = () =>{
 
     return (
-        <p>
+        <div className="Searching">
         <Search/>
         <img src={Loupe} alt="Loupe" id="Loupe"/>
-        </p>
+        </div>
     )
 }
 export default Searchbar;
