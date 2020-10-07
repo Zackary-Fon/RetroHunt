@@ -9,7 +9,6 @@ const Profile = () => {
     return (
     <div>
         <ProfilePage/>
-        Profil
     </div>)
 };
 

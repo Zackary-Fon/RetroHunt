@@ -4,7 +4,7 @@ import React from "react";
 
 const ProfileName = () => {
   return (
-    <div className="firstname">
+    <div>
       Nom:
       <br />
       Prenom:
