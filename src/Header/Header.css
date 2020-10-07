@@ -7,8 +7,8 @@
     letter-spacing: 1px;
 }
 #logo{
-    width:100px;
-    height:100px;
+    width:200px;
+    height:200px;
 }
 .menu_head{
     display:flex;
@@ -26,12 +26,9 @@
 a{
     text-decoration: none;
 }
-.li_menu_head a :hover{
-    border-bottom: 2px, solid;
-    border-color: #ed0cef ;
-}
-.li_menu_head :hover{
-    border-bottom: 2px, solid;
+
+.li_menu_head:hover{
+    border-bottom: 5px, solid;
     border-color: #ed0cef ;
 }
 

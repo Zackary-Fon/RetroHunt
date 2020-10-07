@@ -6,7 +6,7 @@ const Home = () => {
 
     return (
     <div className="homeBody">
-        <div className="headBody">Welcome Home</div>
+        <div className="headBody"><h1>Bienvenue sur RetroHunt</h1></div>
         <Recent/>
         
     </div>);

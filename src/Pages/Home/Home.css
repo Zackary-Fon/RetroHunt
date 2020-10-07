@@ -1,6 +1,12 @@
 .homeBody{
     height:auto;
 }
+.headBody{
+    color:#5be7c4;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 1px;
+}
+
 
 .bodyRecent{
     display:flex;
@@ -13,20 +19,21 @@
     list-style-type: none;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding:10px;
 
 }
 .imageIntitule{
     display:flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-bottom:30px;
     border-radius:20px;
     box-shadow: 10px 5px 10px #3b064d;
     overflow: hidden;
-}
-.imageProduit{
-    height: 200px;
-    width: 224px;
-    
+    padding:20px;
+    width:300px;
+    background-color: #f5f7fa;
 }
 .intituleAnnonce{
     display: flex;
@@ -36,14 +43,4 @@
     font-size: small;
     align-items: center;
     justify-content: center;
-}
-.boutonArticle{
-    display:flex;
-    height:30px;
-    width:150px;
-    border-radius: 20px;
-    background-color: #7a57d1;
-    color: white;
-    justify-content: center;
-    text-align: center;
 }
