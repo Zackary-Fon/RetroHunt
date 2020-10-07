@@ -8,8 +8,8 @@ import {Link} from "react-router-dom";
 
 const Header = () => {
     return ( 
-    <header id="header">
-        <div id="menu_head">
+    <header className="header">
+        <div className="menu_head">
         <Link to="/"> <img id="logo" src={Logo} alt="Logo"/></Link>
         <HeadMenu/>
         <Searchbar/>

@@ -7,18 +7,21 @@ const Recent = () => {
     const Articles = ObjectProduct.map((produit)=>{
         return (
             <li key={produit.id} className="imageIntitule">
-                <img className="imageProduit" src={produit.img} alt="produit"/>
+                <div className="imageProduit" style={{background: `url(${produit.img})`, backgroundRepeat:"no-repeat", backgroundPositionX:"center", backgroundSize:"cover"}}/>
                 <div className="intituleAnnonce">
-                    titre: {produit.name} console: {produit.category} posté par: {produit.userName} posté le: {produit.datePost} prix : {produit.prix}
+                    <h3>titre: {produit.name}</h3>
+                    <h3>console: {produit.category}</h3>
+                    <p>posté par: {produit.userName}</p>
+                    <p>posté le: {produit.datePost}</p>
+                    <h1>prix : {produit.prix}</h1>
+                <Link to={`/Product/${produit.id}`}><div className="boutonArticle">Voir la fiche</div></Link>
                 </div>
-                <Link to={`/Product/${produit.id}`}>Voir la fiche article</Link>
             </li>
         )
     })
 
     return (
         <div className="bodyRecent" >
-            <div className="moreRecent">Les dernières annonces</div>
             <ul className="listArticles">{Articles}</ul>
         </div>
 
