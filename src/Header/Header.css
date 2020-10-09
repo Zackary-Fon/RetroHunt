@@ -42,10 +42,11 @@ a{
     display:flex;
     align-items: center;
     justify-content: center;
+    width:100%;
 }
 .searchbar{
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
     border-radius:10px;
     padding:5px;
 }
@@ -57,10 +58,10 @@ a{
     display:none;
 }
 @media screen and (max-width:700px){
-    #head_menu{
+    .head_menu{
         display:none;
     }
-    #menu_head{
+    .menu_head{
         justify-content:left;
         position: relative;
         width: 100%;
@@ -73,7 +74,7 @@ a{
         width:20px;
         height:20px;
     }
-    #header{
+    .header{
         justify-content: baseline;
     }
     .burgerMenu{
