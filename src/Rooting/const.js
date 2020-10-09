@@ -11,6 +11,8 @@ import Super_Mario_Bros3 from "./ImagesProduits/Super_Mario_Bros3.jpg";
 import Sonic_The_Hedgehog2 from "./ImagesProduits/Sonic_The_Hedgehog2.jpg";
 import Zelda_Ocarina_Of_Time from "./ImagesProduits/Zelda_Ocarina_Of_Time.jpg";
 
+
+//tableau des routes
 const tabRoutes = [
 {id:0, name:"Home", path:"/", component:Home},
 {id:1, name:"Connexion/inscription", path:"/ConnectionInscription", component:ConnectionInscription},
@@ -22,6 +24,7 @@ const tabRoutes = [
 ]
 export default tabRoutes;
 
+//tableau servant de "base de données" dans lequel sont stockées de fausses annonces
 export const ObjectProduct = [
     {id:0, img: Crash_Bandicoot1, name:"Crash", url:"https://www.jeuxvideo.com/jeux/playstation-ps1/00001197-crash-bandicoot.htm", category:"PS1", userName:"Michou", datePost:"09/03/2020", prix:"60€"},
     {id:1, img: Spyro1, name:"Spyro", url:"https://www.jeuxvideo.com/jeux/playstation-ps1/00001478-spyro-the-dragon.htm", category:"PS1", userName:"Michou", datePost:"20/03/2020", prix:"50€"},
