@@ -1,40 +1,172 @@
-
-
-
-img {
-  width: 200px;
-  height: 200px;
-  border-image: ;
-}
-
-
-.deconnexion button{
-  color: brown;
-  cursor: grab;
-}
-
-
-.tout{
+/* page entiere */
+.page{
+  width: 100%;
   display: flex;
-
-  width: 100%;
-  height: auto;
-  border:2px solid ;
+  flex-direction: column;
+  /*border: 2px solid blue;*/
+  box-shadow: inset;
 
 }
 
-
-.infos{
+/*  div une */
+.profile {
+  display: flex;
+  flex-direction: row;
   width: 100%;
+  height: 350px;
+  /*border: 2px solid gray;*/
+}
+
+
+
+/* 1ere div de la div une */
+.profileGauche{
+  width:25%;
+  height: 100%;
+/*border: 3px solid rosybrown;*/
+background-color: 	#E8E8E8;
+text-align: center;
+}
+/* 2eme div de la div une */
+
+.infosProfile{
+  width:75%;
   height: 100%;
 
+  display: flex;
+  flex-direction:column;
+  background-color:whitesmoke;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px darkgrey;
+}
+
+/* 1ere div de la div : infosProfile */
+.Image_Profile{
+  width: 100%;
+  height: 90%;
+/*  border: 2px solid  red;*/
+  text-align: center;
+}
+
+/* 2eme div de la div : infosProfile */
+.InfosperosProfiles{
+  width: 100%;
+  height: 90%;
+  /*border: 2px solid hotpink;*/
+  text-align: center;
+}
+/* 3eme div de la div : infosProfile */
+.ModiAvatar{
+  margin-top: 10px;
+  width: 100%;
+  height: 90%;
+/*border: 2px solid darkgrey;*/
+  text-align: center;
 }
 
 
-.section{
-  width: 500px;
-  border:2px solid blue;
-  height: 250px;
-  margin-left: 50%;
+
+
+/*  div 2 */
+.annonceglobale{
+
+  display: flex;
+  flex-direction:row;
+  width: 100%;
+  height: auto;
+
+  /*border: 2px solid green; */
+}
+
+.annoncesGauche{
+  width:25%;
+  height: 300px;
+/*border: 3px solid rosybrown;*/
+background-color: 	#E8E8E8;
+/*border: 3px solid hotpink;*/
+}
+
+
+.infosannonces{
+  display: flex;
+  flex-direction:column;
+  width:75%;
+  height: 300px;
+  background-color:whitesmoke;
   margin-top: 15px;
+}
+
+
+.paragraphe1annonce{
+  width:700px;
+  height: 100px;
+  margin-left:20%;
+ /*border: 3px solid skyblue;*/
+ text-align: center;
+}
+
+.annonnce2{
+  width:700px;
+  height: 100px;
+  margin-left: 20%;
+  /*border: 3px solid goldenrod;  */
+  text-align: center;
+}
+
+
+
+
+img{
+  border-radius:10px;
+}
+
+
+
+.acces-menu{
+      margin-top: 30%;
+      margin-left: 15px;
+      font-style: normal;
+      font-weight: bold;
+      color:white;
+}
+
+.m{
+  margin-top: 10%;
+  margin-left: 15px;
+  font-weight: 25px;
+
+}
+
+.a{
+  text-align: center;
+  margin-top: 30%;
+      margin-left: 15px;
+      font-style: normal;
+      font-weight: bold;
+}
+
+.mybouton{
+color: white;
+background-color: blueviolet;
+border-radius: 3px;
+}
+
+.creer{font-size: 22px;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+
+
+/*  div 3 */
+.mesachats{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  background-color: #E8E8E8;
+}
+
+.VueAchat{
+  margin-left: 20%;
+
 }
