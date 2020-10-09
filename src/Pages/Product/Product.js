@@ -35,8 +35,8 @@ const Product = ({match}) => {
                             </div>
                             <div className="bouton">Contacter le vendeur</div>
                         </div>
-
-                        
+                  
+                  
                         <div className="description">
                             <h1>Description</h1>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut dui efficitur, porttitor massa vitae, mattis ex. Aliquam vel nisl interdum, convallis massa eget, pretium nibh. Nam eu urna mauris. Duis ac diam malesuada, hendrerit ex non, consequat nisi. Sed tellus lorem, blandit et iaculis vitae, molestie ac justo. Duis at vulputate elit. Praesent pellentesque faucibus urna, faucibus cursus lectus ultrices id.

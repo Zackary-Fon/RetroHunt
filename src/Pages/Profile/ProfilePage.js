@@ -12,48 +12,47 @@ import "./Profile.css";
 const ProfilePage = ({ Bonjour }) => {
  
 
-  return (
-    <div className="pageprofile">
+  return (<div class="page">
 
-            <div className="name-photo">
-
-                    <div className="Photoprofile">
-                        <AvatarProfile />
+            <div class="profile">
+          
+                    <div class="profileGauche"><p class="m">Menu Profile</p>
+                        <p class="acces-menu">Cette partie va nous servir de menu profile
+                        </p>
                     </div>
-
-                    <div class="name-profile">
-                      <ProfileName />
+                    <div class="cadre">
+                          <div class="infosProfile">
+                            
+                          <div class="Image_Profile">Photo</div>
+                          <div class="InfosperosProfiles">Nom <br/><input typ="text" name="nom"/>
+                        <br/>
+                        Prenom <br/><input typ="text" name="nom"/></div>
+                    <div class="ModiAvatar"><button value="modifier" class="mybouton">Modifier votre avatar</button></div> 
+                        
+            </div>
+            </div> 
+            </div>
+          
+            <div class="annonceglobale">
+                <div class="annoncesGauche"><p class="a">Annonces</p></div>
+                <div class="cadre1">
+                    <div class="infosannonces">
+                     <div class="paragraphe1annonce"><p class="creer">Annonces du jour</p>
+                        <p class="depot">On affichera nos annonces  du jour.</p>
                     </div>
-
-                    <div className="modifavatar">
-                        <ButtonProfile text="Modifier Avatar" />
-                      </div>
-
-                      <div className="modifpassword">
-                        <ButtonProfile text="Modifier mot de passe" />
-                      </div>
-
-              </div>
-                <div className="mesboutons">
-
-                      <div className="mesannonces">
-                          <ButtonProfile text="Mes annonces" />
-                      </div>
-
-                      <div className="creationannonces">
-                          <ButtonProfile text="Créer une annonce" />
-                        </div>
-
-
-                        <div className="mesachats">
-                            <ButtonProfile text="Mes achats" />
-                        </div>
-
-                        <div className="deconnexion">
-                          <ButtonProfile text="Déconnexion" />
-                        </div>
-              </div>
-    </div>
+                    </div>
+                     <div class="annonnce2"><p class="creer">Creer vos annonces</p><p class="depot">Ici vous deposerez vos articles à vendre</p></div>
+                     </div>
+                     </div>
+            
+            
+            <div class="mesachats">
+            <div class="mesAchatsgauche"><p class="achat">Mes Achats</p></div>
+                    <div class="VueAchat">
+                        <p class="creer">Historique des achats</p>
+                    </div>
+            </div>
+        </div>
   );
 };
 

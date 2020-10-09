@@ -8,7 +8,7 @@ const ButtonInscription =()=>{
 
 return <div>
 
-<button type="submit" value="inscrit">Inscription</button>
+<button type="submit" class="boutonInscripton" value="inscrit">Inscription</button>
 </div>
 }
 

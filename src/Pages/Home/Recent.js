@@ -9,6 +9,7 @@ import person from '../../Rooting/Icones/person.svg';
 //de l'image les informations telles que le titre du produit, la console, l'utilisateur qui
 //a posté l'annonce et la date à laquelle celle ci a été postée et un bouton pour voir la fiche
 
+
 const Recent = () => {
     const Articles = ObjectProduct.map((produit)=>{
         return (
