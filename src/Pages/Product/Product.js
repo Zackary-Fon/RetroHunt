@@ -2,6 +2,8 @@ import React from "react";
 import {ObjectProduct} from "../../Rooting/const";
 import './Product.css';
 import '../../general.css'
+import chevronGauche from "../../Images/chevronGauche.png";
+import chevronDroite from "../../Images/chevronDroite.png";
 
 const Product = ({match}) => {
     const {params: id } = match;
@@ -24,7 +26,11 @@ const Product = ({match}) => {
                                 Le : {produit.datePost}
                                 <h3>{produit.prix}</h3>
                             </div>
-                            <img className="imageProduit" src={produit.img} alt="produit"/>
+                            <div className="imageFleches">
+                                <img src={chevronGauche} className="fleche"/>
+                                <img className="imageProduit" src={produit.img} alt="produit"/>
+                                <img src={chevronDroite} className="fleche"/>
+                            </div>
                             <div className="bouton">Contacter le vendeur</div>
                         </div>
                         <div className="description">

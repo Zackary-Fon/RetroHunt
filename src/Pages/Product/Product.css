@@ -4,7 +4,6 @@
     list-style-type: none;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding:10px;
 }
 .description{
     display:flex;
@@ -31,4 +30,14 @@
     background-color: #f5f7fa;
     width:100% ;
     max-width: 300px;
+}
+.imageFleches{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+.fleche{
+    width:100%;
+    max-width: 45px;
+    height: 45px;
 }

@@ -5,6 +5,7 @@
     width: 100% ;
     font-family: 'Fredoka One', cursive;
     letter-spacing: 1px;
+    position: fixed;
 }
 #logo{
     width:100%;
@@ -73,19 +74,21 @@ a{
         right:0px;
         width:20px;
         height:20px;
+        padding: 10px;
     }
     .header{
         justify-content: baseline;
     }
     .burgerMenu{
+        list-style-type: none;
         display:flex;
         flex-direction: column;
         width:100%;
-        background-color: antiquewhite;
+        background-color:#7a57d1;
         position: absolute;
         left:0px;
         top:0px;
-        height: 100vh;
+        height: auto;
     }
     
 }
