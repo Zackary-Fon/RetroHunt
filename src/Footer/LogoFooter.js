@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Logo from './Logo.png';
+import Logo from '../Images/logo_blanc.png';
 import {Link} from "react-router-dom";
 
 const LogoFooter = ()=>{
