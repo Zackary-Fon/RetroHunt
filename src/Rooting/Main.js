@@ -21,7 +21,7 @@ const Main = () =>{
 
     
     return(
-        <div className="body" style={{background: `url(${fond})`}}>
+        <div className="body">
             <Switch>
             {Routes()}
             </Switch>

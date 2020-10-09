@@ -6,11 +6,12 @@ import FieldsConnexion from "./FieldsConnexion";
 import PasswordForget from "./PasswordForget";
 import PasswordConnexion from "./PasswordConnexion";
 import InscriptionForm from "../Inscription/InscriptionForm";
+import "./Connexion.css";
 
 const InfosConnexion = () => {
-  return (<div>
-      <div>
-    <div>
+  return (<div class="connecter">
+      <div >
+    <div >  
       <h2>Connexion au compte</h2>
       <div>
         <FieldsConnexion />

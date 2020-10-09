@@ -21,7 +21,9 @@ const InscriptionForm = ({text}) => {
       </input>
       </div>
 <br />
+<p class="boutoninscrit">
 <ButtonInscription/>
+</p>
 </div>
 </div>
 };
