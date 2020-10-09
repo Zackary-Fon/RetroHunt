@@ -1,6 +1,8 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
 import tabRoutes from './const';
+import '../general.css';
+import fond from "../Images/fond.jpg";
 
 const Main = () =>{
        
@@ -19,7 +21,7 @@ const Main = () =>{
 
     
     return(
-        <div>
+        <div className="body" style={{background: `url(${fond})`}}>
             <Switch>
             {Routes()}
             </Switch>

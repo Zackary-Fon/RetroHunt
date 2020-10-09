@@ -1,7 +1,7 @@
 import React from "react";
-import facebook from './facebook.png';
-import twitter from './twitter.png';
-import linkedin from './linkedin.png';
+import facebook from '../Images/facebook.svg';
+import twitter from '../Images/twitter.svg';
+import linkedin from '../Images/linkedin.svg';
 import MentionLegale from "./MentionLegale";
 import LogoFooter from "./LogoFooter";
 import './Footer.css';
@@ -13,16 +13,18 @@ const Footer=()=>{
     const afficheur=icones.map((any, index)=>
     <div className="Footer" key={index}><img src={any} alt="réseaux sociaux"/></div>);
     return (
-        <div className="FooterGlobal">
+    <div className="FooterGlobal">
 
-       <div className="Afficheur">{afficheur}</div>
+       <div className="Afficheur">
+           {afficheur}
+        </div>
 
        <div className="LogoMentions">
-        <LogoFooter/>
-       <MentionLegale/>
+            <LogoFooter/>
+            <MentionLegale/>
        </div>
 
-       </div>
+    </div>
     )
 }
 

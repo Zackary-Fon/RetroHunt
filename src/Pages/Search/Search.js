@@ -31,7 +31,7 @@ const Search = ()=>{
 
     return (
         <>
-        <input type="text" placeholder="Recherchez" onChange={(e)=>{getValue(e)}} />
+        <input type="text" placeholder="Recherchez" className="searchbar" onChange={(e)=>{getValue(e)}} />
         <Searching showSearch={show} txt={recherche}></Searching>
         </>
     )
