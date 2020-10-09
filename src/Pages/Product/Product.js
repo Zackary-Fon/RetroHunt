@@ -6,13 +6,15 @@ import chevronGauche from "../../Images/chevronGauche.png";
 import chevronDroite from "../../Images/chevronDroite.png";
 
 const Product = ({match}) => {
+    // recupérer id du produit
     const {params: id } = match;
     console.log(match);
-    // recupérer id du produit
-    // récupérer dans le tableau les détails du produit avec l'id en utilisation filter
     // afficher les infos
     console.log(id.id)
     const ShowProduct = () => {
+        // récupérer dans le tableau les détails du produit avec un if pour correspondre à l'id
+        //du produit sur lequel on a cliqué puis on affiche les informations et l'image dans une card
+        // et on affiche la description que l'utilisateur à écrit sur une deuxième card
         const ProduitResult = ObjectProduct.map(produit => {
             if (produit.id === (Number(id.id)) ){
                 return(
@@ -33,6 +35,8 @@ const Product = ({match}) => {
                             </div>
                             <div className="bouton">Contacter le vendeur</div>
                         </div>
+
+                        
                         <div className="description">
                             <h1>Description</h1>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut dui efficitur, porttitor massa vitae, mattis ex. Aliquam vel nisl interdum, convallis massa eget, pretium nibh. Nam eu urna mauris. Duis ac diam malesuada, hendrerit ex non, consequat nisi. Sed tellus lorem, blandit et iaculis vitae, molestie ac justo. Duis at vulputate elit. Praesent pellentesque faucibus urna, faucibus cursus lectus ultrices id.
