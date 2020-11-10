@@ -7,7 +7,7 @@ import tabRoutes from "../Rooting/const";
 const list = () =>{
     const result = tabRoutes.map((any, index)=>{
         {/*on met un if car l'index 0 est la route de l'accueil et on met ce lien sur le logo
-           du site et les index supérieurs à 3 sont les routes vers d'autres pages comme 
+           du site et les index supérieurs à 4 sont les routes vers d'autres pages comme 
             la mention légale etc... qui ne seront pas dans ce menu */}
     if (index>0 && index<4)
     {

@@ -1,17 +1,18 @@
 import React from "react";
-import TabForm from "../../Rooting/const.js";
+import {TabForm} from "../../Rooting/const.js";
 
 const Form = () =>{
 
-    const ListForm = TabForm.map( (truc) => {
+    const listForm = TabForm.map( (truc) => {
+    return(
     <div>
     <h2>{truc.name}</h2>
     <input type="send"/>
     </div>
-    })  
-    return(
-        <ListForm/>
     )
+    })
 
+    return listForm;
     
 }
+export default Form;
