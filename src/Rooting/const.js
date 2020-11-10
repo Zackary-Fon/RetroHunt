@@ -1,4 +1,4 @@
-import ConnectionInscription from "../Pages/ConnectionInscription/ConnectionInscription";
+import ConnexionInscription from "../Pages/ConnexionInscription/ConnexionInscription";
 import Home from "../Pages/Home/Home";
 import Legal from "../Pages/Legal/Legal";
 import Product from "../Pages/Product/Product";
@@ -15,7 +15,7 @@ import Zelda_Ocarina_Of_Time from "./ImagesProduits/Zelda_Ocarina_Of_Time.jpg";
 //tableau des routes
 const tabRoutes = [
 {id:0, name:"Home", path:"/", component:Home},
-{id:1, name:"Connexion/inscription", path:"/ConnectionInscription", component:ConnectionInscription},
+{id:1, name:"Connexion/inscription", path:"/ConnexionInscription", component:ConnexionInscription},
 {id:2, name:"Profil", path:"/Profile", component:Profile},
 //{id:3, name:"Product", path:"/Product", component:Product},
 {id:3, name:"Product", path:"/Product/:id", component:Product},
