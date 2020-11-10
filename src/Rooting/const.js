@@ -10,6 +10,7 @@ import Space_Invaders from "./ImagesProduits/Space_Invaders.png";
 import Super_Mario_Bros3 from "./ImagesProduits/Super_Mario_Bros3.jpg";
 import Sonic_The_Hedgehog2 from "./ImagesProduits/Sonic_The_Hedgehog2.jpg";
 import Zelda_Ocarina_Of_Time from "./ImagesProduits/Zelda_Ocarina_Of_Time.jpg";
+import AjouterAnnonce from "../Pages/AjouterAnnonce/AjouterAnnonce";
 
 
 //tableau des routes
@@ -17,10 +18,11 @@ const tabRoutes = [
 {id:0, name:"Home", path:"/", component:Home},
 {id:1, name:"Connexion/inscription", path:"/ConnexionInscription", component:ConnexionInscription},
 {id:2, name:"Profil", path:"/Profile", component:Profile},
+{id:3, name:"Déposer une annonce", path:"/DeposerAnnonce", component:AjouterAnnonce},
 //{id:3, name:"Product", path:"/Product", component:Product},
-{id:3, name:"Product", path:"/Product/:id", component:Product},
-{id:4, name:"Search", path:"/Search", component:Search},
-{id:5, name:"Legal", path:"/Legal", component:Legal}
+{id:4, name:"Product", path:"/Product/:id", component:Product},
+{id:5, name:"Search", path:"/Search", component:Search},
+{id:6, name:"Legal", path:"/Legal", component:Legal}
 ]
 export default tabRoutes;
 
@@ -38,4 +40,11 @@ export const ObjectProduct = [
     {id:9, img: Space_Invaders, name:"Space Invaders", url:"https://www.jeuxvideo.com/jeux/atari-vcs-2600/00049404-space-invaders.htm", category:"Atari 2600", userName:"Pierre", datePost:"07/06/2020", prix:"45€"},
     {id:10, img: Sonic_The_Hedgehog2, name:"Sonic the Hedgehog 2", url:"https://www.jeuxvideo.com/jeux/megadrive/00002033-sonic-the-hedgehog-2.htm", category:"Sega Megadrive", userName:"Paul", datePost:"19/06/2020", prix:"20€"},
     {id:11, img: Zelda_Ocarina_Of_Time, name:"The Legend of Zelda : Ocarina of Time", url:"https://www.jeuxvideo.com/jeux/jeu-56411/", category:"Nintendo 64", userName:"Jacques", datePost:"27/06/2020", prix:"30€"}
+]
+
+export const TabForm = [
+    {id: 0, name:"Titre de l'annonce"},
+    {id: 1, name:"Prix"},
+    {id: 2, name:"État"},
+    {id: 3, name:"Console"}
 ]
