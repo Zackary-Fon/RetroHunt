@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 
 app.set('view engine','ejs');
 app.use(bodyParser.json());
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(express.static('views'));
 app.use('/',UsersRoutes)

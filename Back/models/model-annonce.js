@@ -16,7 +16,7 @@ const AnnonceSchema = new Schema({
     Description:String
 },{collection: "ANNONCE_COLLEC"});
 
-const Annonce = mongoose.model('Annonce',AnnonceSchema);
+const Annonce = mongoose.model('annonce',AnnonceSchema);
 
 
 module.exports = Annonce;
