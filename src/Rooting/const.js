@@ -19,7 +19,6 @@ const tabRoutes = [
 {id:1, name:"Connexion/inscription", path:"/ConnexionInscription", component:ConnexionInscription},
 {id:2, name:"Profil", path:"/Profile", component:Profile},
 {id:3, name:"Déposer une annonce", path:"/DeposerAnnonce", component:AjouterAnnonce},
-//{id:3, name:"Product", path:"/Product", component:Product},
 {id:4, name:"Product", path:"/Product/:id", component:Product},
 {id:5, name:"Search", path:"/Search", component:Search},
 {id:6, name:"Legal", path:"/Legal", component:Legal}
