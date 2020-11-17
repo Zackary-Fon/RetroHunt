@@ -21,10 +21,11 @@ CreateUser(req,res){
     user.save(); 
 },
 GetUser(req,res){
-    console.log("ok ? ")
-    console.log(req.user)
-    res.send(req.user)
- 
+    User.findOne({email: "gege@gmail.com"}).then((user)=>{
+    console.log(user)
+    res.send(user)
+    }
+    )
 },
 Log(req,res){
     User.findOne({email: req.body.email}).then((user)=>{
