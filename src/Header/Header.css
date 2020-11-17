@@ -1,17 +1,30 @@
-.header {
+header {
+    position: relative;
     display: flex;
-    background-color: #7a57d1 ;
+    background: linear-gradient(to right, #594BBD, #3E338C);
     justify-content: space-between;
     width: 100% ;
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Righteous', sans-serif;
+    font: 400;
     letter-spacing: 1px;
     position: fixed;
 }
+
+body{
+    background: radial-gradient(#281761, #181B41, #181B41, #402183, #321575);
+    
+}
+
+.logo_resize{
+    width: 13%;
+    padding: 10px;
+    padding-left: 70px;
+}
+
 #logo{
     width:100%;
-    height:auto;
-    padding: 10px;
 }
+
 .menu_head{
     display:flex;
     position:relative;
@@ -19,19 +32,24 @@
     align-items:center;
     width:100%;
 }
+
 .li_menu_head{
     margin:10px;
 }
+
+.li_menu_head a:hover{
+    color: #61F2F5;
+    border-bottom: 3px solid #61F2F5;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
 .li_menu_head a {
     color :  white;
 }
+
 a{
     text-decoration: none;
-}
-
-.li_menu_head:hover{
-    border-bottom: 5px solid;
-    border-color: #5be7c4 ;
 }
 
 .head_menu{
@@ -39,25 +57,44 @@ a{
     display:flex;
     margin:10px;
 }
-.Searching{
+
+.searching{
+    width: 100%;
+    height: 25%;
     display:flex;
     align-items: center;
     justify-content: center;
-    width:100%;
-}
-.searchbar{
-    width: 100%;
     max-width: 300px;
-    border-radius:10px;
-    padding:5px;
 }
-#Loupe{
-    width:20px;
-    height:20px;
+
+.icon{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-align: center;
+    border: 2px solid white;
 }
+
+.fas{
+    color: aliceblue;
+}
+
+.searchbar{
+    width: 200px;
+    padding: 5px;
+    color: white;
+    background: transparent;
+    border: 2px solid white;
+}
+
 .burger{
     display:none;
 }
+
+
 @media screen and (max-width:700px){
     .head_menu{
         display:none;
@@ -76,7 +113,7 @@ a{
         height:20px;
         padding: 10px;
     }
-    .header{
+    header{
         justify-content: baseline;
     }
     .burgerMenu{
