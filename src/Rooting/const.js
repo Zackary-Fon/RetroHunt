@@ -16,7 +16,7 @@ import AjouterAnnonce from "../Pages/AjouterAnnonce/AjouterAnnonce";
 //tableau des routes
 const tabRoutes = [
 {id:0, name:"Home", path:"/", component:Home},
-{id:1, name:"Catalogue", path:"", component:Profile},
+{id:1, name:"", path:"/Catalogue", component:Home},
 {id:2, name:"Connexion/inscription", path:"/ConnexionInscription", component:ConnexionInscription},
 {id:3, name:"Profil", path:"/Profile", component:Profile},
 {id:4, name:"Déposer une annonce", path:"/DeposerAnnonce", component:AjouterAnnonce},
