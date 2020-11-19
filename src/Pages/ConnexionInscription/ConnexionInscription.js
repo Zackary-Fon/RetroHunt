@@ -12,8 +12,8 @@ const ConnexionInscription = () =>{
     if (switcher == false){
     return(
         <div>
-        <Connexion/>
-        <button onClick={Michel}>Pas encore inscrit ?</button>
+            <Connexion/>
+            <button onClick={Michel}>Pas encore inscrit ?</button>
         </div>
     )
     }else{
