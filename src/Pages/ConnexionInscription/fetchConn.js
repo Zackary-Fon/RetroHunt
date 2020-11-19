@@ -1,19 +1,17 @@
 import React,{useState,useEffect} from "react";
 /* import form from "./Inscription";
  */
-const URL="http://localhost:3006/user";
+const URL="http://localhost:3006/login";
 
 
 const fetchie=()=>{
-  console.log("fetch")
+  console.log("fetchConnexion")
  document.getElementById("submit").addEventListener('click',()=>{
   const user={
-    Nom: document.querySelector("#Nom").value,
     email: document.querySelector("#email").value,
-    Prenom: document.querySelector("#Prenom").value,
     Password: document.querySelector("#Password").value
   }
-  
+
 const Formjson=JSON.stringify(user);
 console.log(user)
 console.log('ENVOIE: '+Formjson)
@@ -31,10 +29,18 @@ const config = {
 fetch(URL, config)
   .then(response => {
     response.json().then(json => {
+        if (response==403){
+            return(<h1>WRONG PASSWORD</h1>)
+        }
+        if (response==401){
+            return(<h1>User not find</h1>)
+        }
+        else{
       console.log(json)
-      
+    document.location.href="/Profile"
+    }
   })})
-  
+ 
 }) 
 
 }

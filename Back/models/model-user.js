@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const bcrypt=require('bcrypt');
 const Schema = mongoose.Schema;
 const annonce= require('./model-annonce').schema;
-const bcrypt=require('bcrypt');
+
 
 const UserSchema = new Schema({
     email:String,
@@ -10,9 +11,10 @@ const UserSchema = new Schema({
     Prenom: String,
     Pseudo: String,
     PhotoProfil:String,
-    Annonces:[{ annonce}]
-},{collection: "USER_COLLEC"});
-UserSchema.pre('save',async function(next){
+    Annonces:[annonce]
+},{collection: "USER_COLLEC"})
+
+ UserSchema.pre('save',async function(next){
     try{
       const Salt=await bcrypt.genSalt(10);
       const Hash=await bcrypt.hash(this.Password,Salt);
@@ -21,7 +23,7 @@ UserSchema.pre('save',async function(next){
     }catch(error){
       next(error);
     };
-    })
+}); 
 
 const User = mongoose.model('user',UserSchema);
 
