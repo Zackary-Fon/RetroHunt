@@ -1,16 +1,28 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
+import  fetchie from "./fetchInsc"
 
-const Inscription = () =>{
 
-    return(
+const Inscription=()=>{
+    
+    useEffect(() => {
+       fetchie()
+      })
+      
+     return(
         <div>
-        <input type="send" placeholder="Nom"></input>
-        <input type="send" placeholder="Prenom"></input>
-        <input type="send" placeholder="Adresse Mail"></input>
-        <input type="send" placeholder="Mot de Passe"></input>
-        <input type="send" placeholder="Confirmez le mot de passe"></input>
+            <form  id="form" method="POST" >
+                <input type="text" placeholder="Nom" name="Nom" id="Nom" ></input>
+                <input type="text" placeholder="Prenom" name="Prenom" id="Prenom" ></input>
+                <input type="text" placeholder="Adresse Mail" name="email" id="email" ></input>
+                <input type="text" placeholder="Mot de Passe" name="Password" id="Password"></input>
+                <input type="text" placeholder="Confirmez le mot de passe"></input>
+                <button  type="submit" id="submit" >Inscription</button>
+            </form>
+            
         </div>
-    )
+    ) 
+
+
 }
 
 export default Inscription;

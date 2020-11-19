@@ -16,6 +16,7 @@ import AjouterAnnonce from "../Pages/AjouterAnnonce/AjouterAnnonce";
 //tableau des routes
 const tabRoutes = [
 {id:0, name:"Home", path:"/", component:Home},
+<<<<<<< HEAD
 {id:1, name:"Catalogue", path:"", component:Profile},
 {id:2, name:"Connexion/inscription", path:"/ConnexionInscription", component:ConnexionInscription},
 {id:3, name:"Profil", path:"/Profile", component:Profile},
@@ -24,6 +25,14 @@ const tabRoutes = [
 {id:5, name:"Product", path:"/Product/:id", component:Product},
 {id:6, name:"Search", path:"/Search", component:Search},
 {id:7, name:"Legal", path:"/Legal", component:Legal}
+=======
+{id:1, name:"Connexion/inscription", path:"/ConnexionInscription", component:ConnexionInscription},
+{id:2, name:"Profil", path:"/Profile", component:Profile},
+{id:3, name:"Déposer une annonce", path:"/DeposerAnnonce", component:AjouterAnnonce},
+{id:4, name:"Product", path:"/Product/:id", component:Product},
+{id:5, name:"Search", path:"/Search", component:Search},
+{id:6, name:"Legal", path:"/Legal", component:Legal}
+>>>>>>> c3a0d8715475f90fb99149cdf1273990d81c06ea
 ]
 export default tabRoutes;
 
