@@ -4,6 +4,7 @@ import Legal from "../Pages/Legal/Legal";
 import Product from "../Pages/Product/Product";
 import Profile from "../Pages/Profile/Profile";
 import Search from "../Pages/Search/Search";
+import Categorie from "../Pages/Catégorie/Categorie";
 import Crash_Bandicoot1 from "./ImagesProduits/Crash_Bandicoot1.jpg";
 import Spyro1 from "./ImagesProduits/Spyro1.jpg";
 import Space_Invaders from "./ImagesProduits/Space_Invaders.png";
@@ -21,7 +22,8 @@ const tabRoutes = [
 {id:3, name:"Déposer une annonce", path:"/DeposerAnnonce", component:AjouterAnnonce},
 {id:4, name:"Product", path:"/Product/:id", component:Product},
 {id:5, name:"Search", path:"/Search", component:Search},
-{id:6, name:"Legal", path:"/Legal", component:Legal}
+{id:6, name:"Legal", path:"/Legal", component:Legal},
+{id:7, name:"Categorie", path:"/Categorie/:category", component:Categorie}
 ]
 export default tabRoutes;
 
