@@ -8,6 +8,11 @@ const jwt=require('jsonwebtoken');
 
 module.exports = {
 CreateUser(req,res){
+    console.log(req.body)
+     if (req.body.nom==''||req.body.prenom==''||req.body.email==''||req.body.Password=='' ||req.body==''){
+        console.log("wtf dude")
+    }else{ 
+        if(req.body != {}){
         const user=new User({
             email:req.body.email,
             Password: req.body.Password,
@@ -18,7 +23,9 @@ CreateUser(req,res){
             Annonces:req.body.Annonces
     });
     console.log('user saved');
-    user.save(); 
+    user.save();  } else{
+        console.log('tu fais chier')
+    }}
 },
 GetUser(req,res){
     User.findOne({email: "gege@gmail.com"}).then((user)=>{
@@ -42,12 +49,12 @@ Log(req,res){
                     /* res.render("profil",{user:user}) */ // JWT dans ce coin ///JWT-> acces utilisateur depuis d'autres fonctions 
                 }
                 else{
-                    res.send(error)
+            res.sendStatus(403)
                 }
             }))
             
         }else{
-            res.sendStatus(401).send('Utilisateur non reconnu')
+            res.sendStatus(401)
         }});
     
 },
