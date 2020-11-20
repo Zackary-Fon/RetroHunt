@@ -1,0 +1,38 @@
+
+
+.container-customize{
+    background-color: #444B90;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.container-customize:nth-child(1){
+    padding-top: 40px;
+    color: white;
+}
+
+.input-customize{
+    flex-wrap: nowrap !important;
+    align-items: space-around;
+    justify-content: space-around;
+    margin: 5%;
+}
+
+.input-customize input{
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 300px;
+    height: 35px;
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.input-customize input::placeholder{
+    color: white;
+    opacity: 50%;
+    margin-left: 3px;
+}
+
+/* .col-customize{
+    background-color: violet;
+} */
