@@ -1,42 +1,42 @@
 import React,{useState,useEffect} from "react";
 /* import form from "./Inscription";
  */
-const URL="http://localhost:3006/user";
+const URL="http://localhost:3006/user"; //URL back
 
 
-const fetchie=()=>{
-  console.log("fetch")
- document.getElementById("submit").addEventListener('click',()=>{
-  const user={
-    Nom: document.querySelector("#Nom").value,
+const fetchie=()=>{ //declaration de la fonction qui va etre appeler dans inscription
+ document.getElementById("submit").addEventListener('click',()=>{  //ecoute du bouton d envoie de formulaire
+  const user={ //creation d'une constante avec donnée utile
+    Nom: document.querySelector("#Nom").value, //recuperation des données utiles
     email: document.querySelector("#email").value,
     Prenom: document.querySelector("#Prenom").value,
     Password: document.querySelector("#Password").value
   }
   
-const Formjson=JSON.stringify(user);
-console.log(user)
-console.log('ENVOIE: '+Formjson)
+const Formjson=JSON.stringify(user); // transformation de ma variable en string pour la bdd
 
-const config = {
+const config = { // options d'envoie de la fetch
     method: 'POST',
     headers: {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin":"http://localhost:3006/user"
+    "Accept": "application/json",   //accept du json
+    "Content-Type": "application/json",  //contien du json
+    "Access-Control-Allow-Origin":"http://localhost:3006/user" // autorise l acces a l url du back
     },
-    body: Formjson,
+    body: Formjson, // enregistrement des données dans le body envoyer
   }
-  
-fetch(URL, config)
-  .then(response => {
-    response.json().then(json => {
-      console.log(json)
-      
+fetch(URL, config)  //mise en place de la fetch
+  .then(response => {  
+    response.json().then(json => {// quand j ai une reponse alors j affiche dans la console le json envoyé
+      if (response == 404){
+        return(<h1>WRONG PASSWORD</h1>)}
+        else{
+          console.log(json)
+          document.location.href="/"
+        }
   })})
   
 }) 
 
 }
 
-export default fetchie;
+export default fetchie; 
