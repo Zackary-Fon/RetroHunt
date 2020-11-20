@@ -1,6 +1,10 @@
 import React, {useState} from "react"
 import Connexion from "./Connexion.js";
 import Inscription from "./Inscription.js";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "./ConnexionInscription.css"
 
 const ConnexionInscription = () =>{
     const [switcher, isTrou] = useState(false);
@@ -11,10 +15,18 @@ const ConnexionInscription = () =>{
 
     if (switcher == false){
     return(
-        <div>
-            <Connexion/>
-            <button onClick={Michel}>Pas encore inscrit ?</button>
-        </div>
+        <>
+        <Container className="container-customize">
+            
+            <Row className="justify-content-md-center justify-content-sm-center justify-content-xs-center h2">Se connecter</Row>
+            <Row className="justify-content-md-center justify-content-sm-center justify-content-xs-center">
+                <Col md="auto" sm="auto" xs="auto" className="col-customize"><Connexion/></Col>
+            </Row>
+            <Row className="justify-content-md-center justify-content-sm-center justify-content-xs-center">
+                <Col md="auto" sm="auto" xs="auto"><span>Pas encore inscrit ? <a onClick={Michel}>S'inscrire</a></span></Col>
+            </Row>
+        </Container>
+        </>
     )
     }else{
         return(
