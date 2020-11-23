@@ -77,7 +77,7 @@ mdp2.addEventListener("keyup", ()=>{
 sub.addEventListener("click",()=>{
     console.log(mdp.classList)
     if(mdp.classList.contains('is-valid') && mdp2.classList.contains('is-valid') && name.classList.contains('is-valid')
-    && prenom.classList.contains('is-valid')||email.classList.contains('is-valid') ){
+    && prenom.classList.contains('is-valid')&&email.classList.contains('is-valid') ){
         btnsub.disabled = false
     }
     else{
