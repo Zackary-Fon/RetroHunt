@@ -6,10 +6,10 @@ const prenom=document.getElementById('Prenom');
 const mdp= document.getElementById('Password');
 const mdp2=document.getElementById('mdp2');
 const email=document.getElementById('email');
+const sub=document.getElementById('invalidCheck');
+const btnsub=document.getElementById('submit');
 
 name.addEventListener("keyup", ()=>{
-    
-    console.log(name.value);
     if(name.value ==''||name.value ==' '){
         name.classList.remove('is-valid');
         name.classList.add('is-invalid');
@@ -39,10 +39,8 @@ mdp.addEventListener("keyup", ()=>{
         mdp.classList.remove('is-valid');
         const paswd= /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
         if(paswd.test(mdp.value)) {
-            
             mdp.classList.remove('is-invalid');
-        mdp.classList.add('is-valid');
-       
+            mdp.classList.add('is-valid');
         }
     }
 });
@@ -55,10 +53,8 @@ email.addEventListener("keyup", ()=>{
         email.classList.add('is-invalid');
         const mail=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if(mail.test(email.value)) {
-            
             email.classList.remove('is-invalid');
             email.classList.add('is-valid');
-          
         }
     }
 });
@@ -74,7 +70,20 @@ mdp2.addEventListener("keyup", ()=>{
         
     }
     }
+
+
 });
+
+sub.addEventListener("click",()=>{
+    console.log(mdp.classList)
+    if(mdp.classList.contains('is-valid') && mdp2.classList.contains('is-valid') && name.classList.contains('is-valid')
+    && prenom.classList.contains('is-valid')||email.classList.contains('is-valid') ){
+        btnsub.disabled = false
+    }
+    else{
+        console.log("retry")
+    }
+})
 
 
 }
