@@ -8,7 +8,22 @@ import chevronHaut from "../../Images/chevronHaut.png";
 import RecupPlay from "./Play"
 const URL=new Request("http://localhost:3006/user");
 const Home = () => {
-
+     useEffect(() => {
+        RecupPlay()
+    },[])
+        /*
+        fetch(URL,{ method: "GET",
+        headers: {
+            "Accept": "application/json",
+            "Access-Control-Allow-Origin":"http://localhost:3006/user"
+        }})
+        .then(response => {
+                response.json().then(json => {
+                console.log(json);
+            })
+        }
+    )
+    },[]); */
 /* GetUser(); */
     return (
     <div className="homeBody">
