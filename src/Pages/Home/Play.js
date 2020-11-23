@@ -8,7 +8,7 @@ const RecupPlay=()=>{
     headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin":"http://localhost:3006/user"
+        "Access-Control-Allow-Origin":"http://localhost:3006/deposer"
     }})
     .then(response => {
             response.json().then(json => {

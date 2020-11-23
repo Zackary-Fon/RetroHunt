@@ -21,7 +21,8 @@ const config = {
     headers: {
     "Accept": "application/json",
     "Content-Type": "application/json",
-    "Access-Control-Allow-Origin":"http://localhost:3006/user"
+    "Access-Control-Allow-Origin":"http://localhost:3006/user",
+    
     },
     body: Formjson,
   }
@@ -36,9 +37,15 @@ fetch(URL, config)
             return(<h1>User not find</h1>)
         }
         else{
-      console.log(json)
-    document.location.href="/Profile"
-    }
+      const token="Bearer "+json.accessToken;
+      console.log(token)
+fetch(URL, {
+  headers:{
+    "Authorization": token,
+    "Access-Control-Allow-Origin":"http://localhost:3006/user",
+  }
+})
+        }
   })})
  
 }) 
