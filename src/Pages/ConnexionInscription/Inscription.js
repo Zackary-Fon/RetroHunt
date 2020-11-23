@@ -3,39 +3,43 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import  fetchie from "./fetchInsc";
 import "./ConnexionInscription.css";
-/* import verif from "./verifInsc" */
+ import verif from "./verifInsc" 
+
 
 
 const Inscription=()=>{
     
     useEffect(() => {{/* fetch fonctionne mieux avec un a */}
-       fetchie() //utilisation de la fonction qui contient le fetch dans fetchInsc
-      /*  verif() *///js de verification de validité du form
+       fetchie() //utilisation de la fonction qui contient le fetch dans fetchIns
+      verif() ///js de verification de validité du form
     })
     
     return(
         <div>
             <form  id="form" method="POST"  >
                 <Row className="input-customize">
-                    <input type="text" placeholder="Nom" name="Nom" id="Nom" ></input>
+                    <input type="text" className="form-control" placeholder="Nom" name="Nom" id="Nom" ></input>
                 </Row>
                 <Row className="input-customize">
-                    <input type="text" placeholder="Prenom" name="Prenom" id="Prenom" ></input>
+                    <input type="text" className="form-control" placeholder="Prenom" name="Prenom" id="Prenom" ></input>
                 </Row>
                 <Row className="input-customize">
-                    <input type="mail" placeholder="Adresse Mail" name="email" id="email"  ></input>
+                    <input type="mail"  className="form-control" placeholder="Adresse Mail" name="email" id="email"  ></input>
                 </Row>
                 <Row className="input-customize">
-                    <input type="password" placeholder="Mot de Passe" name="Password" id="Password"></input>
+                    <input type="password" className="form-control" placeholder="Mot de Passe" name="Password" id="Password"></input>
                 </Row>
                 <Row className="input-customize">
-                    <input type="password" placeholder="Confirmez le mot de passe" id="mdp2"></input>
+                    <input type="password"  className="form-control" placeholder="Confirmez le mot de passe" id="mdp2"></input>
                 </Row>
-                <Button className="btn-customize" type="submit" id="submit" href="">Inscription</Button>{/* fetch fonctionne mieux avec un a */}
+                <Row className="form-group form-check">
+                    <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required></input>
+                    <label className="form-check-label" for="confirm" >Je confirme ces informations</label>
+                </Row>
+                <Button className="btn-customize " type="submit" id="submit" disabled >Inscription</Button>{/* fetch fonctionne mieux avec un a */}
             </form>
-        </div>
-    ) 
-
+    </div>
+    )
 
 }
 

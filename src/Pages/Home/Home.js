@@ -6,7 +6,6 @@ import chevronGauche from "../../Images/chevronGauche.png";
 import chevronDroite from "../../Images/chevronDroite.png";
 import chevronHaut from "../../Images/chevronHaut.png";
 import RecupPlay from "./Play"
-const URL=new Request("http://localhost:3006/user");
 const Home = () => {
      useEffect(() => {
         RecupPlay()
