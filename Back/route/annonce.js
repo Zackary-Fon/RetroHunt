@@ -1,4 +1,4 @@
-const {home} = require('../controllers/controller-annonce');
+const {home,CreateAnn,GetPlay} = require('../controllers/controller-annonce');
 const {CreateUser,GetUser,Log, authenticateToken}= require('../controllers/controller-user');
 const express=require('express');
 const { route } = require('../app/app');
@@ -11,6 +11,10 @@ router.route('/')
 router.route('/user')
 .post(CreateUser)
 .get(GetUser)
+
+router.route('/deposer')
+.post(CreateAnn)
+.get(GetPlay)
 
 router.route('/login')
 .post(Log)
