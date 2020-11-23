@@ -30,11 +30,11 @@ const config = {
 fetch(URL, config)
   .then(response => {
     response.json().then(json => {
-        if (response==403){
-            return(<h1>WRONG PASSWORD</h1>)
+        if (json=="mauvais"){
+          console.log("wrong password")
         }
-        if (response==401){
-            return(<h1>User not find</h1>)
+        if (json=="not found"){
+            console.log("User not found")
         }
         else{
       const token="Bearer "+json.accessToken;
@@ -44,7 +44,7 @@ fetch(URL, {
     "Authorization": token,
     "Access-Control-Allow-Origin":"http://localhost:3006/user",
   }
-})
+}).then(document.location.href="/")
         }
   })})
  

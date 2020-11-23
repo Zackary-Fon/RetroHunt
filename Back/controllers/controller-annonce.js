@@ -1,13 +1,17 @@
 const Annonce = require('../models/model-annonce');
-const bodyParser = require('body-parser');
 const data=require('../data/bd');
+const env=require('dotenv').config();
+const bodyParser = require('body-parser');
+const bcrypt=require('bcrypt');
+const jwt=require('jsonwebtoken');
+
 module.exports = {
     CreateAnn(req,res){
         console.log(req.body)
-         if (req.body.nom==''||req.body.prenom==''||req.body.email==''||req.body.Password=='' ||req.body==''){
+         if (req.body.TitreAnnonce==''||req.body.Date==''||req.body.Prix==''||req.body.description=='' ){
             console.log("wtf dude")
+            res.json("error")
         }else{ 
-                    console.log(req.file)
             const ann=new Annonce({
                 Titre:req.body.TitreAnnoncee,
                 Console:req.body.Console,
@@ -19,8 +23,10 @@ module.exports = {
                 /* PseudoVendeur: String, */
                 Description:req.body.description
         });
-        console.log('user saved');
+        console.log('annonce poster');
+        
         ann.save(); 
+        res.json("OK")
         }
     },
     GetPlay(req,res){
@@ -38,23 +44,6 @@ module.exports = {
             res.send(anno)
         })
     },
-uploadImage(req, res){
-        try {
-          if (req.file && req.file.path) {
-            const image = new Image({
-            url: req.file.path,
-      });
-      image.save();
-      return res.status(200).json({ msg: "image successfully saved" });
-      } else {
-        console.log(req.file);
-        return res.status(422).json({ error: "invalid" });
-          }
-          } catch (error) {
-        console.error(error);
-       return res.status(500).json({ error: "some error occured" });
-        }
-      },
 home(req,res){
     res.render('index')
 }
