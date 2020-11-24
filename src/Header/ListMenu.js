@@ -13,6 +13,7 @@ const list = () =>{
         /*on met un if car l'index 0 est la route de l'accueil et on met ce lien sur le logo
         du site et les index supérieurs à 5 sont les routes vers d'autres pages comme 
         la mention légale etc... qui ne seront pas dans ce menu */
+
     if (index==1){
         return (
             <>
@@ -26,7 +27,13 @@ const list = () =>{
         return (
                 <Nav.Link key={any.id} href={any.path}>{any.name}</Nav.Link>
         )
-    } else {
+    } else if (index ==4) {
+return(
+    <li  className="li_menu_head disabled" key={any.id}>
+           <Link to={any.path}>{any.name}</Link>
+    </li>
+)
+    }else{
         return null
     }
     })

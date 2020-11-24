@@ -3,11 +3,13 @@ import React,{useState,useEffect} from "react";
 const URL="http://localhost:3006/deposer";
 
 const Ajout=()=>{
-
+  console.log(document.querySelector('#myFile'))  
     document.getElementById("submit").addEventListener('click',()=>{  //ecoute du bouton d envoie de formulaire
-        const Annonce={ //creation d'une constante avec donnée utile
+      console.log(document.querySelector('#myFile')) 
+      const Annonce={ //creation d'une constante avec donnée utile1
           TitreAnnonce: document.querySelector("#titreAnnonce").value, //recuperation des données utiles
           Console: document.querySelector("#console").value,
+          Image:document.querySelector('#myFile').value,
           Date: document.querySelector("#date").value,
           Prix: document.querySelector("#Prix").value,
           Etat: document.querySelector("#etat").value,
@@ -28,7 +30,12 @@ const Ajout=()=>{
       fetch(URL, config)  //mise en place de la fetch
         .then(response => {  
             response.json().then(json => {// quand j ai une reponse alors j affiche dans la console le json envoyé
-                console.log(json)
+              if(json=="OK"){
+                console.log("OK")
+                document.location.href="../"
+              } if(json=="error"){
+                console.log('probleme')
+              }
             }
             )})
     })

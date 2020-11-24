@@ -6,12 +6,11 @@ import "./ConnexionInscription.css";
  import verif from "./verifInsc" 
 
 
-
 const Inscription=()=>{
     
     useEffect(() => {{/* fetch fonctionne mieux avec un a */}
-       fetchie() //utilisation de la fonction qui contient le fetch dans fetchIns
-      verif() ///js de verification de validité du form
+       fetchie() //utilisation de la fonction qui contient le fetch dans fetchInsc
+        verif() ///js de verification de validité du form
     })
     
     return(
@@ -38,8 +37,9 @@ const Inscription=()=>{
                 </Row>
                 <Button className="btn-customize " type="submit" id="submit" disabled >Inscription</Button>{/* fetch fonctionne mieux avec un a */}
             </form>
-    </div>
-    )
+        </div>
+    ) 
+
 
 }
 

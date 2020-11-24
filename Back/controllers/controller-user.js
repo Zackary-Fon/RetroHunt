@@ -49,12 +49,12 @@ Log(req,res){
                     /* res.render("profil",{user:user}) */ // JWT dans ce coin ///JWT-> acces utilisateur depuis d'autres fonctions 
                 }
                 else{
-            res.sendStatus(403)
+            res.json("mauvais")
                 }
             }))
             
         }else{
-            res.sendStatus(401)
+            res.json("not found")
         }});
     
 },

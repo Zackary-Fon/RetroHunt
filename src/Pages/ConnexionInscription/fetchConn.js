@@ -21,7 +21,8 @@ const config = {
     headers: {
     "Accept": "application/json",
     "Content-Type": "application/json",
-    "Access-Control-Allow-Origin":"http://localhost:3006/user"
+    "Access-Control-Allow-Origin":"http://localhost:3006/user",
+    
     },
     body: Formjson,
   }
@@ -29,16 +30,22 @@ const config = {
 fetch(URL, config)
   .then(response => {
     response.json().then(json => {
-        if (response==403){
-            return(<h1>WRONG PASSWORD</h1>)
+        if (json=="mauvais"){
+          console.log("wrong password")
         }
-        if (response==401){
-            return(<h1>User not find</h1>)
+        if (json=="not found"){
+            console.log("User not found")
         }
         else{
-      console.log(json)
-    document.location.href="/Profile"
-    }
+      const token="Bearer "+json.accessToken;
+      console.log(token)
+fetch(URL, {
+  headers:{
+    "Authorization": token,
+    "Access-Control-Allow-Origin":"http://localhost:3006/user",
+  }
+}).then(document.location.href="/")
+        }
   })})
  
 }) 

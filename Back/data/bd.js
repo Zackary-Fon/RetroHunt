@@ -1,8 +1,8 @@
 const mongoose=require('mongoose');
-
+const env=require('dotenv').config();
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb+srv://justine:diego.155@elearning.dwya2.mongodb.net/RetroHunt?retryWrites=true&w=majority',{
+mongoose.connect(process.env.MONGO_URI,{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });

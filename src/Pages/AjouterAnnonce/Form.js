@@ -42,7 +42,7 @@ const Form = () =>{
         <option value="Atari">Atari</option>
     </select>
     <h2>Ajouter des photos de l'article</h2>
-    <input type="file" name="myFile"/>
+    <input type="file" name="myFile"id="myFile"/>
     <label for="description"><h2>Description de l'article</h2></label>
     <textarea  id="description" name="description" rows="5" cols="33"></textarea>
     <button type="submit" id="submit">Ajouter l'annonce</button>
