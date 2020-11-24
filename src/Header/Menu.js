@@ -1,11 +1,11 @@
-import React from 'react';
-import './Header.css';
-import list from './ListMenu'
+// import React from 'react';
+// import './Header.css';
+// import list from './ListMenu'
 
-const HeadMenu = () =>{
+// const HeadMenu = () =>{
 
-    return (
-    <ul className="head_menu">{list()}</ul>
-    )
-}
-export default HeadMenu;
+//     return (
+//     <ul className="head_menu">{list()}</ul>
+//     )
+// }
+// export default HeadMenu;

@@ -1,20 +1,34 @@
 import React from 'react';
 import logo_dm from '../Images/logo_retrohunt_darkmodecolor1.png';
-import HeadMenu from './Menu';
+// import HeadMenu from './Menu';
 import './Header.css';
-import Burger from './Burger';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import FormControl from 'react-bootstrap/FormControl';
+// import Burger from './Burger';
 import {Link} from "react-router-dom";
+import List from "./ListMenu";
 
 const Header = () => {
     return ( 
     <header>
-        <div className="menu_head">
-            <div className="logo_resize">
-                <Link to="/"> <img id="logo" src={logo_dm} alt="Logo"/></Link>
-            </div>
-        <HeadMenu/>
-        <Burger/>
-        </div>
+            <Navbar className="menu_head  mr-auto" expand="lg">
+                <Navbar.Brand className="logo_resize" href="/">
+                    <img id="logo" src={logo_dm} alt="Logo"/>
+                </Navbar.Brand>
+                <Nav>
+                    <List/>
+                </Nav>
+            <Form inline>
+            <FormControl type="text" placeholder="Rechercher" className="mr-sm-2" />
+            <Button variant="outline-success">Rechercher</Button>
+            </Form>
+            {/* <HeadMenu/>
+            <Burger/> */}
+            </Navbar>
+
     </header>
     )
 }
