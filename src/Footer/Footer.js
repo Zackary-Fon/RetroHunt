@@ -17,7 +17,28 @@ const Footer=()=>{
     <div className="Footer" key={index}><img src={any} alt="réseaux sociaux"/></div>);
     return (
         <div className="d-flex flex-column">
-        <footer className="footer" >
+            <footer class="site-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4">
+                            <p class="text-justify">Site crée par Zackary, Benoît et Justine</p>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3">
+                            <ul class="footer-links">
+                                <li><a href="http://scanfcode.com/category/c-language/">Mentions legales</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <ul class="social-icons">
+                                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        {/* <footer className="footer" >
             <Row className="p">
                 <Col xs={6}>
                     <h5 className="Mentions mx-auto d-block">Site crée par Zackary, Benoit et Justine</h5>
@@ -29,12 +50,12 @@ const Footer=()=>{
                 <img className="Footer" src={facebook} alt="réseaux sociaux"></img>
                 {/* {afficheur} */}
                 
-                <img className="Footer" src={linkedin} alt="réseaux sociaux"></img>
+               {/*  <img className="Footer" src={linkedin} alt="réseaux sociaux"></img>
                 </Col>
             </Row>
-    </footer>
+    </footer> */}
+    
     </div>
-    )
-}
+    )}
 
 export default Footer;
