@@ -1,0 +1,71 @@
+.btn-customize{
+    color: #444B90 !important;
+    background-color: white !important;
+    border: white !important;
+    font-size: 1.5rem !important;
+}
+
+.btn-customize:hover{
+    color: #9ca3e2;
+}
+
+.Tt{
+    color:white;
+}
+.Retour{
+    Color:white;
+
+}
+.input-customize{
+    flex-wrap: nowrap !important;
+    align-items: space-around;
+    justify-content: space-around;
+    margin: 5%;
+}
+
+.input-customize input{
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 300px;
+    height: 35px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.input-customize input::placeholder{
+    color: white;
+    opacity: 50%;
+}
+
+#Art{
+margin-left:40%;
+margin-top:2%;
+color:white;
+}
+
+#photo{
+    background-color:#48475C;
+    height:37%;
+    width:15%;
+    position: absolute;
+    z-index:6;
+    top:72%;
+    left:20%
+}
+
+.input-photo{
+    padding-top:20%;
+    padding-bottom: 10%;
+    margin-left: 52%;
+}
+
+.center{
+    margin-left:40%;
+    width:50%;
+}
+
+.center label{
+    color:white;
+}
+

@@ -1,11 +1,12 @@
 import React from "react";
 import Form from "./Form.js";
+import './Card.css';
 
 
 const Card = () =>{
 
     return(
-        <div>
+        <div className="Card">
             <Form/>
         </div>
     )
