@@ -4,7 +4,15 @@
     border: white !important;
     font-size: 1.5rem !important;
 }
-
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+    margin-top: 5%;
+  }
+  
 .btn-customize:hover{
     color: #9ca3e2;
 }
