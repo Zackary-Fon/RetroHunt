@@ -1,14 +1,15 @@
 import React from "react";
 import Card from "./Card.js";
-import './Card.css';
+import './AjouterAnnonce.css';
+import Container from 'react-bootstrap/Container';
 
 const AjouterAnnonce = () =>{
 
     return(
-      <div>
-          <h1 className="title">Accueil-Ajouter une annonce</h1>
+      <Container>
+          <p className="breadcrumb">Accueil - Ajouter une annonce</p>
           <Card/>
-      </div>
+      </Container>
     )
 }
 export default AjouterAnnonce;
