@@ -1,4 +1,5 @@
 const Annonce = require('../models/model-annonce');
+const User=require('../models/model-user');
 const data=require('../data/bd');
 const env=require('dotenv').config();
 const bodyParser = require('body-parser');
@@ -18,17 +19,22 @@ module.exports = {
                 Prix: req.body.Prix,
                 Etat: req.body.Etat,
                 Description:req.body.description,
+                PseudoVendeur: req.body.loc,
+                MailVendeur: req.body.mv,
                 image: result.secure_url,
-                cloudinary_id:result.public_id,
+                cloudinary_id:result.public_id
         });
         console.log('annonce poster');
         ann.save(); 
-        res.json("OK");
+        User.findOne({email:req.body.mv}).then((user)=>{
+            user.update({email:req.body.mv},{$set:{Annonces:ann}})
+            console.log('add to user')
+        })
+        res.send("ann"); 
         } 
-    
     catch(err){
-        console.log("error")
-        res.json("error")
+        console.log("error");
+        res.send("error");
     }
     
     },
@@ -47,6 +53,7 @@ module.exports = {
             res.send(anno)
         })
     },
+    
 home(req,res){
     res.render('index')
 }

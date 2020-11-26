@@ -41,7 +41,7 @@ fetch(URL, config)
       console.log(token)
       localStorage.setItem("Token",json.accessToken)
       console.log(localStorage.Token)
-      document.location.href="/Profile"
+      document.location.href="/Profil"
         }
   })})
  

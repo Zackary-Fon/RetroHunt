@@ -38,7 +38,6 @@ module.exports = {
         User.findOne({
             email: req.user.email
         }).then((user) => {
-            console.log(req.user)
             res.json(req.user)
         })
     },
@@ -83,7 +82,10 @@ module.exports = {
             next()
         }) 
 
-    }
+    },
+    deleteUser(req,res){
+        User.deleteOne({email:req.body.email}).then(console.log('user delete'))
+    },
 }
 
 /// JWT -> LogIn 

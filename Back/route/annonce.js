@@ -1,5 +1,5 @@
 const {home,CreateAnn,GetPlay,Getall,Getdate} = require('../controllers/controller-annonce');
-const {CreateUser,GetUser,Log, authenticateToken}= require('../controllers/controller-user');
+const {CreateUser,GetUser,Log, authenticateToken,deleteUser}= require('../controllers/controller-user');
 const express=require('express');
 const { route } = require('../app/app');
 const router=express.Router();
@@ -26,4 +26,6 @@ router.route('/login')
     .post(Log)
 router.route('/auth')
     .post(authenticateToken,GetUser)
+router.route('/delete')
+    .post(deleteUser)
     module.exports=router;

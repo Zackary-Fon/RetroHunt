@@ -1,15 +1,17 @@
-import React,{useEffect} from "react";
-import  Ajout from "./fetchEnvAnn";
-import  RecupPlay from "./fetchEnvAnn";
+import React,{useEffect} from "react";/* 
+import  Ajout from "./fetchEnvAnn"; */
+import  recup from "./recup";
 import Row from "react-bootstrap/Row";
 import Col from 'react-bootstrap/Col';
 import './Form.css';
 import {Link} from "react-router-dom";
+import fetcho from './fetcho'
 
 const Form = () =>{
     useEffect(() => {
-        Ajout()
-        RecupPlay()
+       /*  Ajout() */
+        recup()
+        fetcho()
     })
 
 
@@ -66,6 +68,8 @@ const Form = () =>{
     <label for="description" id="Art"><h2>Description de l'article</h2></label>
     <textarea  id="description" name="description" rows="5" cols="33"className="center"></textarea>
     </Row>
+    <input type="text" name="loc" id="loc" value=""></input>
+    <input type="text" name="mv" id="mv" value=""></input>
     <button type="submit" id="submit" className="btn btn-outline-light">Ajouter l'annonce</button>
     </form>
     </div>

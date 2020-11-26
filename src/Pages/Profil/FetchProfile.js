@@ -16,9 +16,14 @@ const bb=JSON.stringify(local);
     }
         
     fetch(URL, config)
-      .then(response => {
+    .then(response => {
         response.json().then(json => {
-            console.log(json)
+       document.querySelector('#prenom').innerHTML=json.User.Prenom;
+           document.querySelector('#nom').innerHTML=json.User.Nom;
+            document.querySelector('#email').innerHTML=json.User.email;
+            console.log(json.User.Prenom); 
+            /* if(json.User.PhotoProfil !==""){
+                document.querySelector('#photo').innerHTML=json.User.PhotoProfil;} */
       })})
 }
 
