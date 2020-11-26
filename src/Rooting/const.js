@@ -12,6 +12,7 @@ import Super_Mario_Bros3 from "./ImagesProduits/Super_Mario_Bros3.jpg";
 import Sonic_The_Hedgehog2 from "./ImagesProduits/Sonic_The_Hedgehog2.jpg";
 import Zelda_Ocarina_Of_Time from "./ImagesProduits/Zelda_Ocarina_Of_Time.jpg";
 import AjouterAnnonce from "../Pages/AjouterAnnonce/AjouterAnnonce";
+import SuppProfil from "../Pages/Profil/SupprimerProfil";
 
 
 //tableau des routes
@@ -23,7 +24,8 @@ const tabRoutes = [
 {id:4, name:"Déposer une annonce", path:"/DeposerAnnonce", component:AjouterAnnonce},
 {id:5, name:"Product", path:"/Product/:id", component:Product},
 {id:6, name:"Search", path:"/Search", component:Search},
-{id:7, name:"Legal", path:"/Legal", component:Legal}
+{id:7, name:"Legal", path:"/Legal", component:Legal},
+{id:8, name:"SuppProfil", path:"/DeleteProfile", component:SuppProfil}
 ]
 export default tabRoutes;
 

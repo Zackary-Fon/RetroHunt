@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const Profil = () => {
 
@@ -10,7 +11,7 @@ const Profil = () => {
                 <div>
                     <p>Modifier mon profil</p>
                     <p>Me déconnecter</p>
-                    <p>Supprimer mon compte</p>
+                    <Link to="/DeleteProfile"><p>Supprimer mon compte</p></Link>
                 </div>
             </div>
             <div className="Infos">

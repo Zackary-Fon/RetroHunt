@@ -1,5 +1,6 @@
 import React from "react";
 import {ObjectProduct} from "../../Rooting/const";
+import {Link} from "react-router-dom";
 
 const Categorie = ({match}) => {
     // recupérer category du produit
