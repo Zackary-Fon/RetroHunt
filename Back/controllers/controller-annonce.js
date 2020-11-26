@@ -4,30 +4,33 @@ const env=require('dotenv').config();
 const bodyParser = require('body-parser');
 const bcrypt=require('bcrypt');
 const jwt=require('jsonwebtoken');
+const cloudinary = require('../image/upload');
+const upload=require('../image/multer')
 
 module.exports = {
-    CreateAnn(req,res){
-        console.log(req.body)
-         if (req.body.TitreAnnonce==''||req.body.Date==''||req.body.Prix==''||req.body.description=='' ){
-            console.log("wtf dude")
-            res.json("error")
-        }else{ 
+    async CreateAnn(req,res){
+    try{
+        const result=await cloudinary.uploader.upload(req.file.path)
             const ann=new Annonce({
-                Titre:req.body.TitreAnnoncee,
+                Titre:req.body.TitreAnnonce,
                 Console:req.body.Console,
-                image: req.file,
                 Date: req.body.Date,
                 Prix: req.body.Prix,
-                Etat: req.body.etat,
-               /*  Localisation: String, */
-                /* PseudoVendeur: String, */
-                Description:req.body.description
+                Etat: req.body.Etat,
+                Description:req.body.description,
+                image: result.secure_url,
+                cloudinary_id:result.public_id,
         });
         console.log('annonce poster');
-        
         ann.save(); 
-        res.json("OK")
-        }
+        res.json("OK");
+        } 
+    
+    catch(err){
+        console.log("error")
+        res.json("error")
+    }
+    
     },
     GetPlay(req,res){
         Annonce.find({Console:"play1"}).then((ann)=>{

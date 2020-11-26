@@ -11,10 +11,10 @@ const Connexion = () =>{
     return(
         <div>{/* ne pas toucher aux id sinon plus de fetch */}
             <Row className="input-customize">
-                <input type="text" placeholder="Adresse Mail" id="email"></input>
+                <input type="email" placeholder="Adresse Mail" id="email"></input>
             </Row>    
             <Row className="input-customize">
-                <input type="text" placeholder="Mot de passe" id="Password"></input>
+                <input type="password" placeholder="Mot de passe" id="Password"></input>
             </Row>
             <Row className="justify-content-md-center justify-content-sm-center justify-content-xs-center">
                 <Button type="submit" id="submit" className="btn-customize">Go !</Button>{/* fetch fonctionne mieux avec un a */}

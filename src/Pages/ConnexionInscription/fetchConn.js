@@ -37,14 +37,11 @@ fetch(URL, config)
             console.log("User not found")
         }
         else{
-      const token="Bearer "+json.accessToken;
+      const token=json.accessToken;
       console.log(token)
-fetch(URL, {
-  headers:{
-    "Authorization": token,
-    "Access-Control-Allow-Origin":"http://localhost:3006/user",
-  }
-}).then(document.location.href="/")
+      localStorage.setItem("Token",json.accessToken)
+      console.log(localStorage.Token)
+      document.location.href="/Profile"
         }
   })})
  
