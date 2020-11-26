@@ -36,10 +36,10 @@ module.exports = {
     },
     GetUser(req, res) {
         User.findOne({
-            email: req.body.email
+            email: req.user.email
         }).then((user) => {
-            console.log(user)
-            res.send(user)
+            console.log(req.user)
+            res.json(req.user)
         })
     },
     Log(req, res) {
@@ -70,9 +70,8 @@ module.exports = {
         });
 
     },
-    authenticateToken(req, res, next) {
-        const authHeader = req.headers['authorization']
-        const token = authHeader && authHeader.split(' ')[1]
+    authenticateToken(req, res,next) {
+        const token = req.body.token
         if (token == null) {
             return res.sendStatus(401)
         }
@@ -82,7 +81,7 @@ module.exports = {
             }
             req.user = user
             next()
-        })
+        }) 
 
     }
 }
