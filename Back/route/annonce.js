@@ -24,5 +24,6 @@ router.route('/date')
 
 router.route('/login')
     .post(Log)
-    .get(authenticateToken,GetUser)
+router.route('/auth')
+    .post(authenticateToken,GetUser)
     module.exports=router;

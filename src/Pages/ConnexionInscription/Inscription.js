@@ -4,13 +4,14 @@ import Row from "react-bootstrap/Row";
 import  fetchie from "./fetchInsc";
 import "./ConnexionInscription.css";
  import verif from "./verifInsc" 
-
+import eye from './eye'
 
 const Inscription=()=>{
     
     useEffect(() => {{/* fetch fonctionne mieux avec un a */}
        fetchie() //utilisation de la fonction qui contient le fetch dans fetchInsc
         verif() ///js de verification de validité du form
+        eye()
     })
     
     return(
@@ -27,6 +28,7 @@ const Inscription=()=>{
                 </Row>
                 <Row className="input-customize">
                     <input type="password" className="form-control" placeholder="Mot de Passe" name="Password" id="Password"></input>
+                    <span  class="fa fa-fw fa-eye fa-eye-slash field-icon toggle-password"></span>
                 </Row>
                 <Row className="input-customize">
                     <input type="password"  className="form-control" placeholder="Confirmez le mot de passe" id="mdp2"></input>

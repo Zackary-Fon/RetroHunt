@@ -6,7 +6,7 @@ const URL="http://localhost:3006/login";
 
 const fetchie=()=>{
   console.log("fetchConnexion")
- document.getElementById("submit").addEventListener('click',()=>{
+  document.getElementById("submit").addEventListener('click',()=>{
   const user={
     email: document.querySelector("#email").value,
     Password: document.querySelector("#Password").value
@@ -21,7 +21,7 @@ const config = {
     headers: {
     "Accept": "application/json",
     "Content-Type": "application/json",
-    "Access-Control-Allow-Origin":"http://localhost:3006/user",
+    "Access-Control-Allow-Origin":"http://localhost:3006/login",
     
     },
     body: Formjson,
