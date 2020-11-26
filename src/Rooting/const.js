@@ -2,7 +2,7 @@ import ConnexionInscription from "../Pages/ConnexionInscription/ConnexionInscrip
 import Home from "../Pages/Home/Home";
 import Legal from "../Pages/Legal/Legal";
 import Product from "../Pages/Product/Product";
-import Profile from "../Pages/Profile/Profile";
+import Profil from "../Pages/Profil/Profil";
 import Search from "../Pages/Search/Search";
 import Categorie from "../Pages/Catégorie/Categorie";
 import Crash_Bandicoot1 from "./ImagesProduits/Crash_Bandicoot1.jpg";
@@ -19,7 +19,7 @@ const tabRoutes = [
 {id:0, name:"Home", path:"/", component:Home},
 {id:1, name:"Catégories", path:"/Catalogue", component:Categorie},
 {id:2, name:"Connexion/inscription", path:"/ConnexionInscription", component:ConnexionInscription},
-{id:3, name:"Profil", path:"/Profile", component:Profile},
+{id:3, name:"Profil", path:"/Profil", component:Profil},
 {id:4, name:"Déposer une annonce", path:"/DeposerAnnonce", component:AjouterAnnonce},
 {id:5, name:"Product", path:"/Product/:id", component:Product},
 {id:6, name:"Search", path:"/Search", component:Search},
