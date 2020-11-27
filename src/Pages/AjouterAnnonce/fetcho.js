@@ -3,7 +3,7 @@ import React,{useState,useEffect} from "react";
 const URL="http://localhost:3006/deposer";
 
 const fetcho=()=>{
-  console.log(document.querySelector('#image'))  
+  console.log(document.querySelector('#photo'))  
     document.getElementById("submit").addEventListener('click',()=>{
         let form = document.getElementById("myForm");
         

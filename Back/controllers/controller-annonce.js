@@ -26,11 +26,11 @@ module.exports = {
         });
         console.log('annonce poster');
         ann.save(); 
-        User.findOne({email:req.body.mv}).then((user)=>{
+        /* User.findOne({email:req.body.mv}).then((user)=>{
             user.update({email:req.body.mv},{$set:{Annonces:ann}})
             console.log('add to user')
-        })
-        res.send("ann"); 
+        }) */
+        res.json(ann);  
         } 
     catch(err){
         console.log("error");

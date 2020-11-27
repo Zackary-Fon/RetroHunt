@@ -1,5 +1,5 @@
-import React,{useEffect} from "react";/* 
-import  Ajout from "./fetchEnvAnn"; */
+import React,{useEffect} from "react";
+import  Apercu from "./Apercu"; 
 import  recup from "./recup";
 import Row from "react-bootstrap/Row";
 import Form from 'react-bootstrap/Form';
@@ -10,43 +10,46 @@ import fetcho from './fetcho'
 
 const Formulaire = () =>{
     useEffect(() => {
-       /*  Ajout() */
+       Apercu()
         recup()
         fetcho()
     })
 
 
     return(
-    <div>
+    <div> {/* probleme si label et input pas en html */}
         <div className="back_btn"><Link to="/"><i class="fas fa-chevron-left"></i> Retour</Link></div>
-        <Form id="form"  className="form" method='POST' enctype="multipart/form-data">
+        <form id="myForm"  className="form" method='POST' enctype="multipart/form-data">{/* laisser id */}
             <h2 className="title">Ajouter une annonce</h2>
 
 
             <Row className="row_customize justify-content-center ">
                 <h3>Ajouter des photos de l'article</h3>
-                <div id="photo"></div>
-                <Form.Control type="file" name="photo-send" id="photo-send" className="input-custom input-photo"/>
+                <div id="imagePreview"></div> {/* laisser id */}
+                <img src="" alt="Image Previex"   
+						class="image-preview__image" id="imagePreview" />{/* laisser id et class*/}
+						<span id="text" class="image-preview__default-text">Image Preview</span>{/* laisser classe */}
+                <input type="file" name="photo" id="photo" className="input-custom input-photo"/> {/* laisser TOUT */}
             </Row>
             
             <Row className="row_customize">
-                <Form.Label for="titreAnnonce">Titre de l'annonce </Form.Label>
-                <Form.Control type="text" name="TitreAnnonce" id="TitreAnnonce" className="input-custom"></Form.Control>
+                {/* <Form.Label for="titreAnnonce">Titre de l'annonce </Form.Label> */}
+                <input type="text" name="TitreAnnonce" id="TitreAnnonce" className="input-custom"></input>
             </Row>
 
-            <Row className="row_customize">
-                <Form.Label for="date">Année de Sortie </Form.Label>
-                <Form.Control type="text" name="Date" id="Date" className="input-custom"></Form.Control>
+            <Row className="row_customize">{/* 
+                <Form.Label for="date">Année de Sortie </Form.Label> */}
+                <input type="text" name="Date" id="Date" className="input-custom"></input>
             </Row>
 
-            <Row className="row_customize">
-                <Form.Label for="Prix">Prix</Form.Label>
-                <Form.Control type="text" name="Prix" id="Prix" className="input-custom"></Form.Control>
+            <Row className="row_customize">{/* 
+                <Form.Label for="Prix">Prix</Form.Label> */}
+                <input type="text" name="Prix" id="Prix" className="input-custom"></input>
             </Row>
 
-            <Row className="row_customize">
-                    <Form.Label for="Etat">Etat</Form.Label>
-                    <Form.Control type="text"as="select" name="Etat" id="Etat" className="input-custom">
+            <Row className="row_customize">{/* 
+                    <Form.Label for="Etat">Etat</Form.Label> */}
+                    <select type="text"as="select" name="Etat" id="Etat" className="input-custom">
                         <option value=" "> </option>
                         <option value="neuf">Neuf(sous blister)</option>
                         <option value="tresBon"> Très bon (sans blister et pas de défaut sur la boite)</option>
@@ -55,12 +58,12 @@ const Formulaire = () =>{
                         <option value="mauvais">mauvais( défauts sur la boite et le jeu signalés en photo)</option>
                         <option value="NoB">Pas de boite et jeu en bon état</option>
                         <option value="NoM">Pas de boite et jeu avec défauts (signalé en photo)</option>
-                    </Form.Control>
+                    </select>
             </Row>
 
-            <Row className="row_customize">
-                    <Form.Label for="Console">Console</Form.Label>
-                    <Form.Control type="text" as="select" name="Console" id="console" className="input-custom">
+            <Row className="row_customize">{/* 
+                    <Form.Label for="Console">Console</Form.Label> */}
+                    <select type="text" as="select" name="Console" id="console" className="input-custom">
                         <option value=" "> </option>
                         <option value="play1">Playstation 1</option>
                         <option value="play2">Playstation 2</option>
@@ -73,17 +76,18 @@ const Formulaire = () =>{
                         <option value="SuperNes">Super Nes</option>
                         <option value="NEOGEO">NEO GEO </option>
                         <option value="Atari">Atari</option>
-                    </Form.Control>
+                    </select>
             </Row>
         
 
             <Row className="justify-content-center column" >
                 <label for="description" id="description"><h3>Description de l'article</h3></label>
-                <Form.Control  as="textarea" id="description" name="description" rows="7" ></Form.Control>
+                <textarea id="description" name="description" rows="7" ></textarea>
             </Row>
-
-            <div className="addAnonce_div"><Button type="submit" id="submit" className="btn addAnonce_btn">Ajouter l'annonce</Button></div>
-        </Form>
+            <input type="text" id="loc"></input> {/* pas touche a sa */}
+            <input type="text" id="mv"></input>
+            <div className="addAnonce_div"><Button  id="submit" className="btn addAnonce_btn">Ajouter l'annonce</Button></div> {/* NE PAS METTRE DE INPUT SUBMIT */}
+        </form>
     </div>
     )
 }

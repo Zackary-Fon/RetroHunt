@@ -47,7 +47,7 @@
     text-align: center;
 }
 
-#photo{
+#imagePreview{
     background-color:#48475C;
     height:340px;
     width:270px;
@@ -105,3 +105,13 @@
     box-shadow: 0px 0px 3px #61F2F5; 
 }
 
+.image-preview__image{
+    display:none; 
+	width: 100%;
+}
+#loc{
+    visibility:hidden;
+}
+#mv{
+    visibility:hidden;
+}
