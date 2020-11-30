@@ -30,8 +30,14 @@ const Formulaire = () =>{
                 <div id="imagePreview"></div> {/* laisser id */}
                 <img src="" alt="Image Previex"   
 						class="image-preview__image" id="imagePreview" />{/* laisser id et class*/}
+<<<<<<< Updated upstream
 						<span id="text" class="image-preview__default-text">Image Preview</span>{/* laisser classe */}
                 <input type="file" name="photo" id="photo" className="input-custom input-photo" accept="image/png,image/jpg, image/jpeg"/> {/* laisser TOUT */}
+=======
+                        
+						<span id="text" class="image-preview__default-text">Image Preview</span>{/* laisser classe */}
+                <input type="file" name="photo" id="photo" className="input-custom input-photo" accept="image/png,image/jpg, image/jpeg" /> {/* laisser TOUT */}
+>>>>>>> Stashed changes
                 <p id="photoPasOK">Veuillez choisir le bon format: jpg, jpeg ou png</p>
             </Row>
             

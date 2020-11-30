@@ -37,7 +37,7 @@ const Inscription=()=>{
                     <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required></input>
                     <label className="form-check-label" for="confirm" >Je confirme ces informations</label>
                 </Row>
-                <Button className="btn-customize " type="submit" id="submit" disabled >Inscription</Button>{/* fetch fonctionne mieux avec un a */}
+                <Button className="btn-customize "  id="submit" disabled >Inscription</Button>{/* fetch fonctionne mieux avec un a */}
             </form>
         </div>
     ) 

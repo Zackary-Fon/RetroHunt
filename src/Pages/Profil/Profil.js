@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 import React from "react";
+=======
+
+>>>>>>> Stashed changes
 import {Link} from "react-router-dom";
 import React,{useEffect} from "react";
 import fetcha from "./FetchProfile";
@@ -30,7 +34,6 @@ const Profil = () => {
                 <p>Afficher plus</p>
             </div>
             <div className="Annonces">
-
                 <p>Afficher plus</p>
             </div>
         </div>

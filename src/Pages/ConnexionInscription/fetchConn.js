@@ -36,6 +36,8 @@ fetch(URL, config)
         if (json=="not found"){
             console.log("User not found")
         }
+        if(json==undefined)
+        {console.log('pb')}
         else{
       const token=json.accessToken;
       console.log(token)
