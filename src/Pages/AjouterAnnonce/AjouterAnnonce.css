@@ -62,27 +62,13 @@
     flex-direction: row;
     width: 45%;
     justify-content: space-between;
-    align-items: center;
     margin: 2%;
     font-size: 1.2rem;
 }
 
-.form-control{
-    display: flex !important;
-    width: 50% !important;
-    border-radius: 0px !important;
-}
-
-/* .input-custom{
-    width: 30%;
-    max-width: 50em;
-    min-width: 10em;
-} */
-
 .column{
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     width: 80%;
     margin-top: 4%;
     margin-bottom: 4%;
@@ -96,9 +82,12 @@
 .addAnonce_btn{
     background-color: transparent !important;
     border: 2px solid white !important;
+    border-radius: 5px !important;
+    font-size: 1.3rem !important;
 }
 
 .addAnonce_btn:hover{
+    cursor: pointer;
     color: #61F2F5 !important;
     background-color: transparent !important;
     border: 2px solid #61F2F5 !important;
@@ -109,6 +98,7 @@
     display:none; 
 	width: 100%;
 }
+
 #loc,#mv{
     visibility:hidden;
 }
@@ -119,3 +109,25 @@ display:none;
 #photoPasOK{
 display:none;
     }
+
+.form-check-input{
+    position: relative !important;
+    margin-top: 0rem !important;
+    width: 40%;
+}
+
+.check-box{
+    width: 15%;
+}
+
+select{
+    width: 40% !important;
+}
+
+.flex-row{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
