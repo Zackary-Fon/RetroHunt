@@ -16,13 +16,13 @@ const fetcho=()=>{
         body: formData,
     }
     fetch(URL, config)
-    .then(response => response.then((response)=>{
-        if(response.status==200)
+    .then(response => response.json().then((response)=>{
+        if(response=="OK" )
         {
             document.location.href="../"
         }
         else{
-            console.log("probleme" +response)
+            console.log(response)
         }
     })
        
