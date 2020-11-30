@@ -30,7 +30,7 @@ const list = () =>{
     } else if (index ==4) {
 return(
     <li  className="li_menu_head disabled" key={any.id}>
-           <Link to={any.path}>{any.name}</Link>
+            <Link to={any.path}>{any.name}</Link>
     </li>
 )
     }else{
