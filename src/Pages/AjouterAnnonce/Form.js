@@ -19,18 +19,17 @@ const Formulaire = () =>{
 
 
     return(
-    <div> {/* probleme si label et input pas en html */}
+    <div>
         <div className="back_btn"><Link to="/"><i class="fas fa-chevron-left"></i> Retour</Link></div>
         <form id="myForm"  className="form" method='POST' enctype="multipart/form-data">{/* laisser id */}
             <h2 className="title">Ajouter une annonce</h2>
-
 
             <Row className="row_customize justify-content-center ">
                 <h3>Ajouter des photos de l'article</h3>
                 <div id="imagePreview"></div> {/* laisser id */}
                 <img src="" alt="Image Previex"   
 						class="image-preview__image" id="imagePreview" />{/* laisser id et class*/}
-						{/* <span id="text" class="image-preview__default-text">Image Preview</span>laisser classe */}
+
                 <input type="file" name="photo" id="photo" className="input-custom input-photo" accept="image/png,image/jpg, image/jpeg"/> {/* laisser TOUT */}
                 <p id="photoPasOK">Veuillez choisir le bon format: jpg, jpeg ou png</p>
             </Row>

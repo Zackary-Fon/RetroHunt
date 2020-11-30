@@ -36,9 +36,9 @@ module.exports = {
     },
     GetUser(req, res) {
         User.findOne({
-            email: req.user.email
+            email:req.user.User.email
         }).then((user) => {
-            res.json(req.user)
+            res.json(user)
         })
     },
     Log(req, res) {
@@ -79,12 +79,16 @@ module.exports = {
                 res.sendStatus(403)
             }
             req.user = user
+            console.log(req.user)
             next()
         }) 
 
     },
     deleteUser(req,res){
-        User.deleteOne({email:req.body.email}).then(console.log('user delete'))
+        console.log(req.body)
+        User.deleteOne({email:req.body.email}).then((user)=>{
+            console.log('user delete')
+            res.json("Deleted")})
     },
 }
 

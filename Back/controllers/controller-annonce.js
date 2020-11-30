@@ -11,6 +11,7 @@ const upload=require('../image/multer')
 module.exports = {
     async CreateAnn(req,res){
     try{
+        
         const result=await cloudinary.uploader.upload(req.file.path)
             const ann=new Annonce({
                 Titre:req.body.TitreAnnonce,
