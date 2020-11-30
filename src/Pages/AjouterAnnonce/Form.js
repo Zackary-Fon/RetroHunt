@@ -6,13 +6,15 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './AjouterAnnonce.css';
 import {Link} from "react-router-dom";
-import fetcho from './fetcho'
+import fetcho from './fetcho';
+import verif from "./verifAnnonce"
 
 const Formulaire = () =>{
     useEffect(() => {
        Apercu()
         recup()
         fetcho()
+        verif()
     })
 
 
@@ -29,27 +31,28 @@ const Formulaire = () =>{
                 <img src="" alt="Image Previex"   
 						class="image-preview__image" id="imagePreview" />{/* laisser id et class*/}
 						<span id="text" class="image-preview__default-text">Image Preview</span>{/* laisser classe */}
-                <input type="file" name="photo" id="photo" className="input-custom input-photo"/> {/* laisser TOUT */}
+                <input type="file" name="photo" id="photo" className="input-custom input-photo" accept="image/png,image/jpg, image/jpeg"/> {/* laisser TOUT */}
+                <p id="photoPasOK">Veuillez choisir le bon format: jpg, jpeg ou png</p>
             </Row>
             
             <Row className="row_customize">
-                {/* <Form.Label for="titreAnnonce">Titre de l'annonce </Form.Label> */}
-                <input type="text" name="TitreAnnonce" id="TitreAnnonce" className="input-custom"></input>
+                <label for="titreAnnonce">Titre de l'annonce </label> 
+                <input type="text" name="TitreAnnonce" id="TitreAnnonce" className="input-custom form-check-input"></input>
             </Row>
 
             <Row className="row_customize">{/* 
                 <Form.Label for="date">Année de Sortie </Form.Label> */}
-                <input type="text" name="Date" id="Date" className="input-custom"></input>
+                <input type="Number" min="1900" max="2015" name="Date" id="Date" className="input-custom form-check-input"></input>
             </Row>
 
             <Row className="row_customize">{/* 
                 <Form.Label for="Prix">Prix</Form.Label> */}
-                <input type="text" name="Prix" id="Prix" className="input-custom"></input>
+                <input type="number" name="Prix" id="Prix" className="input-custom form-check-input"></input>
             </Row>
 
             <Row className="row_customize">{/* 
                     <Form.Label for="Etat">Etat</Form.Label> */}
-                    <select type="text"as="select" name="Etat" id="Etat" className="input-custom">
+                    <select  name="Etat" id="Etat" className="input-custom">
                         <option value=" "> </option>
                         <option value="neuf">Neuf(sous blister)</option>
                         <option value="tresBon"> Très bon (sans blister et pas de défaut sur la boite)</option>
@@ -86,7 +89,10 @@ const Formulaire = () =>{
             </Row>
             <input type="text" id="loc"></input> {/* pas touche a sa */}
             <input type="text" id="mv"></input>
-            <div className="addAnonce_div"><Button  id="submit" className="btn addAnonce_btn">Ajouter l'annonce</Button></div> {/* NE PAS METTRE DE INPUT SUBMIT */}
+
+            <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required></input>
+                    <label className="form-check-label" for="confirm" >Je confirme ces informations</label>
+            <div className="addAnonce_div"><Button  id="submit" className="btn addAnonce_btn"disabled>Ajouter l'annonce</Button></div> {/* NE PAS METTRE DE INPUT SUBMIT */}
         </form>
     </div>
     )

@@ -16,9 +16,18 @@ const fetcho=()=>{
         body: formData,
     }
     fetch(URL, config)
-    .then(response => 
-            console.log(response))
+    .then(response => response.then((response)=>{
+        if(response.status==200)
+        {
+            document.location.href="../"
+        }
+        else{
+            console.log("probleme" +response)
+        }
     })
+       
+    )
+})
 }
 
 export default fetcho
