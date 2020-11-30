@@ -18,18 +18,15 @@ const Header = () => {
                 <Navbar.Brand className="logo_resize" href="/">
                     <img id="logo" src={logo_dm} alt="Logo"/>
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav>
-                        <List/>
-                    </Nav>
-                    <Form inline>
-                        <Button variant="outline-success"><i className="fas fa-search btn-custom"></i></Button>
-                        <FormControl type="text" placeholder="Rechercher" className="mr-sm-2" />
-                    </Form>
-                    {/* <HeadMenu/>
-                    <Burger/> */}
-                </Navbar.Collapse>
+                <Nav>
+                    <List/>
+                </Nav>
+            <Form inline>
+            <FormControl type="text" placeholder="Rechercher" className="mr-sm-2" />
+            <Button variant="outline-success">Rechercher</Button>
+            </Form>
+            {/* <HeadMenu/>
+            <Burger/> */}
             </Navbar>
 
     </header>
