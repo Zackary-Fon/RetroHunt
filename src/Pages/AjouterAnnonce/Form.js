@@ -31,7 +31,7 @@ const Formulaire = () =>{
                 <img src="" alt="Image Previex"   
 						class="image-preview__image" id="imagePreview" />{/* laisser id et class*/}
                         
-                <input type="file" name="photo" id="photo" className="input-custom input-photo" accept="image/png,image/jpg, image/jpeg" multiple/> {/* laisser TOUT */}
+                <input type="file" name="image" id="image" className="input-custom input-photo" accept="image/png,image/jpg, image/jpeg" multiple/> {/* laisser TOUT */}
                 <p id="photoPasOK">Veuillez choisir le bon format: jpg, jpeg ou png</p>
             </Row>
             

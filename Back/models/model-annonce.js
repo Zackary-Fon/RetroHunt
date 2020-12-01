@@ -14,7 +14,7 @@ const AnnonceSchema = new Schema({
     MailVendeur:String,
     Categorie: String,
     Description:String,
-    image:String,
+    image:Array,
     cloudinary_id:String,
 },{collection: "ANNONCE_COLLEC"});
 
