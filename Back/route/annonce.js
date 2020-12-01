@@ -13,7 +13,7 @@ router.route('/user')
     .post(CreateUser)
 
 router.route('/deposer')
-    .post(upload.single("photo"), CreateAnn) 
+    .post(upload.array("photo"), CreateAnn) 
     .get(GetPlay)
     
 router.route('/all')
