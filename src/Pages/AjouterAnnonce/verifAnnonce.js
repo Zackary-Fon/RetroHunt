@@ -1,7 +1,7 @@
 import react from 'react'
 
 const verif=()=>{
-const photo=document.querySelector('#photo');
+const photo=document.querySelector('#image');
 const Titre=document.querySelector('#TitreAnnonce')
 const Date=document.querySelector('#Date');
 const Prix=document.querySelector('#Prix');

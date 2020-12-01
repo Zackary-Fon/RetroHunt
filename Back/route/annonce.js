@@ -13,7 +13,11 @@ router.route('/user')
     .post(CreateUser)
 
 router.route('/deposer')
+<<<<<<< Updated upstream
     .post(upload.single("photo"), CreateAnn) 
+=======
+    .post(upload.array('image'), CreateAnn) 
+>>>>>>> Stashed changes
     .get(GetPlay)
     
 router.route('/all')

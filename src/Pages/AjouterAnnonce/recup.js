@@ -21,10 +21,10 @@ const recup = () => {
     fetch(URL2, conf)
         .then(response => {
             response.json().then(json => {
-                const loc = json.User.Prenom;
+                const loc = json.Prenom;
                 console.log(loc)
                 document.querySelector('#loc').value = loc;
-                document.querySelector('#mv').value = json.User.email;
+                document.querySelector('#mv').value = json.email;
                 console.log(typeof document.querySelector('#loc').value)
             })
         })

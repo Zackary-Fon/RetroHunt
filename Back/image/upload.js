@@ -11,6 +11,24 @@ cloudinary.config({
   folder: "app",
   allowedFormats: ["jpg", "png", "jpeg"],
   transformation: [{ width: 500, height: 500, crop: "limit" }],
+<<<<<<< Updated upstream
 });
 const upload = multer({ storage: storage }); */
+=======
+}); */
+
+exports.uploads = (file, folder) => {
+  return new Promise(resolve => {
+      cloudinary.uploader.upload(file, (result) => {
+          resolve({
+              url: result.url,
+              id: result.public_id
+          })
+      }, {
+          resource_type: "auto",
+          folder: folder
+      })
+  })
+}
+>>>>>>> Stashed changes
 module.exports = cloudinary/* upload */;

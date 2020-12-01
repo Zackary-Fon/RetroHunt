@@ -6,7 +6,6 @@ const connexion=document.querySelector('#connexion');
 const profil=document.querySelector('#profil')
 const annonce=document.querySelector('#annonce')
 const deco=document.querySelector('#deco')
-
  if (local.length >=1 && local.Token != "undefined"){
     profil.style.display="block";
     annonce.style.display="block";

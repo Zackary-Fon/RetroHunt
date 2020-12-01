@@ -7,12 +7,25 @@ const bcrypt=require('bcrypt');
 const jwt=require('jsonwebtoken');
 const cloudinary = require('../image/upload');
 const upload=require('../image/multer')
-
+const fs=require('fs')
 module.exports = {
-    async CreateAnn(req,res){
-    try{
-        
-        const result=await cloudinary.uploader.upload(req.file.path)
+     async CreateAnn(req,res){
+    
+        console.log("A")
+        const uploader = async (path) => await cloudinary.uploads(path, 'Images');
+
+  if (req.method === 'POST') {
+        const files=req.files
+        console.log("B")
+        const urls=[]
+        for(const file of files){
+          
+             const {path}=file 
+            const newPath=await cloudinary.uploader.upload(path)
+            urls.push(newPath.secure_url)
+            fs.unlinkSync(path)
+            
+        }
             const ann=new Annonce({
                 Titre:req.body.TitreAnnonce,
                 Console:req.body.Console,
@@ -22,23 +35,22 @@ module.exports = {
                 Description:req.body.description,
                 PseudoVendeur: req.body.loc,
                 MailVendeur: req.body.mv,
-                image: result.secure_url,
-                cloudinary_id:result.public_id
+                image: urls,
+                //cloudinary_id:result.public_id
         });
         console.log('annonce poster');
-        ann.save(); 
+        ann.save();
         User.findOne({email:req.body.mv}).then((user)=>{
             User.updateOne({email:req.body.mv},{$push:{"Annonces" : ann }}).then((user)=>{
             console.log(user)})
             console.log('add to user')
-        }) 
-        res.json("OK");  
-        } 
-    catch(err){
+        })  
+         res.json("OK");  
+    }else{
         console.log("error");
-        res.send("error");
-    }
+        res.send("error"); 
     
+    }
     },
     GetPlay(req,res){
         Annonce.find({Console:"play1"}).then((ann)=>{
