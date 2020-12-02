@@ -5,13 +5,13 @@ const URL="http://localhost:3006/user"; //URL back
 
 
 const fetchie=()=>{ //declaration de la fonction qui va etre appeler dans inscription
- document.getElementById("submit").addEventListener('click',()=>{  //ecoute du bouton d envoie de formulaire
-  const user={ //creation d'une constante avec donnée utile
+  document.getElementById("submit").addEventListener('click',()=>{  //ecoute du bouton d envoie de formulaire
+    const user={ //creation d'une constante avec donnée utile
     Nom: document.querySelector("#Nom").value, //recuperation des données utiles
     email: document.querySelector("#email").value,
     Prenom: document.querySelector("#Prenom").value,
     Password: document.querySelector("#Password").value
-  }
+    }
   
 const Formjson=JSON.stringify(user); // transformation de ma variable en string pour la bdd
 

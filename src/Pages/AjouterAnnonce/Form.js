@@ -40,32 +40,30 @@ const Formulaire = () =>{
                 <input type="text" name="TitreAnnonce" id="TitreAnnonce" className="input-custom form-check-input"></input>
             </Row>
 
-            <Row className="row_customize">{/* 
-                <Form.Label for="date">Année de Sortie </Form.Label> */}
+            <Row className="row_customize">
+                <Form.Label for="date">Année de Sortie </Form.Label> 
                 <input type="Number" min="1900" max="2015" name="Date" id="Date" className="input-custom form-check-input"></input>
             </Row>
 
-            <Row className="row_customize">{/* 
-                <Form.Label for="Prix">Prix</Form.Label> */}
+            <Row className="row_customize">
+                <Form.Label for="Prix">Prix</Form.Label> 
                 <input type="number" name="Prix" id="Prix" className="input-custom form-check-input"></input>
             </Row>
 
-            <Row className="row_customize">{/* 
-                    <Form.Label for="Etat">Etat</Form.Label> */}
+            <Row className="row_customize"> 
+                    <Form.Label for="Etat">Etat</Form.Label> 
+                    <Link to={`/Referentiel`}> Mieux comprendre</Link>
                     <select  name="Etat" id="Etat" className="input-custom">
                         <option value=" "> </option>
-                        <option value="neuf">Neuf(sous blister)</option>
-                        <option value="tresBon"> Très bon (sans blister et pas de défaut sur la boite)</option>
-                        <option value="bon">Bon(petits défaut sur la boite signalés en photo)</option>
-                        <option value="moyen">Moyen(défauts sur la boite et/ou le jeu signalés en photo)</option>
-                        <option value="mauvais">mauvais( défauts sur la boite et le jeu signalés en photo)</option>
-                        <option value="NoB">Pas de boite et jeu en bon état</option>
-                        <option value="NoM">Pas de boite et jeu avec défauts (signalé en photo)</option>
-                    </select>
+                        <option value="Impeccable">Presque neuf / Immaculé / État impeccable</option>
+                        <option value="Bon"> Presque parfait / Bon état</option>
+                        <option value="moyen">Moyen / État acceptable</option>
+                        <option value="moyen">Désastreux / Mauvais état</option>
+                        </select>
             </Row>
 
-            <Row className="row_customize">{/* 
-                    <Form.Label for="Console">Console</Form.Label> */}
+            <Row className="row_customize">
+                    <Form.Label for="Console">Console</Form.Label> 
                     <select type="text" as="select" name="Console" id="console" className="input-custom">
                         <option value=" "> </option>
                         <option value="play1">Playstation 1</option>
@@ -89,7 +87,8 @@ const Formulaire = () =>{
             </Row>
             <input type="text" name="loc" id="loc"></input> {/* pas touche a sa */}
             <input type="text" name="mv" id="mv"></input>
-
+            
+            
             <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required></input>
                     <label className="form-check-label" for="confirm" >Je confirme ces informations</label>
             <div className="addAnonce_div"><Button  id="submit" className="btn addAnonce_btn"disabled>Ajouter l'annonce</Button></div> {/* NE PAS METTRE DE INPUT SUBMIT */}

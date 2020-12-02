@@ -9,11 +9,10 @@ const upload=require('../image/multer')
 router.route('/')
     .get(home)
 
-router.route('/user')
+router.route('/user') 
     .post(CreateUser)
 
 router.route('/deposer')
-
     .post(upload.array('image'), CreateAnn) 
     .get(GetPlay)
     

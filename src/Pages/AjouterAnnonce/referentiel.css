@@ -1,0 +1,14 @@
+#Card{
+    position: relative;
+    background-color: #444B90;
+    color: white;
+    font-size: large;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 85%;
+    margin-left:5%;
+    z-index: 0 !important;
+}

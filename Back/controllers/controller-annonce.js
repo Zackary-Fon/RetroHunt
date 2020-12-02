@@ -38,7 +38,7 @@ module.exports = {
                 image: urls,
                 //cloudinary_id:result.public_id
         });
-        console.log('annonce poster');
+        console.log('annonce postée');
         ann.save();
         User.findOne({email:req.body.mv}).then((user)=>{
             User.updateOne({email:req.body.mv},{$push:{"Annonces" : ann }}).then((user)=>{

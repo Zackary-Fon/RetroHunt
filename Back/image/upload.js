@@ -5,23 +5,41 @@ cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.API_KEY,
   api_secret: process.env.API_SECRET,
-  
- // transformation: [{ width: 500, height: 500, crop: "limit" }]
+<<<<<<< Updated upstream
+=======
+  //folder: "app",
+  //transformation: [{ width: 500, height: 500, crop: "limit" }]
+>>>>>>> Stashed changes
 });
+/* const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  folder: "app",
+  allowedFormats: ["jpg", "png", "jpeg"],
+  transformation: [{ width: 500, height: 500, crop: "limit" }],
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+});
+const upload = multer({ storage: storage }); */
+=======
+=======
+>>>>>>> Stashed changes
+}); */
 
-exports.uploads=(file,folder)=>{
-  return new Promise(resolve =>{
-    cloudinary.uploader.upload(file,(result)=>{
-      resolve({
-        url:result.url,
-        id:result.public_id
+exports.uploads = (file, folder) => {
+  return new Promise(resolve => {
+      cloudinary.uploader.upload(file, (result) => {
+          resolve({
+              url: result.url,
+              id: result.public_id
+          })
+      }, {
+          resource_type: "auto",
+          folder: folder
       })
-    },
-    {
-      resource_type:"auto",
-      folder:folder
-    })
   })
 }
-
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 module.exports = cloudinary/* upload */;

@@ -9,8 +9,5 @@ module.exports=multer({
 
         }
         cb(null,true)
-    },limits: { fileSize: 1*1024*1024 },
-    filename:(req,file,cb)=>{
-        cb(null, new Date().toISOString()+'-'+file.originalname)
     }
 })
