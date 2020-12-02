@@ -9,13 +9,16 @@ const upload=require('../image/multer')
 router.route('/')
     .get(home)
 
-router.route('/user')
+router.route('/user') 
     .post(CreateUser)
 
 router.route('/deposer')
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     .post(upload.single("photo"), CreateAnn) 
 =======
+=======
+>>>>>>> Stashed changes
     .post(upload.array('image'), CreateAnn) 
 >>>>>>> Stashed changes
     .get(GetPlay)

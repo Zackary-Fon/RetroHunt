@@ -10,8 +10,11 @@ module.exports=multer({
         }
         cb(null,true)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     },limits: { fileSize: 1*1024*1024 }
 =======
+=======
+>>>>>>> Stashed changes
         
     }
 >>>>>>> Stashed changes

@@ -22,7 +22,6 @@ const config = {
     "Accept": "application/json",
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin":"http://localhost:3006/login",
-    
     },
     body: Formjson,
   }

@@ -9,14 +9,11 @@ const jwt = require('jsonwebtoken');
 module.exports = {
     async CreateUser(req, res) {
         console.log(req.body)
-        if (req.body.nom == '' || req.body.prenom == '' || req.body.email == '' || req.body.Password == '' || req.body == '') {
-            console.log("wtf dude")
-            res.json('vide')
-        } else {
-            const findUser = await User.findOne({
+           User.findOne({
                 email: req.body.email
-            });
-            if (findUser) {
+            }).then((us)=>{
+                if(us != null){
+                    console.log(us)
                 res.json("L'utilisateur existe déjà");
             } else {
                 const user = new User({
@@ -32,7 +29,7 @@ module.exports = {
                 user.save();
                 res.json("Ok");
             }
-        }
+        })
     },
     GetUser(req, res) {
         User.findOne({
@@ -86,7 +83,7 @@ module.exports = {
     },
     deleteUser(req,res){
         console.log(req.body)
-        User.deleteOne({email:req.body.email}).then((user)=>{
+        User.deleteOne({email:req.body.email}).then(()=>{
             console.log('user delete')
             res.json("Deleted")})
     },

@@ -5,6 +5,11 @@ cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.API_KEY,
   api_secret: process.env.API_SECRET,
+<<<<<<< Updated upstream
+=======
+  //folder: "app",
+  //transformation: [{ width: 500, height: 500, crop: "limit" }]
+>>>>>>> Stashed changes
 });
 /* const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
@@ -12,9 +17,12 @@ cloudinary.config({
   allowedFormats: ["jpg", "png", "jpeg"],
   transformation: [{ width: 500, height: 500, crop: "limit" }],
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 });
 const upload = multer({ storage: storage }); */
 =======
+=======
+>>>>>>> Stashed changes
 }); */
 
 exports.uploads = (file, folder) => {
@@ -30,5 +38,8 @@ exports.uploads = (file, folder) => {
       })
   })
 }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 module.exports = cloudinary/* upload */;

@@ -5,6 +5,7 @@ import Product from "../Pages/Product/Product";
 import Profil from "../Pages/Profil/Profil";
 import Search from "../Pages/Search/Search";
 import Categorie from "../Pages/Catégorie/Categorie";
+import ref from "../Pages/AjouterAnnonce/referentiel"
 import Crash_Bandicoot1 from "./ImagesProduits/Crash_Bandicoot1.jpg";
 import Spyro1 from "./ImagesProduits/Spyro1.jpg";
 import Space_Invaders from "./ImagesProduits/Space_Invaders.png";
@@ -18,14 +19,15 @@ import SuppProfil from "../Pages/Profil/SupprimerProfil";
 //tableau des routes
 const tabRoutes = [
 {id:0, name:"Home", path:"/", component:Home},
-{id:1, name:"Catégories", path:"/Catalogue", component:Categorie},
+{id:1, name:"Catégories", path:"/Categorie", component:Categorie},
 {id:2, name:"Connexion/inscription", path:"/ConnexionInscription", component:ConnexionInscription},
 {id:3, name:"Profil", path:"/Profil", component:Profil},
 {id:4, name:"Déposer une annonce", path:"/DeposerAnnonce", component:AjouterAnnonce},
 {id:5, name:"Product", path:"/Product/:id", component:Product},
 {id:6, name:"Search", path:"/Search", component:Search},
 {id:7, name:"Legal", path:"/Legal", component:Legal},
-{id:8, name:"SuppProfil", path:"/DeleteProfile", component:SuppProfil}
+{id:8, name:"SuppProfil", path:"/DeleteProfile", component:SuppProfil},
+{id:9,name:"Referentiel", path:"/Referentiel", component:ref}
 ]
 export default tabRoutes;
 
