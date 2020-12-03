@@ -16,6 +16,7 @@ const Ajout=()=>{
         }
          */
         let form = document.getElementById("myForm");
+        
         let formData = new FormData(form);
       /* const Formjson=JSON.stringify(Annonce); */ // transformation de ma variable en string pour la bdd
       
@@ -31,14 +32,15 @@ const Ajout=()=>{
       fetch(URL, config)  //mise en place de la fetch
         .then(response => {  
             response.json().then(json => {// quand j ai une reponse alors j affiche dans la console le json envoyé
-              if(json=="OK"){
+              console.log(json)
+              /* if(json=="OK"){
                 console.log("OK")
                 document.location.href="../"
               } if(json=="error"){
                 console.log('probleme')
               }
-            }
-            )})
+            } */
+          })})
     })
         
 }

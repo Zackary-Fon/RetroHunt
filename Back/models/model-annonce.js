@@ -11,9 +11,10 @@ const AnnonceSchema = new Schema({
     Etat: String,
     Localisation: String,
     PseudoVendeur: String,
+    MailVendeur:String,
     Categorie: String,
     Description:String,
-    image:String,
+    image:Array,
     cloudinary_id:String,
 },{collection: "ANNONCE_COLLEC"});
 

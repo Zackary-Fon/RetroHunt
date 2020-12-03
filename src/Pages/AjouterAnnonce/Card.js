@@ -1,13 +1,13 @@
 import React from "react";
-import Form from "./Form.js";
-import './Card.css';
+import Formulaire from "./Form.js";
+import './AjouterAnnonce.css';
 
 
 const Card = () =>{
 
     return(
-        <div className="Card">
-            <Form/>
+        <div className="contain-customize">
+            <Formulaire/>
         </div>
     )
 }

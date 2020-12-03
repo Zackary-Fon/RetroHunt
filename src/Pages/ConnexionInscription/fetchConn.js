@@ -22,7 +22,6 @@ const config = {
     "Accept": "application/json",
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin":"http://localhost:3006/login",
-    
     },
     body: Formjson,
   }
@@ -36,12 +35,14 @@ fetch(URL, config)
         if (json=="not found"){
             console.log("User not found")
         }
+        if(json==undefined)
+        {console.log('pb')}
         else{
       const token=json.accessToken;
       console.log(token)
       localStorage.setItem("Token",json.accessToken)
       console.log(localStorage.Token)
-      document.location.href="/Profile"
+      document.location.href="/Profil"
         }
   })})
  

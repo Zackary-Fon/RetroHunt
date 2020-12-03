@@ -1,8 +1,13 @@
-import React from "react";
+
 import {Link} from "react-router-dom";
+import React,{useEffect} from "react";
+import fetcha from "./FetchProfile";
 
 const Profil = () => {
 
+    useEffect(()=>{
+        fetcha()
+    })
     return(
         <div className="Card">
             <div className="CardHeader">
@@ -15,15 +20,16 @@ const Profil = () => {
                 </div>
             </div>
             <div className="Infos">
-
-            
+            <p id="prenom"></p>
+            <p id="nom"></p>
+            <p id="email"></p>
+            <img src="" alt="Photo Profil"></img>
             </div>
             <div className="Conversations">
 
                 <p>Afficher plus</p>
             </div>
             <div className="Annonces">
-
                 <p>Afficher plus</p>
             </div>
         </div>

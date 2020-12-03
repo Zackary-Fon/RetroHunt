@@ -20,11 +20,15 @@ const Header = () => {
                 </Navbar.Brand>
                 <Nav>
                     <List/>
+                    
                 </Nav>
             <Form inline>
             <FormControl type="text" placeholder="Rechercher" className="mr-sm-2" />
             <Button variant="outline-success">Rechercher</Button>
             </Form>
+            <Nav>
+            <Nav.Link id="deco" > Deconnexion</Nav.Link>
+            </Nav>
             {/* <HeadMenu/>
             <Burger/> */}
             </Navbar>

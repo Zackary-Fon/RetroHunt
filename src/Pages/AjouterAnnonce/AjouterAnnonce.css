@@ -1,0 +1,131 @@
+.breadcrumb{
+    color: white;
+    background-color: transparent !important;
+}
+
+.contain-customize{
+    position: relative;
+    background-color: #444B90;
+    color: white;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 100%;
+    z-index: 0 !important;
+}
+
+.back_btn{
+    text-align: left;
+    font-size: 1.3em;
+    color: white !important;
+}
+
+.back_btn a{
+    color: white !important;
+}
+
+.back_btn a:hover{
+    text-decoration: none !important;
+    color: #61F2F5 !important;
+}
+
+.back_btn a i{
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    text-align: center;
+}
+
+#imagePreview{
+    background-color:#48475C;
+    height:340px;
+    width:270px;
+    margin: 6%; 
+}
+
+#photo-send{
+    width: auto;
+}
+
+.row_customize{
+    flex-direction: row;
+    width: 45%;
+    justify-content: space-between;
+    margin: 2%;
+    font-size: 1.2rem;
+}
+
+.column{
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.addAnonce_div{
+    width: 80%;
+    text-align: end;
+}
+
+.addAnonce_btn{
+    background-color: transparent !important;
+    border: 2px solid white !important;
+    border-radius: 5px !important;
+    font-size: 1.3rem !important;
+}
+
+.addAnonce_btn:hover{
+    cursor: pointer;
+    color: #61F2F5 !important;
+    background-color: transparent !important;
+    border: 2px solid #61F2F5 !important;
+    box-shadow: 0px 0px 3px #61F2F5; 
+}
+
+.image-preview__image{
+    display:none; 
+	width: 100%;
+}
+
+#loc,#mv{
+    visibility:hidden;
+}
+
+
+#photoPasOK{
+display:none;
+    }
+
+.form-check-input{
+    position: relative !important;
+    margin-top: 0rem !important;
+    width: 40%;
+}
+
+.check-box{
+    width: 15%;
+}
+
+select{
+    width: 40% !important;
+}
+
+.flex-row{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

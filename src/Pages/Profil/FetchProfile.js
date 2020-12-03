@@ -16,9 +16,30 @@ const bb=JSON.stringify(local);
     }
         
     fetch(URL, config)
-      .then(response => {
+    .then(response => {
         response.json().then(json => {
-            console.log(json)
+            const ann=document.querySelector('.Annonces');
+        document.querySelector('#prenom').innerHTML=json.Prenom;
+           document.querySelector('#nom').innerHTML=json.Nom;
+            document.querySelector('#email').innerHTML=json.email; 
+            console.log(json.Annonces); 
+            for(let i=0;i<json.Annonces.length;i++){
+        const li = document.createElement('li');
+        const img = document.createElement('img');
+        const span2 = document.createElement('span');
+        const btn=document.createElement('button');
+        ann.appendChild(li);
+        li.appendChild(span2);
+        li.appendChild(img);
+        li.appendChild(btn);
+        img.setAttribute('src',json.Annonces[i].image);
+        console.log(json.Annonces[i].image)
+        span2.innerHTML =json.Annonces[i].Titre;
+        btn.innerHTML="Y Acceder"
+            /* btn.setAttribute('href',) */
+            }
+            /* if(json.User.PhotoProfil !==""){
+                document.querySelector('#photo').innerHTML=json.User.PhotoProfil;} */
       })})
 }
 

@@ -1,4 +1,4 @@
-.btn-customize{
+/* .btn-customize{
     color: #444B90 !important;
     background-color: white !important;
     border: white !important;
@@ -12,10 +12,11 @@
 .Tt{
     color:white;
 }
+
 .Retour{
     Color:white;
-
 }
+
 .input-customize{
     flex-wrap: nowrap !important;
     align-items: space-around;
@@ -39,9 +40,9 @@
 }
 
 #Art{
-margin-left:40%;
-margin-top:2%;
-color:white;
+    margin-left:40%;
+    margin-top:2%;
+    color:white;
 }
 
 #photo{
@@ -67,5 +68,5 @@ color:white;
 
 .center label{
     color:white;
-}
+} */
 

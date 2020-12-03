@@ -5,11 +5,11 @@ import './Home.css';
 import chevronGauche from "../../Images/chevronGauche.png";
 import chevronDroite from "../../Images/chevronDroite.png";
 import chevronHaut from "../../Images/chevronHaut.png";
-import RecupPlay from "./Play"
+/* import RecupPlay from "./Play" */
 const Home = () => {
-     useEffect(() => {
+    /*  useEffect(() => {
         RecupPlay()
-    },[])
+    },[]) */
         /*
         fetch(URL,{ method: "GET",
         headers: {

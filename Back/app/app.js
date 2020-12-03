@@ -15,7 +15,10 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Header", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
-
+  app.use(function (err, req, res, next) {
+    console.log('This is the invalid field ->', err.field)
+    next(err)
+  })
 app.use(express.static('views'));
 
 app.use('/',UsersRoutes)

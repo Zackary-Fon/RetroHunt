@@ -1,5 +1,5 @@
 const {home,CreateAnn,GetPlay,Getall,Getdate} = require('../controllers/controller-annonce');
-const {CreateUser,GetUser,Log, authenticateToken}= require('../controllers/controller-user');
+const {CreateUser,GetUser,Log, authenticateToken,deleteUser}= require('../controllers/controller-user');
 const express=require('express');
 const { route } = require('../app/app');
 const router=express.Router();
@@ -9,11 +9,11 @@ const upload=require('../image/multer')
 router.route('/')
     .get(home)
 
-router.route('/user')
+router.route('/user') 
     .post(CreateUser)
 
 router.route('/deposer')
-    .post(upload.single("image"), CreateAnn) 
+    .post(upload.array('image'), CreateAnn) 
     .get(GetPlay)
     
 router.route('/all')
@@ -26,4 +26,6 @@ router.route('/login')
     .post(Log)
 router.route('/auth')
     .post(authenticateToken,GetUser)
+router.route('/delete')
+    .post(deleteUser)
     module.exports=router;
