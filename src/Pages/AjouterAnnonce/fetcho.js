@@ -1,24 +1,23 @@
 import React,{useState,useEffect} from "react";
 
-const URL="http://localhost:3006/deposer"; 
+const URL="http://localhost:3006/deposer"; //url back 
 
 const fetcho=()=>{
-  console.log(document.querySelector('#photo'))  
-    document.getElementById("submit").addEventListener('click',()=>{
-        let form = document.getElementById("myForm");
-        let formData = new FormData(form); //<3
-        const config = {
-            method: 'POST',
+    document.getElementById("submit").addEventListener('click',()=>{//evenement au click
+        let form = document.getElementById("myForm"); //je recupere mon formulaire
+        let formData = new FormData(form); //je transforme mon formulaire en formData
+        const config = { //config fetch
+            method: 'POST', //j envoie des données
             headers: {
-            "Access-Control-Allow-Origin":"http://localhost:3006/deposer" 
+            "Access-Control-Allow-Origin":"http://localhost:3006/deposer" //j autorise l accès 
         },
-        body: formData,
+        body: formData,// j envoie dans body mon formdata (sur post man je pas oublier de mettre formdata et pas raw)
         }
-    fetch(URL, config)
-    .then(response => response.json().then((response)=>{
-        if(response=="OK")
+    fetch(URL, config) //instannciation
+    .then(response => response.json().then((response)=>{//quand je recois la reponse et que je la json
+        if(response=="OK")//res.json("OK") //gestion erreur
         {
-            document.location.href="../"
+            document.location.href="./"
         }
         else{
             console.log(response)
