@@ -7,7 +7,9 @@ import chevronDroite from "../../Images/chevronDroite.png";
 import chevronHaut from "../../Images/chevronHaut.png";
 import Col from 'react-bootstrap/Col';
 import Row from "react-bootstrap/Row";
-import home from "./../../Images/home.png"
+import home from "./../../Images/home.png";
+import Card from "./CardNew";
+
 const Home = () => {
     
     return (
@@ -23,7 +25,7 @@ Et bien sûr vous trouverez plus simplement</p></Col>
             <h2 className="title">Les derniers articles</h2>
         </Row>
         <Recent/>
-        <div className="pagination"><img src={chevronGauche}/><h1>1</h1><img src={chevronDroite}/></div>
+        <Card/>
     </div>);
 }
 
