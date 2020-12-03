@@ -5,28 +5,23 @@ import './Home.css';
 import chevronGauche from "../../Images/chevronGauche.png";
 import chevronDroite from "../../Images/chevronDroite.png";
 import chevronHaut from "../../Images/chevronHaut.png";
-/* import RecupPlay from "./Play" */
+import Col from 'react-bootstrap/Col';
+import Row from "react-bootstrap/Row";
+import home from "./../../Images/home.png"
 const Home = () => {
-    /*  useEffect(() => {
-        RecupPlay()
-    },[]) */
-        /*
-        fetch(URL,{ method: "GET",
-        headers: {
-            "Accept": "application/json",
-            "Access-Control-Allow-Origin":"http://localhost:3006/user"
-        }})
-        .then(response => {
-                response.json().then(json => {
-                console.log(json);
-            })
-        }
-    )
-    },[]); */
-/* GetUser(); */
+    
     return (
     <div className="homeBody">
-        <div className="headBody"><h1>Bienvenue sur RetroHunt</h1></div>
+        <Row>
+            <Col><img src={home} /></Col>
+            <Col className="center"><p>Qui nous sommes:<br></br>
+ 3 grand passionnés de retro gaming qui pensent que, comme tout le monde, rechercher sur internet ne doit pas prendre des heures. 
+Alors ici se trouve une communauté qui partage la même passion! <br></br>
+Et bien sûr vous trouverez plus simplement</p></Col>
+        </Row>
+        <Row>
+            <h2 className="title">Les derniers articles</h2>
+        </Row>
         <Recent/>
         <div className="pagination"><img src={chevronGauche}/><h1>1</h1><img src={chevronDroite}/></div>
     </div>);

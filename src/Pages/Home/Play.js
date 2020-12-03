@@ -1,20 +1,31 @@
 import React,{useState,useEffect} from "react";
 
-const URL="http://localhost:3006/deposer";
-
+const URL="http://localhost:3006/all";
+const Rec=[];
 const RecupPlay=()=>{
     console.log('hello')
     fetch(URL,{ method: "GET",
     headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin":"http://localhost:3006/deposer"
+        "Access-Control-Allow-Origin":"http://localhost:3006/all"
     }})
     .then(response => {
             response.json().then(json => {
-            console.log(json);
+            //console.log(json);
+            const taille=(json.length -1);
+            console.log(taille-6);
+            const Recent=taille-6;
+            
+            for(let i=Recent;i<(taille);i++){
+                Rec.push(json[i])
+                
+            }
+            console.log(Rec)
+            //console.log(json[19])//SMS
         })
     }
 )
 }
+export const tab =Rec;
 export default RecupPlay ; 
