@@ -6,10 +6,11 @@ import './Home.css';
 const Card = () =>{
 
     return(
-        <div className="contain-customize">
+        <div className="Card">
             <div>
+                <h2>News</h2>
                 <Col><img src={mario} className="mario"/></Col>
-                <Col><p>Super Mario 3D All Stars : <br></br>
+                <Col><p  className="News"><h3>Super Mario 3D All Stars : </h3><br></br>
                 La manette GameCube enfin compatible avec la nouvelle mise à jour</p></Col>
             </div>
         </div>

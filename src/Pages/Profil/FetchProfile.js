@@ -53,8 +53,8 @@ const bb=JSON.stringify(local);
                     const btn=document.createElement('button');
                     const btn2=document.createElement('button')
                     ann.appendChild(li);
-                    li.appendChild(span2);
                     li.appendChild(img);
+                    li.appendChild(span2);
                     li.appendChild(btn);
                     li.appendChild(btn2)
                     img.setAttribute('src',json.Annonces[i].image[0]);
