@@ -43,11 +43,4 @@ export const ObjectProduct = [
     {id:9, img: Space_Invaders, name:"Space Invaders", url:"https://www.jeuxvideo.com/jeux/atari-vcs-2600/00049404-space-invaders.htm", category:"Atari 2600", userName:"Pierre", datePost:"07/06/2020", prix:"45€"},
     {id:10, img: Sonic_The_Hedgehog2, name:"Sonic the Hedgehog 2", url:"https://www.jeuxvideo.com/jeux/megadrive/00002033-sonic-the-hedgehog-2.htm", category:"Sega Megadrive", userName:"Paul", datePost:"19/06/2020", prix:"20€"},
     {id:11, img: Zelda_Ocarina_Of_Time, name:"The Legend of Zelda : Ocarina of Time", url:"https://www.jeuxvideo.com/jeux/jeu-56411/", category:"Nintendo 64", userName:"Jacques", datePost:"27/06/2020", prix:"30€"}
-]
-
-export const TabForm = [
-    {id: 0, name:"Titre de l'annonce"},
-    {id: 1, name:"Prix"},
-    {id: 2, name:"État"},
-    {id: 3, name:"Console"}
-]
+];
