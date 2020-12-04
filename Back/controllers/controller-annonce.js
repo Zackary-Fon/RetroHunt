@@ -18,9 +18,9 @@ module.exports = {
             for (const file of files) {
                 const {path} = file
                 const newPath = await cloudinary.uploader.upload(path, {
-                    width: 400,height: 600})
+                    width: 300,height: 400})
                 const thumbnail = await cloudinary.uploader.upload(path, {
-                    width: 250,height: 250})
+                    width: 300,height: 200})
                 urls.push(newPath.secure_url)
                 thumb.push(thumbnail.secure_url)
                 fs.unlinkSync(path) // ??

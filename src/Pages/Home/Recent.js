@@ -21,8 +21,8 @@ const Recent = () => {
         }})
         .then(response => {response.json().then(json => {
             const taille=(json.length -1);
-            let Recent=taille-6;
-            for(let i=0;i<6;i++){
+            let Recent=taille-5;
+            for(let i=1;i<=6;i++){
                 Rec.push(json[Recent])
                 Recent++;
                 }

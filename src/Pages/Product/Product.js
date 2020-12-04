@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from "react";
 import {ObjectProduct} from "../../Rooting/const";
 import './Product.css';
-import '../../general.css'
+import {Link} from "react-router-dom";
 import chevronGauche from "../../Images/chevronGauche.png";
 import chevronDroite from "../../Images/chevronDroite.png";
 
@@ -42,24 +42,27 @@ const Product = ({match}) => {
                     <div className="bodyProduct">
                         {/*Là on met le chemin comme sur le figma*/}
 
-                        <h3>Retour</h3>
-
-                        <div className="DescriptionEtImages">
-                            <div className="Infos">
-                                <h2> Console : {produit.Console}</h2>
-                                <h2>Prix : {produit.Prix}</h2>
-                                <h2>Etat :</h2>
-                                <h2>Vendeur : {produit.PseudoVendeur}</h2>
-                                <h2>Description : {produit.Description}</h2>
-                                <div className="bouton">Contacter le vendeur</div>
-                            </div>
-                            <div className="Images">
+                        <div className="back_btn"><Link to="/"><i class="fas fa-chevron-left"></i> Retour</Link></div>
+                        <div className="Images">
                                 <h1>{produit.Titre}</h1>
-                                <img className="imageProduit" src={produit.image[0]} alt="produit"/>
+                                <img className="imageP" src={produit.image[0]} alt="produit"/>
                             </div>
+                        <div className="Description">
+                            <div className="Infos">
+                                <p> Console : {produit.Console}</p>
+                                <p>Prix : {produit.Prix}</p>
+                                <p>Etat :</p>
+                                <p>Vendeur : {produit.PseudoVendeur}</p>
+                                <p>Description :<br></br> {produit.Description}</p>
+                                
+                            </div>
+                            
                         </div>
-
-                        <h3>Signaler l'annonce</h3>
+                        <div id="contact">
+                        <button className="bouton">Contacter le vendeur</button>
+                        <Link>Signaler l'annonce</Link>
+                        </div>
+                        
                         
                     </div>
                 )
