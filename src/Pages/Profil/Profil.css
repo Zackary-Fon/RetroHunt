@@ -1,0 +1,92 @@
+
+.Card{
+    position: relative;
+    background-color: #444B90;
+    color: white;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 80%;
+    margin-left:10%;
+}
+
+
+.back_btn{
+    text-align: left;
+    font-size: 1.3em;
+    color: white !important;
+}
+
+.back_btn a{
+    color: white !important;
+}
+
+.back_btn a:hover{
+    text-decoration: none !important;
+    color: #61F2F5 !important;
+}
+
+.back_btn a i{
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.title{
+   margin-top:-3%;
+   margin-right:40%;
+   padding-bottom: 3%;
+}
+
+.modificationProfil{
+    width: 50%;
+    margin-left: 62%;
+    margin-top: -8%;
+}
+
+.delete{
+    color: #FF7878;
+}
+
+.Infos{
+    width:70%;
+    margin-left:20%;
+}
+
+#avatar{
+    background-color:#48475C;
+    height:240px;
+    width:170px;
+    margin: 6%; 
+}
+#info{
+    width: 50%;
+    /* float: right; */
+    margin-left: 33%;
+    margin-top: -28%;
+    margin-bottom: 20%;
+    font-size:1.5em;
+}
+
+.contain{
+    width: 70%;
+background-color:#594BBD;
+margin: 3%;
+margin-left:16%;
+border-radius: 10px  0px 10px 0px;
+}
+
+.imgAnnonce{
+    width: 78.71px;
+    height: 76.81px;
+    margin:3%;
+}
+
+.acces,.modif{
+    margin :0 2% 0 2%;
+    color: #444B90 !important;
+    background-color: white !important;
+    border: white !important;
+    font-size: 1.2rem !important;
+}

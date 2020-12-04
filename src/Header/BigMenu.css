@@ -1,70 +1,73 @@
-/* .bigmenu-dropdown{
+.dropdowns {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdowns .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 33px 16px;
+    background-color: inherit;
+    font: inherit;
+    margin: 0;
+  }
+
+  .dropbtn i{
+    margin-left: 5px;
+  }
+  
+  .dropdowns:hover .dropbtn {
+    color: #61F2F5 !important;
+    text-shadow: 0px 0px 5px #61F2F5;
+    text-decoration: none;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
     width: 100%;
-    position: absolute;
-    top: 60px;
-    right: 0%;
-    background-color: #594BBD;
-    list-style: none;
-    text-align: center;
-    margin-top: 40px;
-}
-
-.bigmenu-dropdown li{
-    width: 10%;
-    background-color: #594BBD;
-    cursor: pointer;
-    font-size: 13px;
-    margin-left: 20%;
-}
-
-.bigmenu-dropdown li a:hover{
-    background-color: #4f40be;
-    border-bottom: none;
-}
-
-.bigmenu-dropdown.clicked{
-    display: none;
-}
-
-.bigmenu-dropdown2{
-    width: 55%;
-    position: absolute;
-    top: 60px;
-    right: 10%;
-    background-color: #594BBD;
-    list-style: none;
-    text-align: center;
-    margin-top: 40px;
-}
-
-.bigmenu-dropdown2 li{
-    width: 15%;
-    background-color: #594BBD;
-    cursor: pointer;
-    font-size: 13px;
-}
-
-.bigmenu-dropdown2 li a:hover{
-    background-color: #4f40be;
-    border-bottom: none;
-}
-
-.bigmenu-dropdown2.clicked{
-    display: none;
-}
-
-.dropdown-link{
+    left: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+  }
+  
+  .dropdowns:hover .dropdown-content {
     display: block;
-    height: 100%;
-    text-decoration: none;
-    color: #EFEFEF;
-    padding: 14px;
-}
+  }
+  
+  /* Create three equal columns that floats next to each other */
+  .column-dropdown {
+    float: left;
+    padding: 10px;
+    padding-left: 20%;
+  }
 
-.dropdown-link2{
-    display: block;
-    height: 100%;
+  .column-dropdown a {
+    float: none;
+    color: white;
+    padding: 2px;
     text-decoration: none;
-    color: #EFEFEF;
-    padding: 14px;
-} */
+    display: block;
+    text-align: left;
+  }
+  
+  .column-dropdown a:hover {
+    color: #61F2F5 !important;
+    text-shadow: 0px 0px 5px #61F2F5;
+    text-decoration: none;
+  }
+  
+  .row-dropdown{
+    background: linear-gradient(to right, #594BBD, #3E338C);
+    height: auto;
+  }
+
+  /* Clear floats after the columns */
+  .row-dropdown:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

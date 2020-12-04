@@ -25,45 +25,50 @@ const bb=JSON.stringify(local);
             document.querySelector('#email').innerHTML=json.email; 
             console.log(json.Annonces.length); 
             if (json.Annonces.length >=3){
-            for(let i=0;i<3;i++){
-        const li = document.createElement('li');
-        const img = document.createElement('img');
-        const span2 = document.createElement('span');
-        const btn=document.createElement('button');
-        const btn2=document.createElement('button');
-        ann.appendChild(li);
-        li.appendChild(span2);
-        li.appendChild(img);
-        li.appendChild(btn);
-        li.appendChild(btn2)
-        img.setAttribute('src',json.Annonces[i].image[0]);
-        img.setAttribute('classname','imgAnnonce');
-        span2.innerHTML =json.Annonces[i].Titre;
-        
-        btn2.innerHTML="Modifier";
-        btn2.setAttribute('className',"Modifier");
-        btn.setAttribute('className',"acces");
-        btn.innerHTML="Y Acceder";
+                for(let i=0;i<3;i++){
+                const li = document.createElement('li');
+                const div=document.createElement('div');
+                const img = document.createElement('img');
+                const span2 = document.createElement('span');
+                const btn=document.createElement('button');
+                const btn2=document.createElement('button')
+                ann.appendChild(div);
+                div.appendChild(img);
+                
+                div.appendChild(span2);
+                div.appendChild(btn);
+                div.appendChild(btn2)
+                img.setAttribute('src',json.Annonces[i].image[0]);
+                img.setAttribute('class','imgAnnonce');
+                div.setAttribute('class','contain')
+                span2.innerHTML =json.Annonces[i].Titre;
+                btn.innerHTML="Y Acceder";
+                btn2.innerHTML="Modifier";
+                btn2.setAttribute('class',"modif");
+                btn.setAttribute('class',"acces");
             /* btn.setAttribute('href',) */
             }}else{
                 for(let i=0;i<json.Annonces.length;i++){
                     const li = document.createElement('li');
+                    const div=document.createElement('div');
                     const img = document.createElement('img');
                     const span2 = document.createElement('span');
                     const btn=document.createElement('button');
                     const btn2=document.createElement('button')
-                    ann.appendChild(li);
-                    li.appendChild(img);
-                    li.appendChild(span2);
-                    li.appendChild(btn);
-                    li.appendChild(btn2)
+                    ann.appendChild(div);
+                    div.appendChild(img);
+                    
+                    div.appendChild(span2);
+                    div.appendChild(btn);
+                    div.appendChild(btn2)
                     img.setAttribute('src',json.Annonces[i].image[0]);
-                    img.setAttribute('classname','imgAnnonce');
+                    img.setAttribute('class','imgAnnonce');
+                    div.setAttribute('class','contain')
                     span2.innerHTML =json.Annonces[i].Titre;
                     btn.innerHTML="Y Acceder";
                     btn2.innerHTML="Modifier";
-                    btn2.setAttribute('className',"Modifier");
-                    btn.setAttribute('className',"acces");
+                    btn2.setAttribute('class',"modif");
+                    btn.setAttribute('class',"acces");
                     //btn.classList.add("acces")
                         }
             }
