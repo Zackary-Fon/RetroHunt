@@ -11,8 +11,8 @@
     position: relative;
     z-index: 2;
     margin-top: 5%;
-  }
-  
+}
+
 .btn-customize:hover{
     color: #9ca3e2;
 }

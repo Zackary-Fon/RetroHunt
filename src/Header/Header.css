@@ -13,7 +13,6 @@ header {
 
 body{
     background: radial-gradient(#281761, #181B41, #181B41, #402183, #321575);
-    
 }
 
 a{
@@ -30,6 +29,12 @@ a{
     width:100%;
 }
 
+@media (min-width: 992px){
+    .navbar-expand-lg {
+        justify-content: space-around !important;
+    }
+}
+
 .navbar-light .navbar-nav .nav-link {
     color: white !important;
 }
@@ -37,6 +42,10 @@ a{
 .navbar-light .navbar-nav .nav-link:hover{
     color: #61F2F5 !important;
     text-shadow: 0px 0px 5px #61F2F5;
+}
+
+.navbar-nav{
+    align-items: center;
 }
 
 .form-control{

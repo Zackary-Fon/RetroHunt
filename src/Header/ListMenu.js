@@ -4,8 +4,9 @@ import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 // import BigMenu from "./BigMenu";
 import Searchbar from "./Searchbar";
-import BigMenuDropdown from "./BigMenuDropdown"
-import verifo from "./verifNav"
+import BigMenuDropdown from "./BigMenuDropdown";
+import verifo from "./verifNav";
+import './BigMenu.css';
 //création de la liste,à partir du tableau de routes qui se situe dans "const" ,qui sera le menu
 
 const list = () =>{
@@ -19,12 +20,16 @@ const list = () =>{
 
     if (index==1){
         return (
-            <>
-                    <Nav.Link key={any.id} href={any.path}>{any.name}</Nav.Link>
-                    <NavDropdown title="" id="basic-nav-dropdown">
+            <div className="dropdowns">
+                <button className="dropbtn" key={any.id} href={any.path} id="categories" id="basic-nav-dropdown">{any.name} 
+                    <i className="fas fa-chevron-down"></i>
+                </button>
+                <div className="dropdown-content">
+                    <div className="row-dropdown">
                         <BigMenuDropdown/>
-                    </NavDropdown>
-            </>
+                    </div>
+                </div>
+            </div>
         )
     } if (index===2){
         return (
@@ -39,11 +44,11 @@ const list = () =>{
                 <Nav.Link key={any.id} id="annonce" href={any.path}>{any.name}</Nav.Link>
         )
     } else if (index ==4) {
-return(
-    <li  className="li_menu_head disabled" key={any.id}>
-           <Link to={any.path}>{any.name}</Link>
-    </li>
-)
+        return(
+            <li  className="li_menu_head disabled" key={any.id}>
+                <Link to={any.path}>{any.name}</Link>
+            </li>
+        )
     }else{
         return null
     }
