@@ -4,16 +4,37 @@ import {ObjectProduct} from "../../Rooting/const"
 import '../../general.css';
 import './Home.css';
 import person from '../../Rooting/Icones/person.svg';
- import RecupPlay from "./Play" 
 import { json } from "body-parser";
-import {tab} from './Play';
 //liste des articles mis en ligne, affichés sous forme de cards avec l'image puis en dessous
 //de l'image les informations telles que le titre du produit, la console, l'utilisateur qui
 //a posté l'annonce et la date à laquelle celle ci a été postée et un bouton pour voir la fiche
-
+const Rec=[];
 
 const Recent = () => {
+<<<<<<< HEAD
     const Articles = tab.map((produit)=>{
+=======
+    const[data,setdata]=useState([])
+    useEffect(async () => {
+        fetch("http://localhost:3006/all",{ method: "GET",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin":"http://localhost:3006/all"
+        }})
+        .then(response => {response.json().then(json => {
+            const taille=(json.length -1);
+            let Recent=taille-6;
+            for(let i=0;i<6;i++){
+                Rec.push(json[Recent])
+                Recent++;
+                }
+            setdata(Rec)
+        })})
+    });
+    console.log(data)
+    const Articles = data.map((produit)=>{
+>>>>>>> 78210d1d0b9ceb91825ef743fe60fabbaa1af17b
         return (
             <li key={produit.id} className="imageIntitule">
                 <div className="imageProduit" style={{background: `url(${produit.image[0]})`, backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundSize:"cover", width:"100%", height:"200px"}}/>

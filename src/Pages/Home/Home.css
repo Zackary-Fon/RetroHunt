@@ -12,6 +12,8 @@
 .bodyRecent{
     display:flex;
     flex-direction: row;
+    width:80%;
+    margin-left:13%;
 }
 
 .listArticles{
@@ -72,4 +74,28 @@
     color:white;
     margin-left: 40%;
     margin-top:3%
+}
+.mario {
+    width:238px;
+    height: 167px;
+    margin-left: -575px;
+    position: relative;
+}
+.News{
+    margin-left: 39%;
+    width: 50%;
+    margin-top: -113px;
+}
+
+.Card{
+    background-color: #444B90;
+    margin-bottom: 100px;
+    margin-top:3%;
+    border-radius: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 50%;
+    color:white;
+    margin-left:23%
+    
 }

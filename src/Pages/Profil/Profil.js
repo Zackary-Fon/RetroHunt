@@ -23,15 +23,15 @@ const Profil = () => {
             <p id="prenom"></p>
             <p id="nom"></p>
             <p id="email"></p>
-            <img src="" alt="Photo Profil"></img>
             </div>
-            <div className="Conversations">
+            {/* <div className="Conversations">
 
                 <p>Afficher plus</p>
-            </div>
+            </div> */}
             <div className="Annonces">
-                <p>Afficher plus</p>
+                
             </div>
+            <Link>Afficher plus</Link>
         </div>
     )
 }

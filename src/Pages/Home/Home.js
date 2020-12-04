@@ -7,7 +7,9 @@ import chevronDroite from "../../Images/chevronDroite.png";
 import chevronHaut from "../../Images/chevronHaut.png";
 import Col from 'react-bootstrap/Col';
 import Row from "react-bootstrap/Row";
-import home from "./../../Images/home.png"
+import home from "./../../Images/home.png";
+import Card from "./CardNew";
+
 const Home = () => {
     
     return (
@@ -23,6 +25,7 @@ const Home = () => {
             <h2 className="title">Les derniers articles</h2>
         </Row>
         <Recent/>
+        <Card/>
     </div>);
 }
 
