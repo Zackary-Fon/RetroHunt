@@ -20,7 +20,7 @@ a{
 }
 
 .logo_resize{
-    width: 11%;
+    width: 300px;
     padding: 10px;
     padding-left: 100px;
 }
@@ -47,6 +47,11 @@ a{
     color: white !important;
 }
 
+.navbar-light .navbar-nav .nav-link:hover{
+    color: #61F2F5 !important;
+    text-shadow: 0px 0px 5px #61F2F5;
+}
+
 .li_menu_head a {
     color :  white;
 }
@@ -57,7 +62,6 @@ a{
 
 .form-control{
     border-radius: 0px !important;
-    height: calc(1em + .75rem + 2px) !important;
 }
 
 .head_menu{
@@ -72,7 +76,6 @@ a{
 .btn-custom{
     border: 1px solid white !important;
     border-radius: 0% !important;
-    height: calc(1em + .75rem + 2px) !important;
 }
 
 .searching{
