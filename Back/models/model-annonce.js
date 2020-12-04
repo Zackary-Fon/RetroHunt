@@ -15,6 +15,7 @@ const AnnonceSchema = new Schema({
     Categorie: String,
     Description:String,
     image:Array,
+    thumbnail:Array,
     cloudinary_id:String,
 },{collection: "ANNONCE_COLLEC"});
 
