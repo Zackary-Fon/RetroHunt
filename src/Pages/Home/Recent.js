@@ -11,9 +11,6 @@ import { json } from "body-parser";
 const Rec=[];
 
 const Recent = () => {
-<<<<<<< HEAD
-    const Articles = tab.map((produit)=>{
-=======
     const[data,setdata]=useState([])
     useEffect(async () => {
         fetch("http://localhost:3006/all",{ method: "GET",
@@ -34,7 +31,6 @@ const Recent = () => {
     });
     console.log(data)
     const Articles = data.map((produit)=>{
->>>>>>> 78210d1d0b9ceb91825ef743fe60fabbaa1af17b
         return (
             <li key={produit.id} className="imageIntitule">
                 <div className="imageProduit" style={{background: `url(${produit.image[0]})`, backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundSize:"cover", width:"100%", height:"200px"}}/>

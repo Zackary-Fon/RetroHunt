@@ -17,14 +17,8 @@ const RecupPlay=()=>{
             response.json().then(json => {
             //console.log(json);
             const taille=(json.length -1);
-<<<<<<< HEAD
-            console.log(taille-6);
-            let Recent=taille-6;
-
-=======
             
             let Recent=taille-6;
->>>>>>> 78210d1d0b9ceb91825ef743fe60fabbaa1af17b
             for(let i=0;i<6;i++){
                 Rec.push(json[Recent])
                 Recent++;
