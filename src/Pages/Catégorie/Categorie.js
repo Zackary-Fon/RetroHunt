@@ -1,29 +1,34 @@
 import React, {useState, useEffect} from "react";
 import {ObjectProduct} from "../../Rooting/const";
 import {Link} from "react-router-dom";
+
 const Categorie = ({match}) => {
-    // recupérer category du produit
-    const {params: title } = match;
-    console.log(match);
-    const[data,setdata]=useState([])
-    useEffect(async () => {
+    console.log(match)
+    
+     const[data,setdata]=useState([]);
      const user={
          title:match.params.title
      };
-
+     
      const formjs=JSON.stringify(user)
+    useEffect(async () => {
         fetch("http://localhost:3006/categorie",{ method: "POST",
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin":"http://localhost:3006/categorie"
-        }, body:formjs})
+        },body:formjs
+                })
         .then(response => {response.json().then(json => {
-                console.log(json)
-                setdata(json)
-                },
-        )})
-    });
+            
+            setdata(json)
+        })})
+    }); 
+    //console.log( data) 
+
+    // recupérer id du produit
+    const {params: title } = match;
+    console.log(match);
     const categorieResult = data.map((produit) => {
             
                 return(

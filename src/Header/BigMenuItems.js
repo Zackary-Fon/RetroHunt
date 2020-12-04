@@ -7,140 +7,140 @@ const BigMenuItems = [
     },
     {
         id: 1,
-        title: 'Playstation 1',
-        path:"/Categorie",
+        title: "Playstation 1",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 2,
         title: 'Playstation 2',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 3,
         title: 'Xbox',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 4,
         title: 'Gamecube',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 5,
         title: 'Nintendo 64',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 6,
         title: 'Nes',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 7,
         title: 'Gameboy',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 8,
         title: 'Super Nes',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 9,
         title: 'MegaDrive',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 10,
         title: 'Neo Geo',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 11,
         title: 'Atari',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 12,
         title: 'Consoles',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link2'
     },
     {
         id: 13,
         title: 'Playstation 1',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link2'
     },
     {
         id: 14,
         title: 'Playstation 2',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 15,
         title: 'Xbox',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 16,
         title: 'Gamecube',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 17,
         title: 'Nintendo 64',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 18,
         title: 'Nes',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 19,
         title: 'Gameboy',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 20,
         title: 'Super Nes',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 21,
         title: 'MegaDrive',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 22,
         title: 'Neo Geo',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {
         id: 23,
         title: 'Atari',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
 ]

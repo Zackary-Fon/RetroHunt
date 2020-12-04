@@ -19,7 +19,7 @@ import SuppProfil from "../Pages/Profil/SupprimerProfil";
 //tableau des routes
 const tabRoutes = [
 {id:0, name:"Home", path:"/", component:Home},
-{id:1, name:"Catégories", path:"/Categorie", component:Categorie},
+{id:1, name:"Catégories", path:"/Categorie/:title", component:Categorie},
 {id:2, name:"Connexion/inscription", path:"/ConnexionInscription", component:ConnexionInscription},
 {id:3, name:"Profil", path:"/Profil", component:Profil},
 {id:4, name:"Déposer une annonce", path:"/DeposerAnnonce", component:AjouterAnnonce},

@@ -32,7 +32,6 @@ const Product = ({match}) => {
     const {params: id } = match;
     console.log(match);
     // afficher les infos
-    console.log(id.id)
     const ShowProduct = () => {
         // récupérer dans le tableau les détails du produit avec un if pour correspondre à l'id
         //du produit sur lequel on a cliqué puis on affiche les informations et l'image dans une card
