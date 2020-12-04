@@ -50,7 +50,7 @@ const Product = ({match}) => {
                                 <h2>Prix : {produit.Prix}</h2>
                                 <h2>Etat :</h2>
                                 <h2>Vendeur : {produit.PseudoVendeur}</h2>
-                                <h2>Description : {produit.description}</h2>
+                                <h2>Description : {produit.Description}</h2>
                                 <div className="bouton">Contacter le vendeur</div>
                             </div>
                             <div className="Images">
