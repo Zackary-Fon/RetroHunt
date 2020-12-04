@@ -59,7 +59,7 @@ const Product = ({match}) => {
                             
                         </div>
                         <div id="contact">
-                        <button className="bouton">Contacter le vendeur</button>
+                        <button className="bn">Contacter le vendeur</button>
                         <Link id="chiant">Signaler l'annonce</Link>
                         </div>
                         
