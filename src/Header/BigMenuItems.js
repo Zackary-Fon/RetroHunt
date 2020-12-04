@@ -2,7 +2,7 @@ const BigMenuItems = [
     {
         id: 0,
         title: 'Jeux',
-        path:"/Categorie",
+        path:"/Categorie/:title",
         className: 'dropdown-link'
     },
     {

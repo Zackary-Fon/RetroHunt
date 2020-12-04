@@ -68,14 +68,14 @@ const Formulaire = () =>{
                         <option value=" "> </option>
                         <option value="Playstation 1">Playstation 1</option>
                         <option value="Playstation 2">Playstation 2</option>
-                        <option value="xbox">Xbox</option>
-                        <option value="GameCube">Gamecube</option>
-                        <option value="N64">Nintendo 64</option>
-                        <option value="NES">Nes</option>
+                        <option value="Xbox">Xbox</option>
+                        <option value="Gamecube">Gamecube</option>
+                        <option value="Nintendo 64">Nintendo 64</option>
+                        <option value="Nes">Nes</option>
                         <option value="MegaDrive">MegaDrive</option>
-                        <option value="GameBoy">GameBoy</option>
-                        <option value="SuperNes">Super Nes</option>
-                        <option value="NEOGEO">NEO GEO </option>
+                        <option value="Gameboy">GameBoy</option>
+                        <option value="Super Nes">Super Nes</option>
+                        <option value="Neo Geo">NEO GEO </option>
                         <option value="Atari">Atari</option>
                     </select>
             </Row>

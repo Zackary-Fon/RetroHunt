@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from "react";
 import {ObjectProduct} from "../../Rooting/const";
 import {Link} from "react-router-dom";
+import "./Categorie.css";
 
 const Categorie = ({match}) => {
     console.log(match)
     
-     const[data,setdata]=useState([]);
+    const[data,setdata]=useState([]);
+    if(match.params.title != "Jeux"){
      const user={
          title:match.params.title
      };
@@ -23,7 +25,21 @@ const Categorie = ({match}) => {
             
             setdata(json)
         })})
-    }); 
+    }); }
+    else{
+        fetch("http://localhost:3006/all",{ method: "GET",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin":"http://localhost:3006/all"
+        }
+                })
+        .then(response => {response.json().then(json => {
+            
+            setdata(json)
+        })})
+    }
+    
     //console.log( data) 
 
     // recupérer id du produit
@@ -46,7 +62,7 @@ const Categorie = ({match}) => {
             
         })
     return (
-            <div>
+            <div className="Contain">
             {categorieResult}
             </div>
     )
