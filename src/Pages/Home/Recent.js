@@ -13,10 +13,6 @@ import {tab} from './Play';
 
 
 const Recent = () => {
-    useEffect(() => {
-        RecupPlay()
-        
-    })
     const Articles = tab.map((produit)=>{
         return (
             <li key={produit.id} className="imageIntitule">
@@ -31,7 +27,6 @@ const Recent = () => {
             </li>
         )
     })
-
     return (
         <div className="bodyRecent" >
             <ul className="listArticles">{Articles}</ul>

@@ -15,15 +15,14 @@ const Home = () => {
         <Row>
             <Col><img src={home} /></Col>
             <Col className="center"><p>Qui nous sommes:<br></br>
- 3 grand passionnés de retro gaming qui pensent que, comme tout le monde, rechercher sur internet ne doit pas prendre des heures. 
-Alors ici se trouve une communauté qui partage la même passion! <br></br>
-Et bien sûr vous trouverez plus simplement</p></Col>
+            3 grand passionnés de retro gaming qui pensent que, comme tout le monde, rechercher sur internet ne doit pas prendre des heures. 
+            Alors ici se trouve une communauté qui partage la même passion! <br></br>
+            </p></Col>
         </Row>
         <Row>
             <h2 className="title">Les derniers articles</h2>
         </Row>
         <Recent/>
-        <div className="pagination"><img src={chevronGauche}/><h1>1</h1><img src={chevronDroite}/></div>
     </div>);
 }
 

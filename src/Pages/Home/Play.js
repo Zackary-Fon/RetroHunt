@@ -15,11 +15,11 @@ const RecupPlay=()=>{
             //console.log(json);
             const taille=(json.length -1);
             console.log(taille-6);
-            const Recent=taille-6;
-            
-            for(let i=Recent;i<(taille);i++){
-                Rec.push(json[i])
-                
+            let Recent=taille-6;
+
+            for(let i=0;i<6;i++){
+                Rec.push(json[Recent])
+                Recent++;
             }
             console.log(Rec)
             //console.log(json[19])//SMS
