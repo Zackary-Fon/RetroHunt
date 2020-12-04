@@ -14,7 +14,9 @@ router.route('/user')
 
 router.route('/deposer')
     .post(upload.array('image'), CreateAnn) 
-    .get(GetPlay)
+
+router.route('/categorie')
+    .post(GetPlay)
     
 router.route('/all')
     .get(Getall)
@@ -22,7 +24,7 @@ router.route('/all')
 router.route('/date')
     .get(Getdate)
 router.route('/id')
-.get(Getid)
+.post(Getid)
 
 router.route('/login')
     .post(Log)

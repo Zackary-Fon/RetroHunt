@@ -60,8 +60,9 @@ module.exports = {
         }
     },
     GetPlay(req, res) {
+        console.log(req.body)
         Annonce.find({
-            Console: "play1"
+            Console: req.body.title
         }).then((ann) => {
             res.send(ann)
         })

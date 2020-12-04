@@ -1,34 +1,50 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {ObjectProduct} from "../../Rooting/const";
 import {Link} from "react-router-dom";
-
 const Categorie = ({match}) => {
     // recupérer category du produit
-    const {params: category } = match;
+    const {params: title } = match;
     console.log(match);
-    const ShowCategorie = () => {
-        const categorieResult = ObjectProduct.map((produit) => {
-            if (produit.category === (String(name.name)) ){
+    const[data,setdata]=useState([])
+    useEffect(async () => {
+     const user={
+         title:match.params.title
+     };
+
+     const formjs=JSON.stringify(user)
+        fetch("http://localhost:3006/categorie",{ method: "POST",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin":"http://localhost:3006/categorie"
+        }, body:formjs})
+        .then(response => {response.json().then(json => {
+                console.log(json)
+                setdata(json)
+                },
+        )})
+    });
+    const categorieResult = data.map((produit) => {
+            
                 return(
-                    <li key={produit.id} className="imageIntitule">
-                    <div className="imageProduit" style={{background: `url(${produit.img})`, backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundSize:"cover", width:"100%", height:"200px"}}/>
+                    <li key={produit._id} className="imageIntitule">
+                    <div className="imageProduit" style={{background: `url(${produit.image[0]})`, backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundSize:"cover", width:"100%", height:"200px"}}/>
                     <div className="intituleAnnonce">
-                    <h1>{produit.name}</h1>
-                    <h3>console: {produit.category}</h3>
-                    <p className="PersonPubli"><img src={person} style={{height:"20px", width:"20px"}}/> {produit.userName}</p>
-                    <p>posté le: {produit.datePost}</p>
-                    <h4>prix : {produit.prix}</h4>
-                    <Link to={`/Product/${produit.id}`}><div className="bouton">Voir la fiche</div></Link>
+                    <h1>{produit.Titre}</h1>
+                    <h3>console: {produit.Console}</h3>
+                    <p className="PersonPubli"> {produit.PseudoVendeur}</p>
+                    <h4>prix : {produit.Prix}</h4>
+                    <Link to={`/Product/${produit._id}`}><div className="bouton">Voir la fiche</div></Link>
                     </div>
                     </li>
                 )
-            }
+            
         })
-        return (
+    return (
             <div>
             {categorieResult}
             </div>
-        )
-    }
+    )
+    
 }
 export default Categorie;

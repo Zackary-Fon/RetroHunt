@@ -38,7 +38,7 @@ const Recent = () => {
                     <h3>console: {produit.Console}</h3>
                     <p className="PersonPubli"><img src={person} style={{height:"20px", width:"20px"}}/> {produit.PseudoVendeur}</p>
                     <h4>prix : {produit.Prix}</h4>
-                    <Link to={`/Product/${produit._id}`}><div className="bouton">Voir la fiche</div></Link>
+                <Link to={`/Product/${produit._id}`}><div className="bouton">Voir la fiche</div></Link>
                 </div>
             </li>
         )
