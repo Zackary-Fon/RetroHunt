@@ -14,12 +14,8 @@ router.route('/user')
 
 router.route('/deposer')
     .post(upload.array('image'), CreateAnn) 
-<<<<<<< Updated upstream
 
 router.route('/categorie')
-=======
-    router.route('/cat')
->>>>>>> Stashed changes
     .post(GetPlay)
     
 router.route('/all')

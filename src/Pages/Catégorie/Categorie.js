@@ -29,29 +29,8 @@ const Categorie = ({match}) => {
     // recupérer id du produit
     const {params: title } = match;
     console.log(match);
-<<<<<<< Updated upstream
     const categorieResult = data.map((produit) => {
             
-=======
-    const[data,setdata]=useState([])
-    useEffect(async () => {
-        const user={
-            title:match.params.category
-        }
-        fetch("http://localhost:3006/cat",{ method: "POST",
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin":"http://localhost:3006/cat"
-        }})
-        .then(response => {response.json().then(json => {
-            setdata(json)
-        })})
-    });
-    console.log(data)
-    const ShowCategorie = () => {
-        const categorieResult = ObjectProduct.map((produit) => {
->>>>>>> Stashed changes
                 return(
                     <li key={produit._id} className="imageIntitule">
                     <div className="imageProduit" style={{background: `url(${produit.image[0]})`, backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundSize:"cover", width:"100%", height:"200px"}}/>
