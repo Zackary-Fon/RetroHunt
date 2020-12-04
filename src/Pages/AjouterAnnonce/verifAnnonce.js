@@ -27,13 +27,14 @@ Date.addEventListener('keyup',()=>{
     }
 })
 
-btncheck.addEventListener('click',()=>{
      if(Titre.value !="" && (Date.value>1900 && Date.value < 2010) &&
     Prix.value !="" && Etat.value!="" && Console.value !=""
     && description.value!="" && photo.value != ""){
         sub.disabled=false;
-    } 
-})
+    }else{
+        
+    }
+
 
 
 

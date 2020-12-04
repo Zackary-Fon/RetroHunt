@@ -66,8 +66,8 @@ const Formulaire = () =>{
                     <Form.Label for="Console">Console</Form.Label> 
                     <select type="text" as="select" name="Console" id="console" className="input-custom">
                         <option value=" "> </option>
-                        <option value="play1">Playstation 1</option>
-                        <option value="play2">Playstation 2</option>
+                        <option value="Playstation 1">Playstation 1</option>
+                        <option value="Playstation 2">Playstation 2</option>
                         <option value="xbox">Xbox</option>
                         <option value="GameCube">Gamecube</option>
                         <option value="N64">Nintendo 64</option>
