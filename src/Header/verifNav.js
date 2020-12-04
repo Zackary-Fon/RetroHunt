@@ -18,11 +18,13 @@ else{
     annonce.style.display="none";
     deco.style.display="none";
 }
-    
-   /*  profil.classList.add="disabled" */
-   console.log(profil)
-   console.log(connexion)
-   console.log(annonce)
+  deco.addEventListener('click',()=>{
+      localStorage.removeItem('Token');
+      connexion.style.display="block";
+    profil.style.display="none";
+    annonce.style.display="none";
+    deco.style.display="none";
+  })
 
 }
 
