@@ -33,15 +33,15 @@ const list = () =>{
         )
     } if (index===2){
         return (
-                <Nav.Link key={any.id} id="connexion" href={any.path}>{any.name}</Nav.Link>
+            <Nav.Link key={any.id} id="connexion" href={any.path}>{any.name}</Nav.Link>
         )
     } if (index===3){
         return (
-                <Nav.Link key={any.id} id="profil" href={any.path}>{any.name}</Nav.Link>
+            <Nav.Link key={any.id} id="profil" href={any.path}>{any.name}</Nav.Link>
         )
     } if (index===4){
         return (
-                <Nav.Link key={any.id} id="annonce" href={any.path}>{any.name}</Nav.Link>
+            <Nav.Link key={any.id} id="annonce" href={any.path}>{any.name}</Nav.Link>
         )
     } else if (index ==4) {
         return(

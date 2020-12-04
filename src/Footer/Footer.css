@@ -1,34 +1,7 @@
-/* 
-.footer
+
+.site-footer
 {
-    background-color: #7a57d1 ;
-}
-
-
-.Footer {
-    width: 50px;
-    height: auto;
-}
-.Logo{
-    width:200px;
-    height:auto;
-    padding: 10px;
-}
-.p{
-    margin-bottom:0;
-    height:100%;
-}
-.Mentions{
-    text-decoration:none;
-    color:black;
-    margin-top:10px;
-}
-
- */
-
- .site-footer
-{
-  background-color: #7a57d1;
+  background: linear-gradient(to right, #594BBD, #3E338C);
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
@@ -43,14 +16,13 @@
 {
   display:block
 }
-.footer-links a
+.footer-links li a
 {
   color:white
 }
-.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+.footer-links li a:active,.footer-links li a:focus,.footer-links li a:hover
 {
-  color:black;
-  text-decoration:none;
+  color:rgb(214, 214, 214);
 }
 .footer-links.inline li
 {

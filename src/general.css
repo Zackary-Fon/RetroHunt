@@ -15,3 +15,8 @@
     padding-top: 100px;
     font-family: 'Righteous', sans-serif;
 }
+
+.row{
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+}
