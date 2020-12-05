@@ -82,15 +82,14 @@ const Formulaire = () =>{
         
 
             <Row className="justify-content-center column" >
-                <label for="description" id="description"><h3>Description de l'article</h3></label>
+                <label for="description" id="Description"><h3>Description de l'article</h3></label>
                 <textarea id="description" name="description" rows="7" ></textarea>
             </Row>
             <input type="text" name="loc" id="loc"></input> {/* pas touche a sa */}
             <input type="text" name="mv" id="mv"></input>
             
             
-            <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required></input>
-                    <label className="form-check-label" for="confirm" >Je confirme ces informations</label>
+            
             <div className="addAnonce_div"><Button  id="submit" className="btn addAnonce_btn"disabled>Ajouter l'annonce</Button></div> {/* NE PAS METTRE DE INPUT SUBMIT */}
         </form>
     </div>

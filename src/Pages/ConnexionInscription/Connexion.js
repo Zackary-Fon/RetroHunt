@@ -22,6 +22,7 @@ const Connexion = () =>{
             <Row className="justify-content-md-center justify-content-sm-center justify-content-xs-center">
                 <Button  id="submit" className="btn-customize">Go !</Button>{/* fetch fonctionne mieux avec un a */}
             </Row>
+            <p id="erreur"></p>
         </div>
     )
 }
