@@ -1,29 +1,53 @@
 import React, {useState, useEffect} from "react";
 import {ObjectProduct} from "../../Rooting/const";
 import {Link} from "react-router-dom";
+import "./Categorie.css";
+
 const Categorie = ({match}) => {
-    // recupérer category du produit
-    const {params: title } = match;
-    console.log(match);
-    const[data,setdata]=useState([])
-    useEffect(async () => {
+    console.log(match)
+    
+    const[data,setdata]=useState([]);
      const user={
          title:match.params.title
      };
-
+     
      const formjs=JSON.stringify(user)
+     
+    useEffect(async () => {
+        if(match.params.title !== "Jeux"){
         fetch("http://localhost:3006/categorie",{ method: "POST",
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin":"http://localhost:3006/categorie"
-        }, body:formjs})
+        },body:formjs
+                })
         .then(response => {response.json().then(json => {
-                console.log(json)
-                setdata(json)
-                },
-        )})
-    });
+            console.log('cat')
+            console.log(data)
+            setdata(json)
+        })})
+     }
+    else{
+        fetch("http://localhost:3006/all",{ method: "GET",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin":"http://localhost:3006/all"
+        }
+                })
+        .then(response => {response.json().then(json => {
+            //console.log('all')
+            console.log(data)
+            setdata(json)
+        })})
+    }})
+    
+    console.log( data) 
+
+    // recupérer id du produit
+    const {params: title } = match;
+    console.log(match);
     const categorieResult = data.map((produit) => {
             
                 return(
@@ -41,7 +65,7 @@ const Categorie = ({match}) => {
             
         })
     return (
-            <div>
+            <div className="Contain">
             {categorieResult}
             </div>
     )

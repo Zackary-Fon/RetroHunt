@@ -8,7 +8,7 @@ const BigMenuDropdown = ()=>{
     const titleGames = BigMenuItems.map((any, index)=> {
         if (index == 0 ){
             return (
-                    <Link key={any.id} to={`${any.path}/${any.title}`}>{any.title}</Link>
+                    <Link key={any.id} to={`/Categorie/${any.title}`}>{any.title}</Link>
             )
         }
     });
@@ -16,7 +16,7 @@ const BigMenuDropdown = ()=>{
     const thirstColumn = BigMenuItems.map((any, index)=> {
         if (index > 0 && index < 12 ){
             return (
-                    <Link key={any.id} to={`${any.path}/${any.title}`}>{any.title}</Link>
+                    <Link key={any.id} to={`/Categorie/${any.title}`}>{any.title}</Link>
             )
         }
     });
@@ -24,7 +24,7 @@ const BigMenuDropdown = ()=>{
     const titleConsoles = BigMenuItems.map((any, index)=> {
         if (index == 12 ){
             return (
-                    <Link key={any.id} to={`${any.path}/${any.title}`}>{any.title}</Link>
+                    <Link key={any.id} to={`/Categorie/${any.title}`}>{any.title}</Link>
             )
         }
     });
@@ -32,7 +32,7 @@ const BigMenuDropdown = ()=>{
     const secondColumn = BigMenuItems.map((any, index)=> {
         if (index > 12 ){
             return (
-                    <Link key={any.id} to={`${any.path}/${any.title}`}>{any.title}</Link>
+                    <Link key={any.id} to={`/Categorie/${any.title}`}>{any.title}</Link>
             )
         }
     });

@@ -26,13 +26,16 @@ Date.addEventListener('keyup',()=>{
         console.log("date trop grande")
     }
 })
-
-btncheck.addEventListener('click',()=>{
+document.getElementById('myForm').addEventListener('change',()=>{
      if(Titre.value !="" && (Date.value>1900 && Date.value < 2010) &&
-    Prix.value !="" && Etat.value!="" && Console.value !=""
+    Prix.value !="" && Etat.value!=" " && Console.value !=" "
     && description.value!="" && photo.value != ""){
+        console.log("OK")
         sub.disabled=false;
-    } 
+    }else{
+        console.log("vas te faire");
+        sub.disabled=true;
+    }
 })
 
 

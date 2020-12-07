@@ -8,6 +8,7 @@ const Profil = () => {
     useEffect(()=>{
         fetcha()
     })
+    
     return(
         <div className="Card">
             <div className="CardHeader">

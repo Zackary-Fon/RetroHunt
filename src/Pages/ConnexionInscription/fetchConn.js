@@ -26,14 +26,18 @@ const config = { //configuration fetch
 fetch(URL, config) //instancier la fetch
   .then(response => { //après que la fetch est faite je fais :
     response.json().then(json => { //transformation de la reponse en json
-        if (json=="mauvais"){ //gestion erreur
+        if (json==="mauvais"){ //gestion erreur
           console.log("wrong password")
-        }
-        if (json=="not found"){
+          document.getElementById("erreur").innerHTML="Erreur Mot de passe"
+        }else
+        if (json==="not found"){
             console.log("User not found")
-        }
-        if(json==undefined)
-        {console.log('pb')}
+            document.getElementById("erreur").innerHTML="User not found"
+        }else
+        if(json===undefined)
+        {console.log('pb')
+        document.getElementById("erreur").innerHTML="pb"
+      }
         else{
       const token=json.accessToken;
       console.log(token)

@@ -66,31 +66,30 @@ const Formulaire = () =>{
                     <Form.Label for="Console">Console</Form.Label> 
                     <select type="text" as="select" name="Console" id="console" className="input-custom">
                         <option value=" "> </option>
-                        <option value="play1">Playstation 1</option>
-                        <option value="play2">Playstation 2</option>
-                        <option value="xbox">Xbox</option>
-                        <option value="GameCube">Gamecube</option>
-                        <option value="N64">Nintendo 64</option>
-                        <option value="NES">Nes</option>
+                        <option value="Playstation 1">Playstation 1</option>
+                        <option value="Playstation 2">Playstation 2</option>
+                        <option value="Xbox">Xbox</option>
+                        <option value="Gamecube">Gamecube</option>
+                        <option value="Nintendo 64">Nintendo 64</option>
+                        <option value="Nes">Nes</option>
                         <option value="MegaDrive">MegaDrive</option>
-                        <option value="GameBoy">GameBoy</option>
-                        <option value="SuperNes">Super Nes</option>
-                        <option value="NEOGEO">NEO GEO </option>
+                        <option value="Gameboy">GameBoy</option>
+                        <option value="Super Nes">Super Nes</option>
+                        <option value="Neo Geo">NEO GEO </option>
                         <option value="Atari">Atari</option>
                     </select>
             </Row>
         
 
             <Row className="justify-content-center column" >
-                <label for="description" id="description"><h3>Description de l'article</h3></label>
+                <label for="description" id="Description"><h3>Description de l'article</h3></label>
                 <textarea id="description" name="description" rows="7" ></textarea>
             </Row>
             <input type="text" name="loc" id="loc"></input> {/* pas touche a sa */}
             <input type="text" name="mv" id="mv"></input>
             
             
-            <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required></input>
-                    <label className="form-check-label" for="confirm" >Je confirme ces informations</label>
+            
             <div className="addAnonce_div"><Button  id="submit" className="btn addAnonce_btn"disabled>Ajouter l'annonce</Button></div> {/* NE PAS METTRE DE INPUT SUBMIT */}
         </form>
     </div>

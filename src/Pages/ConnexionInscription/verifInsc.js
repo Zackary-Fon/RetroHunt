@@ -74,14 +74,15 @@ mdp2.addEventListener("keyup", ()=>{
 
 });
 
-sub.addEventListener("click",()=>{
+document.getElementById('form').addEventListener('change',()=>{
     console.log(mdp.classList)
     if(mdp.classList.contains('is-valid') && mdp2.classList.contains('is-valid') && name.classList.contains('is-valid')
-    && prenom.classList.contains('is-valid')&&email.classList.contains('is-valid') ){
+    && prenom.classList.contains('is-valid')&&email.classList.contains('is-valid')&&sub.checked==true ){
         btnsub.disabled = false
     }
     else{
         console.log("retry")
+        btnsub.disabled = true
     }
 })
 
