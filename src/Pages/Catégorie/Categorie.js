@@ -7,13 +7,14 @@ const Categorie = ({match}) => {
     console.log(match)
     
     const[data,setdata]=useState([]);
-    if(match.params.title != "Jeux"){
      const user={
          title:match.params.title
      };
      
      const formjs=JSON.stringify(user)
+     
     useEffect(async () => {
+        if(match.params.title !== "Jeux"){
         fetch("http://localhost:3006/categorie",{ method: "POST",
         headers: {
             "Accept": "application/json",
@@ -22,10 +23,11 @@ const Categorie = ({match}) => {
         },body:formjs
                 })
         .then(response => {response.json().then(json => {
-            
+            console.log('cat')
+            console.log(data)
             setdata(json)
         })})
-    }); }
+     }
     else{
         fetch("http://localhost:3006/all",{ method: "GET",
         headers: {
@@ -35,12 +37,13 @@ const Categorie = ({match}) => {
         }
                 })
         .then(response => {response.json().then(json => {
-            
+            //console.log('all')
+            console.log(data)
             setdata(json)
         })})
-    }
+    }})
     
-    //console.log( data) 
+    console.log( data) 
 
     // recupérer id du produit
     const {params: title } = match;

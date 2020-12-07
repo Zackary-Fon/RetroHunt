@@ -1,40 +1,32 @@
 
 import React, {useState} from "react";
-import {ObjectProduct} from "../../Rooting/const";
+import Search,{AnnFilt} from "../../Header/Search";
+import {Link} from "react-router-dom";
 
 
-
-
-const Search = ()=>{
-    const [recherche, majRecherche] = useState("");
-    const getValue = (e) =>{
-        let recherche = e.currentTarget.value;
-        majRecherche(recherche);
-    };
-    const [show, setShow] = useState(false);
-    const showSearch = () =>{
-        if (recherche !== ""){
-            setShow(!show)
-        }
-    };
-    const Searching = (txt) =>{
-        if (show){
-            ObjectProduct.filter(produit => produit.name === txt).map(filteredProduit => (
-                <li>
-                    {filteredProduit.name}
+    const Searching = () =>{
+        const SearchResult = AnnFilt.map((produit) => {
+            
+            return(
+                <li key={produit._id} className="imageIntitule">
+                <div className="imageProduit" style={{background: `url(${produit.image[0]})`, backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundSize:"cover", width:"100%", height:"200px"}}/>
+                <div className="intituleAnnonce">
+                <h1>{produit.Titre}</h1>
+                <h3>console: {produit.Console}</h3>
+                <p className="PersonPubli"> {produit.PseudoVendeur}</p>
+                <h4>prix : {produit.Prix}</h4>
+                <Link to={`/Product/${produit._id}`}><div className="bouton">Voir la fiche</div></Link>
+                </div>
                 </li>
-                
-            ))
-        } else return null
-    };
+            )
+        
+    })
+return (
+        <div className="Contain">
+        {SearchResult}
+        </div>
+)
 
-
-    return (
-        <>
-        <input type="text" placeholder="Recherchez" className="searchbar" onChange={(e)=>{getValue(e)}} />
-        <Searching showSearch={show} txt={recherche}></Searching>
-        </>
-    )
 }
 
-export default Search;
+export default Searching;

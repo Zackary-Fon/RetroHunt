@@ -9,7 +9,6 @@ const Searchbar = () =>{
             <div className="icon">
                 <i class="fas fa-search"></i>
             </div>
-            <Search/>
         </div>
     )
 }

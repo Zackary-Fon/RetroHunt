@@ -58,7 +58,7 @@ const Product = ({match}) => {
                             
                         </div>
                         <div id="contact">
-                        <button className="bn">Contacter le vendeur</button>
+                        <Link to={`/Contact/${produit.PseudoVendeur}`}><button className="bn">Contacter le vendeur</button></Link>
                         <Link id="chiant">Signaler l'annonce</Link>
                         </div>
                         

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import logo_dm from '../Images/logo_retrohunt_darkmodecolor1.png';
 // import HeadMenu from './Menu';
 import './Header.css';
@@ -10,8 +10,12 @@ import FormControl from 'react-bootstrap/FormControl';
 // import Burger from './Burger';
 import {Link} from "react-router-dom";
 import List from "./ListMenu";
+import Search from "./Search";
 
 const Header = () => {
+    useEffect(()=>{
+        Search()
+    })
     return ( 
     <header>
             <Navbar className="menu_head  mr-auto" expand="lg">
@@ -22,8 +26,8 @@ const Header = () => {
                     <List/>
                 </Nav>
             <Form inline>
-                <Button variant="btn btn-custom"><i className="fas fa-search"></i></Button>
-                <FormControl type="text" placeholder="Rechercher" className="mr-sm-2" />
+            <Link to={`/Search`} ><Button variant="btn btn-custom"><i className="fas fa-search"></i></Button></Link>
+                <FormControl type="text" id="searchBar" placeholder="Rechercher" className="mr-sm-2" />
             </Form>
             <Nav>
                 <Nav.Link id="deco" > Déconnexion</Nav.Link>
