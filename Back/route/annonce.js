@@ -1,4 +1,4 @@
-const {home,CreateAnn,GetPlay,Getall,Getdate,Getid} = require('../controllers/controller-annonce');
+const {home,CreateAnn,GetPlay,Getall,Getdate,Getid,Getidbyuser} = require('../controllers/controller-annonce');
 const {CreateUser,GetUser,Log, authenticateToken,deleteUser}= require('../controllers/controller-user');
 const express=require('express');
 const { route } = require('../app/app');
@@ -25,7 +25,8 @@ router.route('/date')
     .get(Getdate)
 router.route('/id')
 .post(Getid)
-
+router.route('/idUser')
+.post(Getidbyuser)
 router.route('/login')
     .post(Log)
 router.route('/auth')

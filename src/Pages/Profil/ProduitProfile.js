@@ -1,35 +1,35 @@
 import React,{useEffect,useState} from "react";
-import {ObjectProduct} from "../../Rooting/const";
-import './Product.css';
 import {Link} from "react-router-dom";
 import chevronGauche from "../../Images/chevronGauche.png";
 import chevronDroite from "../../Images/chevronDroite.png";
 
-const Product = ({match}) => {
+const Produit = ({match}) => {
     console.log(match.params.id)
      const[data,setdata]=useState([]);
+     console.log(data)
      const user={
          _id:match.params.id
      };
      console.log(user)
      const formjs=JSON.stringify(user)
     useEffect(async () => {
-        fetch("http://localhost:3006/id",{ method: "POST",
+        fetch("http://localhost:3006/idUser",{ method: "POST",
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin":"http://localhost:3006/id"
+            "Access-Control-Allow-Origin":"http://localhost:3006/idUser"
         },body:formjs
                 })
         .then(response => {response.json().then(json => {
             console.log(json)
-            setdata(json)
+            setdata([json])
         })})
     });
-    console.log( data) 
+    console.log(data) 
 
     // recupérer id du produit
     const {params: id } = match;
+    console.log(match)
     // afficher les infos
     const ShowProduct = () => {
         // récupérer dans le tableau les détails du produit avec un if pour correspondre à l'id
@@ -68,12 +68,10 @@ const Product = ({match}) => {
         })
         return ProduitResult
     }
-    
-    console.table(ObjectProduct);
     return (<div>
         {ShowProduct()}
         
     </div>)
 }
 
-export default Product;
+export default Produit;

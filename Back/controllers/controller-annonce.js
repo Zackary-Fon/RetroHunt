@@ -79,10 +79,30 @@ module.exports = {
         })
     },
     Getid(req, res) {
+        console.log(req.body)
         Annonce.find({
             _id: req.body._id
         }).then((anno) => {
+            console.log(anno)
             res.send(anno)
+        })
+    },
+    Getidbyuser(req, res) {
+        const ppp=[];
+
+       User.find({
+             Annonces:  {$elemMatch :{_id:req.body._id}}
+        }).then((anno) => {
+            //console.log(anno[0].Annonces)
+            for(let i=0;i<anno[0].Annonces.length;i++){
+                
+                if(anno[0].Annonces[i]._id==req.body._id){
+                    console.log(anno[0].Annonces[i])
+                    res.json(anno[0].Annonces[i])
+                }
+                //ppp.push(anno[0].Annonces[i]);
+            }
+            //res.json(ppp)
         })
     },
     home(req, res) {

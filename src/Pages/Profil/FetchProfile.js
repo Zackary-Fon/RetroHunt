@@ -30,8 +30,11 @@ const bb=JSON.stringify(local);
                 const div=document.createElement('div');
                 const img = document.createElement('img');
                 const span2 = document.createElement('span');
-                const btn=document.createElement('button');
-                const btn2=document.createElement('button')
+                const btn=document.createElement('a');
+                const btn2=document.createElement('a');
+                const title=json.Annonces[i]._id;
+                //console.log("\""+title+"\"");
+                console.log(json.Annonces[i]._id)
                 ann.appendChild(div);
                 div.appendChild(img);
                 
@@ -44,6 +47,8 @@ const bb=JSON.stringify(local);
                 span2.innerHTML =json.Annonces[i].Titre;
                 btn.innerHTML="Y Acceder";
                 btn2.innerHTML="Modifier";
+                btn2.setAttribute('href',"/modification");
+                btn.setAttribute('href',"/Produit/"+title);
                 btn2.setAttribute('class',"modif");
                 btn.setAttribute('class',"acces");
             /* btn.setAttribute('href',) */
@@ -53,8 +58,8 @@ const bb=JSON.stringify(local);
                     const div=document.createElement('div');
                     const img = document.createElement('img');
                     const span2 = document.createElement('span');
-                    const btn=document.createElement('button');
-                    const btn2=document.createElement('button')
+                    const btn=document.createElement('a');
+                    const btn2=document.createElement('a')
                     ann.appendChild(div);
                     div.appendChild(img);
                     
@@ -67,6 +72,7 @@ const bb=JSON.stringify(local);
                     span2.innerHTML =json.Annonces[i].Titre;
                     btn.innerHTML="Y Acceder";
                     btn2.innerHTML="Modifier";
+                    btn.setAttribute('src','/Product/${produit._id}`')
                     btn2.setAttribute('class',"modif");
                     btn.setAttribute('class',"acces");
                     //btn.classList.add("acces")
