@@ -1,13 +1,7 @@
 import React,{useEffect,useState} from "react";
 import {ObjectProduct} from "../../Rooting/const";
 import './Product.css';
-<<<<<<< HEAD
 import '../../general.css'
-=======
-import {Link} from "react-router-dom";
-import chevronGauche from "../../Images/chevronGauche.png";
-import chevronDroite from "../../Images/chevronDroite.png";
->>>>>>> 50757e178638b06e7d51b5b2a46fbbdd4c2ba50b
 
 const Product = ({match}) => {
     console.log(match.params.id)
