@@ -3,7 +3,10 @@ const app = express();
 const UsersRoutes = require('../route/annonce')
 const bodyParser = require('body-parser')
 const cors= require('cors');
-
+var corsOptions={
+  origin:"http://localhost:3000" //URL front
+}
+app.use(cors(corsOptions))
 app.set('view engine','ejs');
 app.use(bodyParser.json());
 app.use(express.json());

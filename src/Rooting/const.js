@@ -6,8 +6,8 @@ import Profil from "../Pages/Profil/Profil";
 import Searching from "../Pages/Search/Search";
 import Categorie from "../Pages/Catégorie/Categorie";
 import ref from "../Pages/AjouterAnnonce/referentiel";
-
 import Produit from "../Pages/Profil/ProduitProfile";
+import Modification from "../Pages/Profil/Modification";
 
 import Crash_Bandicoot1 from "./ImagesProduits/Crash_Bandicoot1.jpg";
 import Spyro1 from "./ImagesProduits/Spyro1.jpg";
@@ -32,7 +32,8 @@ const tabRoutes = [
 {id:8, name:"SuppProfil", path:"/DeleteProfile", component:SuppProfil},
 {id:9,name:"Referentiel", path:"/Referentiel", component:ref},
 {id:10,name:"Contact", path:"/Contact", component:contact},
-{id:5, name:"Produit", path:"/Produit/:id", component:Produit},
+{id:11, name:"Produit", path:"/Produit/:id", component:Produit},
+{id:12, name:"Modification", path:"/Modification/:id", component:Modification},
 ]
 export default tabRoutes;
 

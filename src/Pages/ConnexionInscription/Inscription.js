@@ -16,6 +16,7 @@ const Inscription=()=>{
     
     return(
         <div>
+            <p id="error"></p>
             <form  id="form" method="POST"  >
                 <Row className="input-customize">
                     <input type="text" className="form-control" placeholder="Nom" name="Nom" id="Nom" ></input>

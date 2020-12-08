@@ -33,6 +33,14 @@ document.getElementById('myForm').addEventListener('change',()=>{
         console.log("OK")
         sub.disabled=false;
     }else{
+        console.log(Titre.value);
+        console.log(Date.value)
+        console.log(Prix.value)
+        console.log(Etat.value)
+        console.log(Console.value)
+        
+        console.log(description.value)
+        console.log(photo.value)
         console.log("vas te faire");
         sub.disabled=true;
     }

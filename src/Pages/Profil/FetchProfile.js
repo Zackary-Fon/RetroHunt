@@ -3,7 +3,7 @@ const URL="http://localhost:3006/auth"
 
 const fetcha=()=>{
 const local={
-    token: localStorage.Token,
+    token: sessionStorage.Token,
 }
 const bb=JSON.stringify(local);
     const config = {
@@ -47,7 +47,7 @@ const bb=JSON.stringify(local);
                 span2.innerHTML =json.Annonces[i].Titre;
                 btn.innerHTML="Y Acceder";
                 btn2.innerHTML="Modifier";
-                btn2.setAttribute('href',"/modification");
+                btn2.setAttribute('href',"/Modification/"+title);
                 btn.setAttribute('href',"/Produit/"+title);
                 btn2.setAttribute('class',"modif");
                 btn.setAttribute('class',"acces");
@@ -59,10 +59,10 @@ const bb=JSON.stringify(local);
                     const img = document.createElement('img');
                     const span2 = document.createElement('span');
                     const btn=document.createElement('a');
-                    const btn2=document.createElement('a')
+                    const btn2=document.createElement('a');
                     ann.appendChild(div);
                     div.appendChild(img);
-                    
+                    const title=json.Annonces[i]._id;
                     div.appendChild(span2);
                     div.appendChild(btn);
                     div.appendChild(btn2)
@@ -72,7 +72,9 @@ const bb=JSON.stringify(local);
                     span2.innerHTML =json.Annonces[i].Titre;
                     btn.innerHTML="Y Acceder";
                     btn2.innerHTML="Modifier";
-                    btn.setAttribute('src','/Product/${produit._id}`')
+                    btn.setAttribute('href','/Product/'+title),
+                    
+                    btn2.setAttribute('href','/Modification/'+title)
                     btn2.setAttribute('class',"modif");
                     btn.setAttribute('class',"acces");
                     //btn.classList.add("acces")
