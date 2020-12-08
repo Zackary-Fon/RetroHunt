@@ -4,7 +4,7 @@ const URL2 = "http://localhost:3006/auth";
 
 const recup = () => {
     const local = {
-        token: localStorage.Token,
+        token: sessionStorage.Token,
     }
     console.log(local)
     const bb = JSON.stringify(local);

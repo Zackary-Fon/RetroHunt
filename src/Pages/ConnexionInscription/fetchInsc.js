@@ -27,11 +27,19 @@ const config = { // options d'envoie de la fetch
 fetch(URL, config)  //mise en place de la fetch
   .then(response => {  
     response.json().then(json => {// quand j ai une reponse alors j affiche dans la console le json envoyé
-      if (response == 404){
-        return(<h1>WRONG PASSWORD</h1>)}
-        else{
+      if (json == "L'utilisateur existe déjà"){
+        document.getElementById('error').innerHTML=json;
+        }
+        if (json == "ce n est pas des données possible"){
+          document.getElementById('error').innerHTML=json;
+          } 
+          if (json == "vide"){
+            document.getElementById('error').innerHTML=json;
+            }
+        else if(json=="Ok"){
           console.log(json)
-          document.location.href="/"
+document.getElementById('error').style.style="none";
+          document.location.href="/ConnexionInscription"
         }
   })})
   

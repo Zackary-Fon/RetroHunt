@@ -41,8 +41,8 @@ fetch(URL, config) //instancier la fetch
         else{
       const token=json.accessToken;
       console.log(token)
-      localStorage.setItem("Token",json.accessToken)
-      console.log(localStorage.Token)
+      sessionStorage.setItem("Token",json.accessToken)
+      console.log(sessionStorage.Token)
       document.location.href="/Profil"
         }
   })})

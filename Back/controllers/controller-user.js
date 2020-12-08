@@ -8,14 +8,17 @@ const jwt = require('jsonwebtoken');
 
 module.exports = {
     async CreateUser(req, res) {
-        console.log(req.body)
+        if(req.body !=[]){
            User.findOne({
                 email: req.body.email
             }).then((us)=>{
                 if(us != null){
-                    console.log(us)
+                console.log(us)
                 res.json("L'utilisateur existe déjà");
             } else {
+                const mail=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                const paswd= /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+                if(mail.test(req.body.email) && paswd.test(req.body.Password))  {
                 const user = new User({
                     email: req.body.email,
                     Password: req.body.Password,
@@ -28,8 +31,16 @@ module.exports = {
                 console.log('user saved');
                 user.save();
                 res.json("Ok");
+            }else{
+                console.log("ce n est pas des données possible")
+            }
             }
         })
+    
+    }else  {
+        console.log("vide");
+        res.json('vide')
+    }
     },
     GetUser(req, res) {
         User.findOne({
@@ -67,7 +78,7 @@ module.exports = {
 
     },
     authenticateToken(req, res,next) {
-        const token = req.body.token
+        const token = req.body.token;
         if (token == null) {
             return res.sendStatus(401)
         }

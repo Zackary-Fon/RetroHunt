@@ -10,6 +10,7 @@ const upload = require('../image/multer')
 const fs = require('fs')
 module.exports = {
     async CreateAnn(req, res) {
+        if(req.body != []){
         const uploader = async (path) => await cloudinary.uploads(path, 'Images');
         if (req.method === 'POST') {
             const files = req.files
@@ -57,7 +58,11 @@ module.exports = {
             console.log("error");
             res.send("error");
 
-        }
+        }}
+    else {
+        console.log('vide');
+        res.json('vide')
+    }
     },
     GetPlay(req, res) {
         Annonce.find({
@@ -105,7 +110,38 @@ module.exports = {
             //res.json(ppp)
         })
     },
-    home(req, res) {
-        res.render('index')
+    UpdateAnn(req,res){
+        console.log(req.body)
+        User.findOne({
+            Pseudo:  req.body.Prenom}
+        ).then((anno) => { 
+            console.log(anno.Annonces.length)
+       for(let i=0;i<anno.Annonces.length;i++){
+            if(anno.Annonces[i]._id==req.body._id){
+                console.log(anno.Annonces[i])
+                User.updateOne({
+                email:anno.email
+                }, {
+                    $addToSet: {
+                        "Annonces": anno.Annonces[i]
+                    }
+            } ).then((user)=>{
+                console.log(user);
+                console.log('ok')
+            })
+           }
+        }
     }
+        ) 
+    },
+   deleteAnn(req,res){
+    User.findOne({
+        Pseudo:  req.body.Prenom}
+    ).then((anno) => { 
+        console.log(anno.Annonces.length)
+   for(let i=0;i<anno.Annonces.length;i++){
+        if(anno.Annonces[i]._id==req.body._id){
+            console.log('j en ai marre')
+        }}})
+   }
 }
