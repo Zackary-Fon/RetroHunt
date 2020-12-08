@@ -84,11 +84,9 @@ module.exports = {
         })
     },
     Getid(req, res) {
-        console.log(req.body)
         Annonce.find({
             _id: req.body._id
         }).then((anno) => {
-            console.log(anno)
             res.send(anno)
         })
     },
@@ -102,7 +100,6 @@ module.exports = {
             for(let i=0;i<anno[0].Annonces.length;i++){
                 
                 if(anno[0].Annonces[i]._id==req.body._id){
-                    console.log(anno[0].Annonces[i])
                     res.json(anno[0].Annonces[i])
                 }
                 //ppp.push(anno[0].Annonces[i]);
@@ -135,13 +132,10 @@ module.exports = {
         ) 
     },
    deleteAnn(req,res){
-    User.findOne({
-        Pseudo:  req.body.Prenom}
+    Annonce.deleteOne({
+        email:  req.body.email}
     ).then((anno) => { 
-        console.log(anno.Annonces.length)
-   for(let i=0;i<anno.Annonces.length;i++){
-        if(anno.Annonces[i]._id==req.body._id){
-            console.log('j en ai marre')
-        }}})
+       console.log("ok")
+        })
    }
 }

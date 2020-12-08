@@ -12,8 +12,8 @@ const Product = ({match}) => {
      };
      console.log(user)
      const formjs=JSON.stringify(user)
-    useEffect(async () => {
-        fetch("http://localhost:3006/id",{ method: "POST",
+    useEffect( () => {
+         fetch("http://localhost:3006/id",{ method: "POST",
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
@@ -21,7 +21,6 @@ const Product = ({match}) => {
         },body:formjs
                 })
         .then(response => {response.json().then(json => {
-            console.log(json)
             setdata(json)
         })})
     });
@@ -39,7 +38,7 @@ const Product = ({match}) => {
                     <div className="bodyProduct">
                         {/*Là on met le chemin comme sur le figma*/}
 
-                        <div className="back_btn"><Link to="/"><i class="fas fa-chevron-left"></i> Retour</Link></div>
+                        <div className="back_btn"><Link to="../"><i class="fas fa-chevron-left"></i> Retour</Link></div>
                         <div className="Images">
                                 <h1>{produit.Titre}</h1>
                                 <img className="imageP" src={produit.image[0]} alt="produit"/>

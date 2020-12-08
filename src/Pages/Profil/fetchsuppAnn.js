@@ -4,12 +4,8 @@ const URL='http://localhost:3006/delete/annonce'
 const fetchy=()=>{
     console.log('slip')
     const modif={
-        Titre:document.getElementById('titre').value,
-        Console:document.getElementById('Console').value,
-        Etat: document.getElementById('Etat').value,
-        Prix: document.getElementById('Prix').value,
-        PseudoVendeur: document.getElementById('PseudoVendeur').value,
-        _id:document.getElementById('ID').value
+        email: document.getElementById('PseudoVendeur').value,
+        
     }
     const js=JSON.stringify(modif)
 const config={method: "POST",

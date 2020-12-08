@@ -17,7 +17,7 @@ const fetcho=()=>{
     .then(response => response.json().then((response)=>{//quand je recois la reponse et que je la json
         if(response=="OK")//res.json("OK") //gestion erreur
         {
-            document.location.href="./"
+            document.location.href="/Profil"
         }
         else{
             console.log(response)

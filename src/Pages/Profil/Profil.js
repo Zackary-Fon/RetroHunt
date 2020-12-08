@@ -6,7 +6,10 @@ import fetcha from "./FetchProfile";
 const Profil = () => {
 
     useEffect(()=>{
-        fetcha()
+        fetcha();
+       
+           // fetchu();
+            
     })
     
     return(
@@ -36,7 +39,6 @@ const Profil = () => {
             
                 
             </div>
-            <Link>Afficher plus</Link>
         </div>
     )
 }
