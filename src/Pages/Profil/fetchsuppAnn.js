@@ -1,23 +1,32 @@
 import react from "react"
 const URL='http://localhost:3006/delete/annonce'
 
-const fetchy=()=>{
-    console.log('slip')
-    const modif={
-        email: document.getElementById('PseudoVendeur').value,
-        
-    }
-    const js=JSON.stringify(modif)
-const config={method: "POST",
-headers: {
-    "Accept": "application/json", //j'accepte de recevoir du json
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin":"http://localhost:3006/delete/annonce"
-},body:js}
-fetch(URL, config) //instannciation
-    .then(response => response.json().then((response)=>{
-console.log(response)
-    }))
+const delet=()=>{
+    
+    console.log("TEST SUPP")
+    const del=document.querySelectorAll('.del');
+    del.forEach((element)=> {
+        element.addEventListener('click',()=>{
+        console.log("TEST SUPP2")
+        const modif={
+            id:element.value
+        }
+        console.log(modif)
+        const js=JSON.stringify(modif)
+    const config={method: "POST",
+                    headers: {
+                    "Accept": "application/json", //j'accepte de recevoir du json
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin":"http://localhost:3006/delete/annonce"
+                    },
+                    body:js}
+     fetch("http://localhost:3006/delete/annonce", config) 
+        .then(response => response.json().then((response)=>{
+    console.log(response)
+        }))
+    } 
+    
+)})
+}
 
-    }
-export default fetchy;
+export default delet

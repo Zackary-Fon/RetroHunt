@@ -10,7 +10,7 @@ const jwt = require('jsonwebtoken');
 module.exports = {
     GetAnn(req,res){
         console.log(req.body)
-        Annonce.findOne({
+        Annonce.find({
             MailVendeur: req.body.email
         }).then((is)=>{
             res.send(is)

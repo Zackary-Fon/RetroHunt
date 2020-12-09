@@ -10,6 +10,7 @@ const upload = require('../image/multer')
 const fs = require('fs')
 module.exports = {
     async CreateAnn(req, res) {
+        console.log(req.body)
         if(req.body != []){
         const uploader = async (path) => await cloudinary.uploads(path, 'Images');
         if (req.method === 'POST') {
@@ -41,7 +42,7 @@ module.exports = {
             });
             console.log('annonce postée');
             ann.save();
-            User.findOne({
+           /*  User.findOne({
                 email: req.body.mv
             }).then((user) => {
                 User.updateOne({
@@ -52,7 +53,7 @@ module.exports = {
                     }
                 }).then((user) => {})
                 console.log('add to user')
-            })
+            }) */
             res.json("OK");
         } else {
             console.log("error");
@@ -133,7 +134,7 @@ module.exports = {
     },
    deleteAnn(req,res){
     Annonce.deleteOne({
-        MailVendeur:  req.body.email}
+        _id:  req.body.id}
     ).then((anno) => { 
        console.log("ok")
         })
