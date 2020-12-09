@@ -52,7 +52,7 @@ module.exports = {
     }
     },
     GetUser(req, res) {
-        User.findOne({
+        User.find({
             email:req.user.User.email // recherche d un utilisateur grace au token 
         }).then((user) => {
             res.json(user) //renvoie de l utilisateur

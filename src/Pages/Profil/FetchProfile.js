@@ -20,12 +20,13 @@ const bb=JSON.stringify(local);
     .then(response => {
         response.json().then(json => {
             const ann=document.querySelector('.Annonces');
-        document.querySelector('#prenom').innerHTML=json.Prenom;
-           document.querySelector('#nom').innerHTML=json.Nom;
-            document.querySelector('#email').innerHTML=json.email; 
+            console.log(json[0].Prenom)
+        document.querySelector('#prenom').innerHTML=json[0].Prenom;
+           document.querySelector('#nom').innerHTML=json[0].Nom;
+            document.querySelector('#email').innerHTML=json[0].email; 
             const p=document.createElement('a');
             ann.appendChild(p);
-            const title=json.email
+            const title=json[0].email
             p.setAttribute('href',"/Annonce/"+title);
             p.innerHTML="Annonces"
             /* if(json.User.PhotoProfil !==""){

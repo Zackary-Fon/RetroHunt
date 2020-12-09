@@ -133,7 +133,7 @@ module.exports = {
     },
    deleteAnn(req,res){
     Annonce.deleteOne({
-        email:  req.body.email}
+        MailVendeur:  req.body.email}
     ).then((anno) => { 
        console.log("ok")
         })
