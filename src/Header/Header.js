@@ -12,6 +12,8 @@ import {Link} from "react-router-dom";
 import List from "./ListMenu";
 import Search from "./Search";
 
+import Alert from 'react-bootstrap/Alert';
+
 const Header = () => {
     useEffect(()=>{
         Search()
@@ -35,7 +37,9 @@ const Header = () => {
             {/* <HeadMenu/>
             <Burger/> */}
             </Navbar>
-
+            <Alert className="deco" variant={'danger'}>
+    vosu etes 
+  </Alert>
     </header>
     )
 }

@@ -3,8 +3,10 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import  fetchie from "./fetchInsc";
 import "./ConnexionInscription.css";
- import verif from "./verifInsc" 
-import eye from './eye'
+ import verif from "./verifInsc" ;
+import eye from './eye';
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip"
 
 const Inscription=()=>{
     
@@ -14,6 +16,11 @@ const Inscription=()=>{
         eye()
     })
     
+    const renderTooltip = props => (
+        <Tooltip {...props}>Le mot de passe doit contenir uen majuscule,
+        une chiffre , un caractere special et doit contenir 8 caracteres</Tooltip>
+      );
+
     return(
         <div>
             <p id="error"></p>
@@ -29,6 +36,11 @@ const Inscription=()=>{
                 </Row>
                 <Row className="input-customize">
                     <input type="password" className="form-control" placeholder="Mot de Passe" name="Password" id="Password"></input>
+                    </Row>
+                <Row>
+                    <OverlayTrigger placement="top" overlay={renderTooltip}>
+                        <Button>?</Button>
+                    </OverlayTrigger>
                 </Row>
                 <div id="eyes">
                     <span  class="fa fa-fw fa-eye fa-eye-slash field-icon toggle-password"></span>
