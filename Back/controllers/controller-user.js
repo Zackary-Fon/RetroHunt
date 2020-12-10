@@ -59,6 +59,7 @@ module.exports = {
         })
     },
     Log(req, res) {
+        console.log(req.body)
         User.findOne({
             email: req.body.email  // je cherche mon user
         }).then((user) => {  
@@ -66,6 +67,7 @@ module.exports = {
                 bcrypt.compare(req.body.Password, user.Password, (function (error, same) { //je verifie son mot de pass
                     if (same == true) { // si c'est pareil
                         console.log('good password'); 
+                        console.log(user)
                         const People = { // j enregistre mon user dans un objet
                             User: user
                         };
