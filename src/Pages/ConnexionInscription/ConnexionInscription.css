@@ -12,6 +12,13 @@
     z-index: 2;
     margin-top: 5%;
 }
+#eyes{
+    
+    width: 8%;
+    margin-left: 97%;
+    margin-top: -10%;
+    margin-bottom: 13%;
+}
 
 .btn-customize:hover{
     color: #9ca3e2;

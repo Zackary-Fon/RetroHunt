@@ -29,8 +29,10 @@ const Inscription=()=>{
                 </Row>
                 <Row className="input-customize">
                     <input type="password" className="form-control" placeholder="Mot de Passe" name="Password" id="Password"></input>
-                    <span  class="fa fa-fw fa-eye fa-eye-slash field-icon toggle-password"></span>
                 </Row>
+                <div id="eyes">
+                    <span  class="fa fa-fw fa-eye fa-eye-slash field-icon toggle-password"></span>
+                </div>
                 <Row className="input-customize">
                     <input type="password"  className="form-control" placeholder="Confirmez le mot de passe" id="mdp2"></input>
                 </Row>

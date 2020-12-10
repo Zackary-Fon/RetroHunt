@@ -28,6 +28,7 @@ else{
     profil.style.display="none";
     annonce.style.display="none";
     deco.style.display="none";
+    document.location.href="/"
   })
   
 }
