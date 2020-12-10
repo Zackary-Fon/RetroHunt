@@ -98,3 +98,25 @@
     margin-left:23%
     
 }
+
+@media screen and (max-width:750px){
+    .us{
+        width:50%;
+    }
+    .nous{
+        font-size:1rem;
+    }
+    .title{
+        margin-left:22%;
+    }
+    .mario{
+        margin-left:10%
+    }
+    .Card{
+        height: 500px;
+    }
+    .News{
+        margin-top:10%;
+        margin-left:22%
+    }
+}

@@ -26,9 +26,32 @@ const bb=JSON.stringify(local);
             document.querySelector('#email').innerHTML=json[0].email; 
             const p=document.createElement('a');
             ann.appendChild(p);
-            const title=json[0].email
-            p.setAttribute('href',"/Annonce/"+title);
-            p.innerHTML="Annonces"
+            const title=json[0].email;
+            const j={
+                email:title
+            }
+            const jts=JSON.stringify(j)
+            console.log(jts)
+const conf={ method: "POST",
+headers: {
+"Accept": "application/json",
+"Content-Type": "application/json",
+"Access-Control-Allow-Origin":"http://localhost:3006/Profil/Annonce"
+},
+body:jts};
+fetch("http://localhost:3006/Profil/Annonce",conf)
+.then(response => response.json().then((json) => {
+    console.log(json)
+     if (json.length >0){
+        p.setAttribute('href',"/Annonce/"+title);
+        p.innerHTML="Annonces";
+        }else{
+             p.setAttribute('href',"/DeposerAnnonce");
+        p.innerHTML=" deposer une Annonces";
+        }  
+    
+}))
+            
             /* if(json.User.PhotoProfil !==""){
                 document.querySelector('#photo').innerHTML=json.User.PhotoProfil;} */
       })})

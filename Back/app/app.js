@@ -24,7 +24,7 @@ app.use(function(req, res, next) {
     next(err)
   })
 
-  io.sockets.on('connection', function (socket, pseudo) {
+  /* io.sockets.on('connection', function (socket, pseudo) {
     
     // Dès qu'on nous donne un pseudo, 
     //on le stocke en variable de session et on informe les autres personnes
@@ -41,7 +41,7 @@ app.use(function(req, res, next) {
         console.log(socket.pseudo+":"+message)
     }); 
 });
-
+ */
 
 app.use(express.static('views'));
 

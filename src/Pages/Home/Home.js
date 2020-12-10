@@ -15,8 +15,8 @@ const Home = () => {
     return (
     <div className="homeBody">
         <Row>
-            <Col><img src={home} /></Col>
-            <Col className="center"><p>Qui nous sommes:<br></br>
+            <Col><img class="us" src={home} /></Col>
+            <Col className="center"><p className="nous">Qui nous sommes:<br></br>
             3 grand passionnés de retro gaming qui pensent que, comme tout le monde, rechercher sur internet ne doit pas prendre des heures. 
             Alors ici se trouve une communauté qui partage la même passion! <br></br>
             </p></Col>
