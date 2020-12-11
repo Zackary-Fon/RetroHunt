@@ -58,11 +58,8 @@ const Product = ({match}) => {
                         <a href={`mailto:${produit.MailVendeur}`}><button className="bn">Contacter le vendeur</button></a>
                         <Link id="chiant">Signaler l'annonce</Link>
                         </div>
-                        
-                        
                     </div>
                 )
-           
         })
         return ProduitResult
     }
