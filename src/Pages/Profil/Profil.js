@@ -36,6 +36,7 @@ const Profil = () => {
                         <p id="prenom" className="firstname mb-0"></p>
                         <p id="nom" className="name mb-0"></p>
                         <p id="email" className="email mb-0"></p>
+                        <p id="localisation"></p>
                     </div>
                 </Col>
             </Row>

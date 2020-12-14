@@ -8,7 +8,7 @@ const UserSchema = new Schema({
     Password: String,
     Nom: String,
     Prenom: String,
-    Pseudo: String,
+    Localisation:String,
     PhotoProfil:String
 },{collection: "USER_COLLEC"})
 

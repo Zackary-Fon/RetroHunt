@@ -24,13 +24,17 @@ const bb=JSON.stringify(local);
             console.log(json[0].Prenom)
         document.querySelector('#prenom').innerHTML=json[0].Prenom;
            document.querySelector('#nom').innerHTML=json[0].Nom;
-            document.querySelector('#email').innerHTML=json[0].email; 
+            document.querySelector('#email').innerHTML=json[0].email;
+            if(json[0].Localisation !== undefined){
+                document.querySelector('#localisation').innerHTML=json[0].Localisation;
+            }
+            
             const p=document.createElement('a');
             const modif=document.createElement('a');
             ann.appendChild(p);
             ann2.appendChild(modif);
             const title=json[0].email;
-            modif.setAttribute('href',"/Modif/"+title);
+            modif.setAttribute('href',"/Modif/");
             modif.setAttribute('class',"profil_set");
             modif.innerHTML=" Modifier mon prodil";
             const j={

@@ -35,6 +35,7 @@ module.exports = {
                     Prenom: req.body.Prenom,
                     Pseudo: req.body.Pseudo,
                     PhotoProfil: req.body.PhotoProfil,
+                    Localisation: " ",
                     Annonces: req.body.Annonces
                 });
                 console.log('user saved');
@@ -51,6 +52,15 @@ module.exports = {
         res.json('vide')
     }
     },
+    UpdateUser(req,res){
+        console.log(req.body);
+        User.replaceOne({_id:req.body.id},
+            {_id:req.body.id , Nom: req.body.Nom , Prenom:req.body.Prenom , 
+                email:req.body.email,Password:req.body.Password,Localisation: req.body.Localisation })
+                .then((user)=>{
+                    console.log(user)
+                })
+    },
     GetUser(req, res) {
         User.find({
             email:req.user.User.email // recherche d un utilisateur grace au token 
@@ -62,7 +72,8 @@ module.exports = {
         console.log(req.body)
         User.findOne({
             email: req.body.email  // je cherche mon user
-        }).then((user) => {  
+        }).then((user) => {
+            console.log(user)  
             if (user !== null) {  //si j ai quelquechose
                 bcrypt.compare(req.body.Password, user.Password, (function (error, same) { //je verifie son mot de pass
                     if (same == true) { // si c'est pareil

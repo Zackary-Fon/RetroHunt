@@ -48,6 +48,7 @@ const Articles = data.map((produit)=>{
 })
 return (
     <div className="bodyRecent" >
+        <Link to="/Profil"><i class="fas fa-chevron-left"></i> Retour</Link>
         <ul className="listArticles">{Articles}</ul>
     </div>
 

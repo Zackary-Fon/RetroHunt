@@ -7,7 +7,6 @@ import Searching from "../Pages/Search/Search";
 import Categorie from "../Pages/Catégorie/Categorie";
 import ref from "../Pages/AjouterAnnonce/referentiel";
 import Produit from "../Pages/Profil/ProduitProfile";
-import Modification from "../Pages/Profil/Modification";
 import Annonce from "../Pages/Profil/Annonces";
 import modifProfil from "../Pages/Profil/modifProfil";
 
@@ -35,9 +34,8 @@ const tabRoutes = [
 {id:9,name:"Referentiel", path:"/Referentiel", component:ref},
 {id:10,name:"Contact", path:"/Contact", component:contact},
 {id:11, name:"Produit", path:"/Produit/:id", component:Produit},
-{id:12, name:"Modification", path:"/Modification/:id", component:Modification},
 {id:13, name:"Annonce", path:"/Annonce/:id", component:Annonce},
-{id:14, name:"ModifProfil", path:"/Modif/:id", component:modifProfil}
+{id:14, name:"ModifProfil", path:"/Modif/", component:modifProfil}
 ]
 export default tabRoutes;
 
