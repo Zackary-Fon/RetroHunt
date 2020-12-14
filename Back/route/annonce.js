@@ -1,5 +1,6 @@
-const {home,CreateAnn,GetPlay,Getall,Getdate,Getid,Getidbyuser, UpdateAnn, deleteAnn} = require('../controllers/controller-annonce');
+const {CreateAnn,GetPlay,Getall,Getdate,Getid,Getidbyuser, UpdateAnn, deleteAnn} = require('../controllers/controller-annonce');
 const {CreateUser,GetUser,Log,UpdateUser, authenticateToken,deleteUser, GetAnn}= require('../controllers/controller-user');
+const {Createconv,AddMessage}=require('../controllers/controller-message');
 const express=require('express');
 const { route } = require('../app/app');
 const router=express.Router();
@@ -11,8 +12,10 @@ router.route('/user')
 
 router.route('/user/modif')
 .post(UpdateUser)
+
 router .route('/Profil/Annonce')
 .post(GetAnn)
+
 router.route('/deposer')
     .post(upload.array('image'), CreateAnn) 
 
@@ -24,18 +27,31 @@ router.route('/all')
 
 router.route('/date')
     .get(Getdate)
+
 router.route('/id')
 .post(Getid)
+
 router.route('/idUser')
 .post(Getidbyuser)
+
 router.route('/Update')
 .post(UpdateAnn)
+
 router.route('/login')
     .post(Log)
+
 router.route('/auth')
     .post(authenticateToken,GetUser)
+
 router.route('/delete')
     .post(deleteUser)
+
 router.route('/delete/annonce')
 .post(deleteAnn)
+
+router.route('/message/new')
+.post(Createconv)
+
+router.route('/message')
+.post(AddMessage)
     module.exports=router;

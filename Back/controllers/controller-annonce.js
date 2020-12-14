@@ -137,6 +137,7 @@ module.exports = {
         _id:  req.body.id}
     ).then((anno) => { 
        console.log("ok")
+       res.json("deleted")
         })
    }
 }

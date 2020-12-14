@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 
 const MessageSchema = new Schema({
-    Pseudo:String,
-    Message:String
+    message:String,
+    Date: String
 },{collection: "MESSAGE_COLLEC"});
 
 const Message = mongoose.model('message',MessageSchema);

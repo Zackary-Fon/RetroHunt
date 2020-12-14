@@ -45,7 +45,6 @@ const Profil = () => {
 
                 <p>Afficher plus</p>
             </div> */}
-            <h2 className="TitreAnnonce annonce_title">Mes annonces</h2>
             <div className="Annonces">
             
                 

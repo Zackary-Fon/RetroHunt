@@ -54,10 +54,10 @@ fetch("http://localhost:3006/Profil/Annonce",conf)
     console.log(json)
      if (json.length >0){
         p.setAttribute('href',"/Annonce/"+title);
-        p.innerHTML="Annonces";
+        p.innerHTML="Mes Annonces";
         }else{
              p.setAttribute('href',"/DeposerAnnonce");
-        p.innerHTML=" deposer une Annonces";
+        p.innerHTML=" Deposer votre première Annonces";
         }  
     
 }))

@@ -21,8 +21,10 @@ const delet=()=>{
                     },
                     body:js}
      fetch("http://localhost:3006/delete/annonce", config) 
-        .then(response => response.json().then((response)=>{
-    console.log(response)
+        .then(response => response.json().then((json)=>{
+            if(json =="deleted"){
+                document.location.href="/Profil"
+            }
         }))
     } 
     
