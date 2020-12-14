@@ -9,6 +9,7 @@ import ref from "../Pages/AjouterAnnonce/referentiel";
 import Produit from "../Pages/Profil/ProduitProfile";
 import Modification from "../Pages/Profil/Modification";
 import Annonce from "../Pages/Profil/Annonces";
+import modifProfil from "../Pages/Profil/modifProfil";
 
 import Crash_Bandicoot1 from "./ImagesProduits/Crash_Bandicoot1.jpg";
 import Spyro1 from "./ImagesProduits/Spyro1.jpg";
@@ -35,7 +36,8 @@ const tabRoutes = [
 {id:10,name:"Contact", path:"/Contact", component:contact},
 {id:11, name:"Produit", path:"/Produit/:id", component:Produit},
 {id:12, name:"Modification", path:"/Modification/:id", component:Modification},
-{id:13, name:"Annonce", path:"/Annonce/:id", component:Annonce}
+{id:13, name:"Annonce", path:"/Annonce/:id", component:Annonce},
+{id:14, name:"ModifProfil", path:"/Modif/:id", component:modifProfil}
 ]
 export default tabRoutes;
 

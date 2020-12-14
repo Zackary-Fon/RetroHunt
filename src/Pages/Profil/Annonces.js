@@ -1,18 +1,14 @@
 import {Link} from "react-router-dom";
 import React,{useEffect,useState} from "react";
 import recup from "./recupP";
-import delet from "./fetchsuppAnn"
-       
+import delet from "./fetchsuppAnn";
+import "./Profil.css";
+    
 const Rec=[];
 
 const Annonce = ({match}) => {
     
 const[data,setdata]=useState([])
-
-        
-
-
-
 
 useEffect( () => {
     delet();

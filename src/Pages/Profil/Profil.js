@@ -24,7 +24,6 @@ const Profil = () => {
                 <Col md={6} xs={12}><h2 className="profil_title" >Mon Profil</h2></Col>
                 <Col md={3} xs={12}>
                     <div className="modificationProfil">
-                        <Row className="justify-content-center"><Link className="profil_set">Modifier mon profil</Link></Row>
                         <Row className="justify-content-center"><Link to="/DeleteProfile" className="delete">Supprimer mon compte</Link></Row>
                     </div>
                 </Col>
@@ -50,8 +49,6 @@ const Profil = () => {
             
                 
             </div>
-            
-            <Link>Afficher plus</Link>
         </Container>
     )
 }

@@ -20,13 +20,19 @@ const bb=JSON.stringify(local);
     .then(response => {
         response.json().then(json => {
             const ann=document.querySelector('.Annonces');
+            const ann2=document.querySelector('.modificationProfil');
             console.log(json[0].Prenom)
         document.querySelector('#prenom').innerHTML=json[0].Prenom;
            document.querySelector('#nom').innerHTML=json[0].Nom;
             document.querySelector('#email').innerHTML=json[0].email; 
             const p=document.createElement('a');
+            const modif=document.createElement('a');
             ann.appendChild(p);
+            ann2.appendChild(modif);
             const title=json[0].email;
+            modif.setAttribute('href',"/Modif/"+title);
+            modif.setAttribute('class',"profil_set");
+            modif.innerHTML=" Modifier mon prodil";
             const j={
                 email:title
             }
