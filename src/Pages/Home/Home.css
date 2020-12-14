@@ -1,20 +1,30 @@
 .homeBody{
     height:auto;
     margin-top:2%;
+    color: white;
 }
-.headBody{
+
+.aboutUs{
+    margin-right:10%;
+    font-size: 1.5em;
+}
+
+.imageIntitule{
+    width: 25rem;
+}
+
+/* .headBody{
     color:black;
     font-family: 'Righteous', sans-serif;
     letter-spacing: 1px;
-}
+} */
 
-
-.bodyRecent{
+/* .bodyRecent{
     display:flex;
     flex-direction: row;
     width:80%;
     margin-left:13%;
-}
+} */
 
 .listArticles{
     display: flex;
@@ -22,10 +32,9 @@
     list-style-type: none;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding:10px;
-
 }
-.imageIntitule{
+
+/* .imageIntitule{
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -36,58 +45,69 @@
     background-color: #444B90;
     width:100% ;
     max-width: 300px;
-}
-.intituleAnnonce{
+} */
+
+/* .intituleAnnonce{
     display: flex;
     flex-direction: column;
     font-size: small;
     align-items: center;
     justify-content: center;
     padding:20px;
-}
-.PersonPubli{
+} */
+
+/* .PersonPubli{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.pagination{
+} */
+
+/* .pagination{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-}
-.pagination img{
+} */
+
+/* .pagination img{
     width:100%;
     max-width: 45px;
     height: auto;
     
-}
-.center{
-    margin-top:5%;
-    margin-right:10%;
-    font-size: 1.5em;
-    color:white;
-}
-.title{
+} */
+
+
+
+/* .title{
     text-align: center;
     color:white;
     margin-left: 40%;
     margin-top:3%
-}
+} */
+
 .mario {
     width:238px;
     height: 167px;
     margin-left: -575px;
     position: relative;
 }
+
 .News{
     margin-left: 39%;
     width: 50%;
     margin-top: -113px;
 }
 
-.Card{
-    background-color: #444B90;
+.card{
+    background-color: #444B90 !important;
+}
+
+.list-group li{
+    background-color: #444B90 !important
+}
+
+/* .Card{
+    background-color: #444B90 !important;
     margin-bottom: 100px;
     margin-top:3%;
     border-radius: 10px;
@@ -95,6 +115,5 @@
     padding-bottom: 40px;
     width: 50%;
     color:white;
-    margin-left:23%
-    
-}
+    margin-left:23%;
+} */
