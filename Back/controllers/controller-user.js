@@ -100,6 +100,7 @@ module.exports = {
 
     },
     authenticateToken(req, res,next) {
+        console.log
         const token = req.body.token; // je recupere le token envoyer par le front
         if (token == null) { // si j ai rien
             return res.sendStatus(401)

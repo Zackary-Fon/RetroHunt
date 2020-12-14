@@ -5,13 +5,14 @@ const bodyParser = require('body-parser');
 
 module.exports = {
     Createconv(req,res){
-        Conv.findOne({Acheteur:req.body.Acheteur,
-            Vendeur:req.body.Vendeur})
+        console.log(req.body)
+        Conv.findOne({receveur:req.body.receveur,
+            envoyeur:req.body.envoyeur})
             .then((user)=>{
                 if(user === null){
                     const conv=new Conv({
-                        Acheteur:req.body.Acheteur,
-                        Vendeur:req.body.Vendeur,
+                        receveur:req.body.receveur,
+                        envoyeur:req.body.envoyeur,
                         Message: req.body.Message
                     })
                     console.log('message envoyé');
@@ -29,8 +30,8 @@ module.exports = {
             message: req.body.message,
             Date:req.body.Date
         })
-        Conv.updateOne({Acheteur:req.body.Acheteur,
-            Vendeur:req.body.Vendeur}, {
+        Conv.updateOne({receveur:req.body.receveur,
+            envoyeur:req.body.envoyeur}, {
             $push: {
                 "Message": mess
             }
@@ -39,5 +40,13 @@ module.exports = {
             console.log('add to user')
         })
         
+    },
+    Getconv(req,res){
+        Conv.findOne({receveur:req.body.receveur,
+            envoyeur:req.body.envoyeur})
+        .then((conv)=>{
+            console.log(conv)
+            res.json(conv)
+        })
     }
 }

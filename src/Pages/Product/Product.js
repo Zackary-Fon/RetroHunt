@@ -55,7 +55,7 @@ const Product = ({match}) => {
                             
                         </div>
                         <div id="contact">
-                        <a href={`mailto:${produit.MailVendeur}`}><button className="bn">Contacter le vendeur</button></a>
+                        <Link to ={`/Chat/${produit.MailVendeur}`}><button className="bn">Contacter le vendeur</button></Link>
                         <Link id="chiant">Signaler l'annonce</Link>
                         </div>
                     </div>

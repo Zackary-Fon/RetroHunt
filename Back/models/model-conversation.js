@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 
 
 const ConvSchema = new Schema({
-    Acheteur:String,
-    Vendeur:String,
+    receveur:String,
+    envoyeur:String,
     Message: [Message]
 },{collection: "CONVERSATION"});
 
