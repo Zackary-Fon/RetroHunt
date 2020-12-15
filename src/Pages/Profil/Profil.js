@@ -40,14 +40,9 @@ const Profil = () => {
                     </div>
                 </Col>
             </Row>
-
-            {/* <div className="Conversations">
-
-                <p>Afficher plus</p>
-            </div> */}
+            <div className="Conversations">
+            </div> 
             <div className="Annonces">
-            
-                
             </div>
         </Container>
     )

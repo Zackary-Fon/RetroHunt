@@ -7,10 +7,11 @@ import Searching from "../Pages/Search/Search";
 import Categorie from "../Pages/Catégorie/Categorie";
 import ref from "../Pages/AjouterAnnonce/referentiel";
 import Produit from "../Pages/Profil/ProduitProfile";
-import Annonce from "../Pages/Profil/Annonces";
+import Annonce from "../Pages/Profil/Annonces/Annonces";
 import modifProfil from "../Pages/Profil/modifProfil";
 import Chat from "../Pages/Chat/Chat";
-import modifAnn from "../Pages/Profil/ModificationAnnonce";
+import modifAnn from "../Pages/Profil/Annonces/ModificationAnnonce";
+import conv from "../Pages/Profil/Conversations/conversation";
 
 import Crash_Bandicoot1 from "./ImagesProduits/Crash_Bandicoot1.jpg";
 import Spyro1 from "./ImagesProduits/Spyro1.jpg";
@@ -40,6 +41,7 @@ const tabRoutes = [
 {id:14, name:"ModifProfil", path:"/Modif/", component:modifProfil},
 {id:15, name:"Chat", path:"/Chat/:id", component:Chat},
 {id:16, name:"ModifAnn", path:"/ModifAnn/:id", component:modifAnn},
+{id:17, name:"Conv", path:"/Conv/:id", component:conv},
 ]
 export default tabRoutes;
 

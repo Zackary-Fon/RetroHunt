@@ -50,5 +50,18 @@ module.exports = {
             console.log(conv)
             res.json(conv)
         })
-    }
+    },
+    GetEnvoie(req,res){
+        const All=[];
+        Conv.find({envoyeur: req.body.user}).then((env)=>{
+            All.push(env)
+            Conv.find({receveur:req.body.user}).then((rec)=>{
+                All.push(rec)
+                console.log(All)
+                res.json(All)
+            })
+        }
+        )
+    },
+
 }

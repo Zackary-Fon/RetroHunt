@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from "react";
-import '../../general.css';
+import '../../../general.css';
 import {Link} from "react-router-dom";
 import fetche from "./fetchmodif"
 import recModAnn from "./recupmodifAnn"

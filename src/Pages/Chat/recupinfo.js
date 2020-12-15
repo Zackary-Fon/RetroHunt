@@ -31,7 +31,6 @@ const Info=()=>{
             console.log(json)
             document.getElementById('envoyeur').value=json[0].email;
             })
-
         })
     }
 }
