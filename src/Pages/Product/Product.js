@@ -3,8 +3,11 @@ import {ObjectProduct} from "../../Rooting/const";
 import './Product.css';
 import '../../general.css'
 import {Link} from "react-router-dom";
+import ver from './verifP'
+import verif from "../ConnexionInscription/verifInsc";
 
 const Product = ({match}) => {
+    
     console.log(match.params.id)
      const[data,setdata]=useState([]);
      const user={
@@ -12,7 +15,7 @@ const Product = ({match}) => {
      };
      console.log(user)
      const formjs=JSON.stringify(user)
-    useEffect( () => {
+    useEffect(async () => {
          fetch("http://localhost:3006/id",{ method: "POST",
         headers: {
             "Accept": "application/json",
@@ -23,7 +26,7 @@ const Product = ({match}) => {
         .then(response => {response.json().then(json => {
             setdata(json)
         })})
-    });
+    })
     console.log( data) 
 
     // recupérer id du produit
@@ -55,9 +58,12 @@ const Product = ({match}) => {
                             
                         </div>
                         <div id="contact">
-                        <Link to ={`/Chat/${produit.MailVendeur}`}><button className="bn">Contacter le vendeur</button></Link>
+                        <Link to ={`/Chat/${produit.MailVendeur}`}>
+                            <button className="bn"  id="con" >Contacter le vendeur</button>
+                            </Link>
+                            </div>
                         <Link id="chiant">Signaler l'annonce</Link>
-                        </div>
+                        
                     </div>
                 )
         })

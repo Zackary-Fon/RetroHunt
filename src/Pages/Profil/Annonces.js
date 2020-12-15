@@ -41,6 +41,7 @@ const Articles = data.map((produit)=>{
             </div>   
                 <h4>prix : {produit.Prix}</h4>
             <Link to={`/Product/${produit._id}`}><div className="bouton">Voir la fiche</div></Link>
+            <Link to={`/ModifAnn/${produit._id}`}><div className="bouton">Modifier Annonce</div></Link>
             <button className="del" value={produit._id}>Supprimer l'annonce</button>
             
         </li>

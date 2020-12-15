@@ -1,18 +1,11 @@
 import react from "react"
-
 const URL2 = "http://localhost:3006/auth";
 
 
-const Info=()=>{
-    const local={
-        token: sessionStorage.Token
+const recModAnn=()=>{
+    const local = {
+        token: sessionStorage.Token,
     }
-
-    const loc=sessionStorage;
-    console.log(loc)
-     if (loc.length <1 && loc.Token == undefined){
-        document.location.href="/ConnexionInscription"
-    } else{
     console.log(local)
     const bb = JSON.stringify(local);
     const conf = {
@@ -29,11 +22,15 @@ const Info=()=>{
         .then(response => {
             response.json().then(json => {
             console.log(json)
-            document.getElementById('envoyeur').value=json[0].email;
+            const email=document.getElementById('email');
+            const prenom=document.getElementById('pseudo');
+            prenom.value=json[0].Prenom;
+            email.value=json[0].email; 
+            console.log(email);
+            console.log(prenom);
             })
-
-        })
-    }
+        }
+        )
 }
 
-export default Info
+export default recModAnn

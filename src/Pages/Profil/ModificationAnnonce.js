@@ -1,81 +1,72 @@
 import React,{useEffect,useState} from "react";
+import '../../general.css';
 import {Link} from "react-router-dom";
-import chevronGauche from "../../Images/chevronGauche.png";
-import chevronDroite from "../../Images/chevronDroite.png";
 import fetche from "./fetchmodif"
-import fetchy from "./fetchsuppAnn"
-const Modification = ({match}) => {
-    console.log(match.params.id)
-     const[data,setdata]=useState([]);
-     console.log(data)
-     const user={
-         _id:match.params.id
-     };
-    console.log(user)
-    const formjs=JSON.stringify(user)
-     
+import recModAnn from "./recupmodifAnn"
+
+const ModifAnnonce = ({match}) => {
+
     useEffect( () => {
-        
-        fetch("http://localhost:3006/idUser",{ method: "POST",
+        fetche()
+        recModAnn()
+        const user={
+            _id:match.params.id
+        };
+        console.log(user)
+        const formjs=JSON.stringify(user)
+         fetch("http://localhost:3006/id",{ method: "POST",
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin":"http://localhost:3006/idUser"
+            "Access-Control-Allow-Origin":"http://localhost:3006/id"
         },body:formjs
                 })
         .then(response => {response.json().then(json => {
             console.log(json)
-            setdata([json])
+            const Titre=document.getElementById('titre');
+            const Prix=document.getElementById('Prix');
+            const Etat=document.getElementById('etat');
+            const Console=document.getElementById('console');
+            const Date=document.getElementById('Année');
+            const Desc=document.getElementById('description');
+            Titre.value=json[0].Titre;
+            Prix.value=json[0].Prix;
+            Etat.value=json[0].Etat;
+            Console.value=json[0].Console;
+            Date.value=json[0].Date;
+            Desc.value=json[0].Description;
+            document.getElementById('ID').value=json[0]._id;
+            console.log(json[0].image)
+            document.getElementById('img').src=json[0].image[0];
         })})
-        ;
-    }
-    )
-    
-    console.log(data) 
-
-    // recupérer id du produit
-    const {params: id } = match;
-    console.log(match)
-    // afficher les infos
-    const ShowProduct = () => {
-        // récupérer dans le tableau les détails du produit avec un if pour correspondre à l'id
-        //du produit sur lequel on a cliqué puis on affiche les informations et l'image dans une card
-        // et on affiche la description que l'utilisateur à écrit sur une deuxième card
-        const ProduitResult = data.map(produit => {
-                return(
-                    <div className="bodyProduct" >
-                        {/*Là on met le chemin comme sur le figma*/}
-                        <div className="back_btn"><Link to="/"><i class="fas fa-chevron-left"></i> Retour</Link></div>
-                        <form id="form" method='POST'enctype="multipart/form-data" >
-                        
-                        <div className="Images">
-                                <textarea type="text" id="titre">{produit.Titre}</textarea>
-                                <img className="imageP" src={produit.image[0]} alt="produit"/>
+    });
+   
+    return (<div>
+         <div className="bodyProduct">
+            <div className="back_btn"><Link to="/Profil"><i class="fas fa-chevron-left"></i> Retour</Link></div>
+                <div className="Images">
+                    <input type="text" id="titre"></input>
+                                <img className="imageP" id="img" alt="produit"/>
                             </div>
                         <div className="Description">
                             <div className="Infos">
-                                <input type="hidden" id="ID" value={produit._id}/>
-                                <textarea type="text" row='1' id="Console">{produit.Console}</textarea>
-                                <textarea type="text" id="Prix">{produit.Prix}</textarea>
-                                <textarea type="text" id="Etat">{produit.Etat}</textarea>
-                                <textarea type="text" id="PseudoVendeur">{produit.PseudoVendeur}</textarea>
-                                <textarea type="text" id="Description" >{produit.Description}</textarea>
+                                <input type="text" id="Prix"></input>
+                                <input type="text" id="Année"></input>
+                                <input type="text" id="etat"></input>
+                                <input type="text" id="console"></input>
+                                <input type="text" id="description"></input>
+                                <input type="hidden" id="pseudo"></input>
+                                <input type="hidden" id="ID"></input>
+                                <input type="hidden" id="email"></input>
                             </div>
                             
                         </div>
-                        <div onClick={fetche} className="test" id="connard"> "enregistrer"</div>
-                        <div onClick={fetchy} className="test" id="test"> supprimer</div>
-                        </form>
-                        
+                        <div id="contact">
+                        <a className="bn" id="envoi">Modifier l'annonce</a>
+                        </div>
                     </div>
-                )
-        })
-        return ProduitResult
-    }
-    return (<div>
-        {ShowProduct()}
         
     </div>)
 }
 
-export default Modification;
+export default ModifAnnonce;

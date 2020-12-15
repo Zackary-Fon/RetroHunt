@@ -2,13 +2,17 @@ import react from "react"
 const URL='http://localhost:3006/Update'
 
 const fetche=()=>{
+    console.log(document.getElementById('envoi'))
+    document.getElementById('envoi').addEventListener('click',()=>{
+
     console.log('ta mere')
     const modif={
         Titre:document.getElementById('titre').value,
-        Console:document.getElementById('Console').value,
-        Etat: document.getElementById('Etat').value,
+        Console:document.getElementById('console').value,
+        Etat: document.getElementById('etat').value,
         Prix: document.getElementById('Prix').value,
-        PseudoVendeur: document.getElementById('PseudoVendeur').value,
+        Description:document.getElementById('description').value,
+        Date:document.getElementById('Année').value,
         _id:document.getElementById('ID').value
     }
     const js=JSON.stringify(modif)
@@ -22,6 +26,6 @@ fetch(URL, config) //instannciation
     .then(response => response.json().then((response)=>{
 console.log(response)
     }))
-
+})
     }
-export default fetche;
+export default fetche

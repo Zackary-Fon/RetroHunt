@@ -110,27 +110,22 @@ module.exports = {
     },
     UpdateAnn(req,res){
         console.log(req.body)
-        User.findOne({
-            Pseudo:  req.body.Prenom}
-        ).then((anno) => { 
-            console.log(anno.Annonces.length)
-       for(let i=0;i<anno.Annonces.length;i++){
-            if(anno.Annonces[i]._id==req.body._id){
-                console.log(anno.Annonces[i])
-                User.updateOne({
-                email:anno.email
-                }, {
-                    $addToSet: {
-                        "Annonces": anno.Annonces[i]
-                    }
-            } ).then((user)=>{
-                console.log(user);
-                console.log('ok')
+        Annonce.update(
+            { _id: req.body._id },
+            {
+            $set: {
+            Titre:req.body.Titre,
+            Console: req.body.Console,
+            Date: req.body.Date,
+            Prix: req.body.Prix,
+            Etat: req.body.Etat,
+            Description: req.body.Description
+            }
+            }
+        )
+            .then((user)=>{
+                console.log(user)
             })
-           }
-        }
-    }
-        ) 
     },
    deleteAnn(req,res){
     Annonce.deleteOne({
