@@ -4,27 +4,25 @@
     color: white;
 }
 
+.margin_custom{
+    margin-top: 7%;
+    margin-bottom: 5%;
+}
+
 .aboutUs{
     margin-right:10%;
     font-size: 1.5em;
 }
 
 .imageIntitule{
-    width: 25rem;
+    width: 24rem;
+    margin-bottom: 5%;
 }
 
-/* .headBody{
-    color:black;
-    font-family: 'Righteous', sans-serif;
-    letter-spacing: 1px;
-} */
-
-/* .bodyRecent{
-    display:flex;
-    flex-direction: row;
-    width:80%;
-    margin-left:13%;
-} */
+.imageProduit{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 .listArticles{
     display: flex;
@@ -34,55 +32,10 @@
     justify-content: space-around;
 }
 
-/* .imageIntitule{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    margin:30px;
-    border-radius:20px;
-    overflow: hidden;
-    background-color: #444B90;
-    width:100% ;
-    max-width: 300px;
-} */
-
-/* .intituleAnnonce{
-    display: flex;
-    flex-direction: column;
-    font-size: small;
-    align-items: center;
-    justify-content: center;
-    padding:20px;
-} */
-
-/* .PersonPubli{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-/* .pagination{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-} */
-
-/* .pagination img{
-    width:100%;
-    max-width: 45px;
-    height: auto;
-    
-} */
-
-
-
-/* .title{
+.button_custom-width{
+    width: 100%;
     text-align: center;
-    color:white;
-    margin-left: 40%;
-    margin-top:3%
-} */
+}
 
 .mario {
     width:238px;
@@ -99,13 +52,18 @@
 
 .card{
     background-color: #444B90 !important;
+    border-radius: 10px !important;
+}
+
+.card-title{
+    text-align: center;
 }
 
 .list-group li{
     background-color: #444B90 !important
 }
 
- .Card{
+/* .Card{
     background-color: #444B90 !important;
     margin-bottom: 100px;
     margin-top:3%;
@@ -116,7 +74,7 @@
     color:white;
     margin-left:23%
     
-}
+} */
 
 @media screen and (max-width:750px){
     .us{

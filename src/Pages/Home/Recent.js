@@ -32,19 +32,19 @@ const Recent = () => {
     const Articles = data.map((produit)=>{
         return (
             <div key={produit._id} className="imageIntitule card card-custom">
-                <div  style={{background: `url(${produit.thumbnail[0]})`, backgroundPosition:"center", backgroundSize:"cover", width:"100%", height:"180px"}}/>
+                <div className="imageProduit " > <div style={{background: `url(${produit.thumbnail[0]})`, backgroundPosition:"center",backgroundRepeat:"no-repeat", backgroundSize:"80%", height:"200px"}}></div> </div>
                 {/* <img className="imageProduit card-img-top" src="url(${produit.image[0]})" alt="Card image cap" ></img> */}
                 <div className="intituleAnnonce card-body">
                     <h1 className="card-title">{produit.Titre}</h1>
                     <ul className="list-group list-group-flush">
-                        <li class="list-group-item"><h3>console: {produit.Console}</h3></li>
+                        <li class="list-group-item"><p> {produit.Console}</p></li>
+                        <li class="list-group-item"><p> {produit.Prix} €</p></li>
                         <li class="list-group-item"><p className="PersonPubli"><img src={person} style={{height:"20px", width:"20px"}}/> {produit.PseudoVendeur}</p></li>
-                        <li class="list-group-item"><h4>prix : {produit.Prix}</h4></li>
                     </ul>
                     
                     
                     
-                <Link to={`/Product/${produit._id}`}><div className="bouton btn btn-primary">Voir la fiche</div></Link>
+                <div className="button_custom-width"><Link to={`/Product/${produit._id}`} className="bouton btn btn-primary">Voir la fiche</Link></div>
                 </div>
             </div>
         )
