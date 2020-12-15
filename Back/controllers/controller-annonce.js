@@ -22,7 +22,7 @@ module.exports = {
                 const newPath = await cloudinary.uploader.upload(path, {
                     width: 300,height: 400})
                 const thumbnail = await cloudinary.uploader.upload(path, {
-                    width: 300,height: 200})
+                    width: 250,height: 250})
                 urls.push(newPath.secure_url)
                 thumb.push(thumbnail.secure_url)
                 fs.unlinkSync(path) // ??

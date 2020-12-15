@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from "react";
 import "./Chat.css"
 import Info from "./recupinfo"
-
+import mess from "./recupmess"
 
 const Chat = ({match}) =>{
     console.log(match.params.id)
@@ -9,24 +9,7 @@ const Chat = ({match}) =>{
 
 useEffect(()=>{
     Info()
-    const Conv={
-        receveur:match.params.id,
-        envoyeur:document.getElementById('envoyeur').value
-    }
-    const jsConv=JSON.stringify(Conv);
-    
-const conf={ method: "POST",
-headers: {
-"Accept": "application/json",
-"Content-Type": "application/json",
-"Access-Control-Allow-Origin":"http://localhost:3006/message/find"
-},
-body:jsConv};
-fetch("http://localhost:3006/message/find",conf)
-.then(response => response.json().then((json) => {
-console.log(json)
-setdata(json.Message)
-}))
+    mess()
     document.getElementById('envoi_message').addEventListener('click',()=>{
         const ladate= new Date();;
         const date=ladate.getDate()+"/"+(ladate.getMonth()+1)+"/"+ladate.getFullYear()
@@ -81,26 +64,14 @@ document.location.href='/Profil'
     })
    
 }) 
-const {params:id } = match;
-const Messages = data.map((produit)=>{
-    return (
-        <li key={produit._id} className="imageIntitule">
-             
-                <h4> {produit.message}</h4>
-                
-                <h4> {produit.Date}</h4>
-        </li>
-    )
-})
 
     return(
     <div className="chat">
         <div>
-            <h3 id="Receveur "> {match.params.id}</h3>
+            <h3 id="Receveur"> {match.params.id}</h3>
             <input type="hidden" id="envoyeur"></input>
         </div>
         <ul id="zone_chat">
-            {Messages}
             </ul>
         <form action="/" method="post" className="envoi">
             <input type="text" name="message" id="message" placeholder="Votre message..." size="50" autofocus />

@@ -11,21 +11,13 @@
 
 }
 
-.envoi{
-    background: #220c40;
+.envoi{background: #220c40;
     padding: 3px;
     bottom: 94px;
-    width: 61%;
-    position: fixed;
+    /* width: 61%; */
+    margin-top: 56%;
 }
 
-#zone_chat{
-   
-    width: 99%;
-    height: 391px;
-    margin-top: 7%;
-
-}
 
 #message{
     background: none;

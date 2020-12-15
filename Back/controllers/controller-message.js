@@ -42,9 +42,11 @@ module.exports = {
         
     },
     Getconv(req,res){
+        console.log(req.body)
         Conv.findOne({receveur:req.body.receveur,
             envoyeur:req.body.envoyeur})
         .then((conv)=>{
+            console.log('la conv est :')
             console.log(conv)
             res.json(conv)
         })
