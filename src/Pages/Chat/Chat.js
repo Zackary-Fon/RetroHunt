@@ -68,10 +68,11 @@ document.location.href='/Profil'
     return(
     <div className="chat">
         <div>
-            <h3 id="Receveur"> {match.params.id}</h3>
+            <h3 id="Receveur">{match.params.id}</h3>
             <input type="hidden" id="envoyeur"></input>
         </div>
         <ul id="zone_chat">
+            <input value="Voir les messages" id="conv"></input>
             </ul>
         <form action="/" method="post" className="envoi">
             <input type="text" name="message" id="message" placeholder="Votre message..." size="50" autofocus />

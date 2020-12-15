@@ -27,7 +27,6 @@ const fetcho=()=>{
 })
 
 window.addEventListener("keydown", (eve)=> {//evenement au click
-    console.log(eve.key)
     const sub=document.getElementById('submit');
      if (eve.key=="Enter" && sub.disabled ==false ){
     let form = document.getElementById("myForm"); //je recupere mon formulaire

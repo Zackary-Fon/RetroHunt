@@ -32,7 +32,7 @@ const Recent = () => {
     const Articles = data.map((produit)=>{
         return (
             <div key={produit._id} className="imageIntitule card card-custom">
-                <div className="imageProduit " style={{background: `url(${produit.image[0]})`, backgroundPosition:"center", backgroundSize:"cover", width:"100%", height:"180px"}}/>
+                <div  style={{background: `url(${produit.thumbnail[0]})`, backgroundPosition:"center", backgroundSize:"cover", width:"100%", height:"180px"}}/>
                 {/* <img className="imageProduit card-img-top" src="url(${produit.image[0]})" alt="Card image cap" ></img> */}
                 <div className="intituleAnnonce card-body">
                     <h1 className="card-title">{produit.Titre}</h1>
