@@ -58,20 +58,11 @@ const Product = ({match}) => {
                             
                         </div>
                         <div id="contact">
-<<<<<<< HEAD
                         <Link to ={`/Chat/${produit._id}`}>
-=======
-                        <Link to ={`/Chat/${produit.MailVendeur}`}>
->>>>>>> master
                             <button className="bn"  id="con" >Contacter le vendeur</button>
                             </Link>
                             </div>
                         <Link id="chiant">Signaler l'annonce</Link>
-<<<<<<< HEAD
-                        
-                        
-=======
->>>>>>> master
                         
                     </div>
                 )
