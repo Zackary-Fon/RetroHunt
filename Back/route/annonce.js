@@ -1,6 +1,6 @@
 const {CreateAnn,GetPlay,Getall,Getdate,Getid,Getidbyuser, UpdateAnn, deleteAnn} = require('../controllers/controller-annonce');
 const {CreateUser,GetUser,Log,UpdateUser, authenticateToken,deleteUser, GetAnn}= require('../controllers/controller-user');
-const {Createconv,AddMessage,Getconv, GetEnvoie}=require('../controllers/controller-message');
+const {Createconv,AddMessage,Getconv, GetEnvoie,GetEnvoiereceveur}=require('../controllers/controller-message');
 const express=require('express');
 const { route } = require('../app/app');
 const router=express.Router();
@@ -18,6 +18,10 @@ router .route('/Profil/Annonce')
 
 router.route('/Profil/Conversations')
 .post(GetEnvoie)
+
+
+router.route('/Profil/Conversations/receveur')
+.post(GetEnvoiereceveur)
 
 router.route('/deposer')
     .post(upload.array('image'), CreateAnn) 

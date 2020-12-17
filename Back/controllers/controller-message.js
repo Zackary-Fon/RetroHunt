@@ -5,9 +5,8 @@ const bodyParser = require('body-parser');
 
 module.exports = {
     Createconv(req,res){
-        console.log(req.body)
         Conv.findOne({receveur:req.body.receveur,
-            envoyeur:req.body.envoyeur})
+            envoyeur:req.body.envoyeur,TitreAnnonce:req.body.Titre,})
             .then((user)=>{
                 if(user === null){
                     const conv=new Conv({
@@ -31,37 +30,38 @@ module.exports = {
             message: req.body.message,
             Date:req.body.Date
         })
-        Conv.updateOne({receveur:req.body.receveur,
+        console.log(req.body)
+       
+       Conv.updateOne({receveur:req.body.receveur,
             envoyeur:req.body.envoyeur,
             TitreAnnonce:req.body.Titre}, {
             $push: {
                 "Message": mess
             }
         }).then((user) => {
-            console.log(user)
             console.log('add to user')
-        })
+            res.json("OK")
+        }) 
         
     },
     Getconv(req,res){
-        console.log(req.body)
         Conv.findOne({receveur:req.body.receveur,
-            envoyeur:req.body.envoyeur,TitreAnnonce:req.body.Titre})
+            envoyeur:req.body.envoyeur,
+            TitreAnnonce:req.body.Titre})
         .then((conv)=>{
-            console.log('la conv est :')
-            console.log(conv)
             res.json(conv)
         })
     },
     GetEnvoie(req,res){
-        const All=[];
-        Conv.find({envoyeur: req.body.user}).then((env)=>{
-            All.push(env)
-            Conv.find({receveur:req.body.user}).then((rec)=>{
-                All.push(rec)
-                console.log(All)
-                res.json(All)
-            })
+        console.log(req.body)
+        Conv.find({envoyeur: req.body.email}).then((env)=>{
+            res.json(env)
+        }
+        )
+    },
+    GetEnvoiereceveur(req,res){
+        Conv.find({receveur: req.body.email}).then((env)=>{
+            res.json(env)
         }
         )
     },

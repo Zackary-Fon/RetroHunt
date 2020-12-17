@@ -23,9 +23,11 @@ body:jsConv};
 fetch("http://localhost:3006/message/new",conf)
 .then(response => response.json().then((json) => {
 console.log(json)
- if(json =="deja une conv"){
+ if(json ==="deja une conv"){
+   console.log('mess')
 const mess={
-    receveeur:document.getElementById('Receveur').value,
+  Titre:document.getElementById('titre').innerHTML,
+    receveur:document.getElementById('Receveur').value,
     envoyeur:document.getElementById('envoyeur').value,
     message:document.getElementById('message').value,
 Date:date}
@@ -41,7 +43,12 @@ headers: {
 body:jsmess};
 fetch("http://localhost:3006/message",config)
 .then(response => response.json().then((json) => {
-    console.log(json)
+    if(json=="OK"){
+      document.location.href='/Profil'
+    }
+    else{
+      console.log(json)
+    }
 }))
 
 
