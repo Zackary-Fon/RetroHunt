@@ -56,6 +56,8 @@ fetch("http://localhost:3006/message",config)
 }
 else{
 document.location.href='/Profil'
+
+
 } 
 })
 

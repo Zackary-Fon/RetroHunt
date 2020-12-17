@@ -9,6 +9,7 @@ const email=document.getElementById('email');
 const sub=document.getElementById('invalidCheck');
 const btnsub=document.getElementById('submit');
 
+console.log(email.value)
 name.addEventListener("keyup", ()=>{
     if(name.value ==''||name.value ==' '){
         name.classList.remove('is-valid');
@@ -20,6 +21,7 @@ name.addEventListener("keyup", ()=>{
 });
 
 prenom.addEventListener("keyup", ()=>{
+    console.log(prenom)
     if(prenom.value ==''||prenom.value==' '){
         prenom.classList.remove('is-valid');
         prenom.classList.add('is-invalid');
@@ -61,15 +63,18 @@ mdp2.addEventListener("keyup", ()=>{
             mdp2.classList.add('is-invalid');
         }
     } 
+});
 
 email.addEventListener("keyup", ()=>{
+    console.log('email')
     if(email.value==''||email.value ==' '){
         email.classList.remove('is-valid');
         email.classList.add('is-invalid');
     }else{
         email.classList.add('is-invalid');
         const mail=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if(mail.test(email.value)) {
+        console.log(mail.test(email.value))
+        if(mail.test(email.value)==true) {
             email.classList.remove('is-invalid');
             email.classList.add('is-valid');
         }
@@ -78,7 +83,6 @@ email.addEventListener("keyup", ()=>{
 
 
 
-});
 
 document.getElementById('form').addEventListener('change',()=>{
     console.log(mdp.classList)
