@@ -27,7 +27,7 @@ Date.addEventListener('keyup',()=>{
     }
 })
 document.getElementById('myForm').addEventListener('change',()=>{
-     if(Titre.value !="" && (Date.value>1900 && Date.value < 2010) &&
+    if(Titre.value !="" && (Date.value>1900 && Date.value < 2010) &&
     Prix.value !="" && Etat.value!=" " && Console.value !=" "
     && description.value!="" && photo.value != ""){
         console.log("OK")
@@ -41,7 +41,6 @@ document.getElementById('myForm').addEventListener('change',()=>{
         
         console.log(description.value)
         console.log(photo.value)
-        console.log("vas te faire");
         sub.disabled=true;
     }
 })
