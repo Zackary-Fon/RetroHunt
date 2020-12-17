@@ -57,9 +57,12 @@ const Product = ({match}) => {
                             
                         </div>
                         <div id="contact">
-                        <Link to={`/Contact/${produit.PseudoVendeur}`}><button className="bn">Contacter le vendeur</button></Link>
+                        <Link to ={`/Chat/${produit._id}`}>
+                            <button className="bn"  id="con" >Contacter le vendeur</button>
+                            </Link>
+                            </div>
                         <Link id="chiant">Signaler l'annonce</Link>
-                        </div>
+                        
                         
                         
                     </div>

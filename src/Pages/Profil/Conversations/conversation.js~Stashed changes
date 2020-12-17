@@ -1,0 +1,76 @@
+import react,{useEffect,useState} from "react";
+import {Link} from "react-router-dom";
+import recConv from "./recupConv.js"
+
+
+const conv=({match}) => {
+        const[data,setdata]=useState([])
+        
+        useEffect( () => {
+            const user={
+                email: match.params.id
+            }
+            const jts=JSON.stringify(user)
+            const conf={ method: "POST",
+                headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin":"http://localhost:3006/Profil/Conversations"
+                },
+                body:jts};
+            fetch("http://localhost:3006/Profil/Conversations",conf)
+                .then(response => response.json().then((json) => {
+                    console.log(json.length)
+                    const Conv=document.querySelector('.listArticles');
+                    for(let i=0;i<json.length;i++){
+                        const li=document.createElement('li');
+                        Conv.appendChild(li)
+                        if(json[i].[0].Acheteur === match.params.id){
+                            const vendeur=document.createElement('p');
+                            li.appendChild(vendeur);
+                            vendeur.innerHTML=json[i].[0].Vendeur
+                        }else{
+                            const acheteur=document.createElement('p');
+                            li.appendChild(acheteur);
+                            acheteur.innerHTML=json[i].[0].Acheteur
+                        }
+                        const mess=document.createElement('p');
+                        const date=document.createElement('p');
+                        li.appendChild(mess)
+                        li.appendChild(date)
+                        
+                        const taille=json[i].[0].Message.length
+                        console.log(taille)
+                            
+                        console.log(json[i].[0].Message[taille-1])
+                        mess.innerHTML=json[i].[0].Message[taille-1].message;
+                        date.innerHTML= json[i].[0].Message[taille-1].Date;
+                            
+                    }
+                }))
+        });
+        /* console.log(data)
+            return (
+                <li key={produit._id} className="imageIntitule">
+                    <div className="intituleAnnonce">
+                        <h1>{produit.envoyeur}</h1>
+                        <h1>{produit.receveur}</h1>
+                    </div>   
+                        <h4> {produit.Message}</h4>
+                        <h4> {produit.Date}</h4>
+                    
+                    <Link to={`/Chat/${produit.receeveur}`}><div className="bouton">y aller</div></Link>
+                    
+                </li>
+            ) */
+        
+        return (
+            <div className="bodyRecent" >
+                <Link to="/Profil"><i class="fas fa-chevron-left"></i> Retour</Link>
+                <ul className="listArticles"></ul>
+            </div>
+        
+        )
+}
+
+export default conv
