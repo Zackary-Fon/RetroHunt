@@ -11,6 +11,9 @@ header {
     z-index: 1;
 }
 
+.deco{
+    display:none !important;
+  }
 body{
     background: radial-gradient(#281761, #181B41, #181B41, #402183, #321575);
 }
@@ -115,7 +118,22 @@ a{
 }
 
 
-@media screen and (max-width:700px){
+@media screen and (max-width:750px){
+    
+.logo_resize{
+    width: 150px;
+    padding: 10px;
+    padding-left: 45px;
+    margin-top: -10%;
+}
+.dropdowns{
+    font-size: 1rem;
+    margin-top: -10%;
+}
+
+#logo{
+    width:100%;
+}
     .head_menu{
         display:none;
     }
@@ -151,4 +169,6 @@ a{
 
     }
     
+.navbar-nav{flex-direction: row;
+}
 }

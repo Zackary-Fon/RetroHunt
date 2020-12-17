@@ -1,11 +1,13 @@
 import React,{useEffect,useState} from "react";
 import {ObjectProduct} from "../../Rooting/const";
 import './Product.css';
+import '../../general.css'
 import {Link} from "react-router-dom";
-import chevronGauche from "../../Images/chevronGauche.png";
-import chevronDroite from "../../Images/chevronDroite.png";
+import ver from './verifP'
+import verif from "../ConnexionInscription/verifInsc";
 
 const Product = ({match}) => {
+    
     console.log(match.params.id)
      const[data,setdata]=useState([]);
      const user={
@@ -14,7 +16,7 @@ const Product = ({match}) => {
      console.log(user)
      const formjs=JSON.stringify(user)
     useEffect(async () => {
-        fetch("http://localhost:3006/id",{ method: "POST",
+         fetch("http://localhost:3006/id",{ method: "POST",
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
@@ -22,10 +24,9 @@ const Product = ({match}) => {
         },body:formjs
                 })
         .then(response => {response.json().then(json => {
-            console.log(json)
             setdata(json)
         })})
-    });
+    })
     console.log( data) 
 
     // recupérer id du produit
@@ -40,7 +41,7 @@ const Product = ({match}) => {
                     <div className="bodyProduct">
                         {/*Là on met le chemin comme sur le figma*/}
 
-                        <div className="back_btn"><Link to="/"><i class="fas fa-chevron-left"></i> Retour</Link></div>
+                        <div className="back_btn"><Link to="../"><i class="fas fa-chevron-left"></i> Retour</Link></div>
                         <div className="Images">
                                 <h1>{produit.Titre}</h1>
                                 <img className="imageP" src={produit.image[0]} alt="produit"/>
@@ -57,17 +58,23 @@ const Product = ({match}) => {
                             
                         </div>
                         <div id="contact">
+<<<<<<< HEAD
                         <Link to ={`/Chat/${produit._id}`}>
+=======
+                        <Link to ={`/Chat/${produit.MailVendeur}`}>
+>>>>>>> master
                             <button className="bn"  id="con" >Contacter le vendeur</button>
                             </Link>
                             </div>
                         <Link id="chiant">Signaler l'annonce</Link>
+<<<<<<< HEAD
                         
                         
+=======
+>>>>>>> master
                         
                     </div>
                 )
-           
         })
         return ProduitResult
     }

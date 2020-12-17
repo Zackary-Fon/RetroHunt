@@ -13,20 +13,23 @@ import Card from "./CardNew";
 const Home = () => {
     
     return (
-    <div className="homeBody">
-        <Row>
-            <Col><img src={home} /></Col>
-            <Col className="center"><p>Qui nous sommes:<br></br>
-            3 grand passionnés de retro gaming qui pensent que, comme tout le monde, rechercher sur internet ne doit pas prendre des heures. 
-            Alors ici se trouve une communauté qui partage la même passion! <br></br>
-            </p></Col>
-        </Row>
-        <Row>
-            <h2 className="title">Les derniers articles</h2>
-        </Row>
-        <Recent/>
-        <Card/>
-    </div>);
+        <div className="homeBody">
+            <Row className="justify-content-center align-items-center">
+                <Col className="d-flex justify-content-center align-items-center"><img src={home} /></Col>
+                <Col className="center aboutUs">
+                    <p>Qui nous sommes:<br></br>
+                    3 grand passionnés de retro gaming qui pensent que, comme tout le monde, rechercher sur internet ne doit pas prendre des heures. 
+                    Alors ici se trouve une communauté qui partage la même passion!
+                    </p>
+                </Col>
+            </Row>
+            <Row className="justify-content-center">
+                <h2 className="title margin_custom">Les derniers articles</h2>
+            </Row>
+            <Recent/>
+            <Card/>
+        </div>
+    );
 }
 
 export default Home;

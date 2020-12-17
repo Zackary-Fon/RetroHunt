@@ -1,16 +1,6 @@
-.bouton{
-	font-size: 16px;
-    display:flex;
-    height:30px;
-    width:160px;
-    border-radius: 20px;
-    background-color: #7a57d1;
-	color: white;
-	align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin:20px;
-}
+
+
+
 .body{
     padding-top: 100px;
     font-family: 'Righteous', sans-serif;
@@ -19,4 +9,8 @@
 .row{
     margin-left: 0% !important;
     margin-right: 0% !important;
+}
+
+p{
+    margin-bottom: 0rem !important;
 }

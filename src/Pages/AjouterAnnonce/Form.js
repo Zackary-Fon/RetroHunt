@@ -7,7 +7,9 @@ import Button from 'react-bootstrap/Button';
 import './AjouterAnnonce.css';
 import {Link} from "react-router-dom";
 import fetcho from './fetcho';
-import verif from "./verifAnnonce"
+import verif from "./verifAnnonce";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip"
 
 const Formulaire = () =>{
     useEffect(() => {
@@ -16,7 +18,9 @@ const Formulaire = () =>{
         fetcho()
         verif()
     })
-
+    const renderTooltip = props => (
+        <Tooltip {...props}>La date doit être comprise entre 1900 et 2010</Tooltip>
+      );
 
     return(
     <div> {/* probleme si label et input pas en html */}
@@ -43,11 +47,15 @@ const Formulaire = () =>{
             <Row className="row_customize">
                 <Form.Label for="date">Année de Sortie </Form.Label> 
                 <input type="Number" min="1900" max="2015" name="Date" id="Date" className="input-custom form-check-input"></input>
+                <OverlayTrigger placement="top" overlay={renderTooltip}>
+                <Button>?</Button>
+                </OverlayTrigger>
             </Row>
 
             <Row className="row_customize">
                 <Form.Label for="Prix">Prix</Form.Label> 
                 <input type="number" name="Prix" id="Prix" className="input-custom form-check-input"></input>
+                
             </Row>
 
             <Row className="row_customize"> 

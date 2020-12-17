@@ -17,8 +17,11 @@ const Connexion = () =>{
             </Row>    
             <Row className="input-customize">
                 <input type="password" placeholder="Mot de passe" name="Password" id="Password"></input>
-                <span  class="fa fa-fw fa-eye fa-eye-slash field-icon toggle-password"></span>
+                <div id="eyes"  className="eyes">
+                        <span  class="fa fa-fw fa-eye fa-eye-slash field-icon toggle-password"></span>
+                </div>
             </Row>
+
             <Row className="justify-content-md-center justify-content-sm-center justify-content-xs-center">
                 <Button  id="submit" className="btn-customize">Go !</Button>{/* fetch fonctionne mieux avec un a */}
             </Row>

@@ -31,16 +31,22 @@ const Recent = () => {
     console.log(data)
     const Articles = data.map((produit)=>{
         return (
-            <li key={produit._id} className="imageIntitule">
-                <div className="imageProduit" style={{background: `url(${produit.image[0]})`, backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundSize:"cover", width:"100%", height:"200px"}}/>
-                <div className="intituleAnnonce">
-                    <h1>{produit.Titre}</h1>
-                    <h3>console: {produit.Console}</h3>
-                    <p className="PersonPubli"><img src={person} style={{height:"20px", width:"20px"}}/> {produit.PseudoVendeur}</p>
-                    <h4>prix : {produit.Prix}</h4>
-                <Link to={`/Product/${produit._id}`}><div className="bouton">Voir la fiche</div></Link>
+            <div key={produit._id} className="imageIntitule card card-custom">
+                <div className="imageProduit " > <div style={{background: `url(${produit.thumbnail[0]})`, backgroundPosition:"center",backgroundRepeat:"no-repeat", backgroundSize:"80%", height:"200px"}}></div> </div>
+                {/* <img className="imageProduit card-img-top" src="url(${produit.image[0]})" alt="Card image cap" ></img> */}
+                <div className="intituleAnnonce card-body">
+                    <h1 className="card-title">{produit.Titre}</h1>
+                    <ul className="list-group list-group-flush">
+                        <li class="list-group-item"><p> {produit.Console}</p></li>
+                        <li class="list-group-item"><p> {produit.Prix} €</p></li>
+                        <li class="list-group-item"><p className="PersonPubli"><img src={person} style={{height:"20px", width:"20px"}}/> {produit.PseudoVendeur}</p></li>
+                    </ul>
+                    
+                    
+                    
+                <div className="button_custom-width"><Link to={`/Product/${produit._id}`} className="bouton btn btn-primary">Voir la fiche</Link></div>
                 </div>
-            </li>
+            </div>
         )
     })
     return (

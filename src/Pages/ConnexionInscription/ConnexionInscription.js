@@ -18,11 +18,11 @@ const ConnexionInscription = () =>{
         <>
         <Container className="container-customize">
             <div className="container_resize">
-                <Row className="justify-content-md-center justify-content-sm-center justify-content-xs-center h2">Se connecter</Row>
-                <Row className="justify-content-md-center justify-content-sm-center justify-content-xs-center">
+                <Row className="justify-content-center h2">Se connecter</Row>
+                <Row className="justify-content-center">
                     <Col md="auto" sm="auto" xs="auto" className="col-customize"><Connexion/></Col>
                 </Row>
-                <Row className="justify-content-md-center justify-content-sm-center justify-content-xs-center">
+                <Row className="smaller justify-content-center">
                     <Col md="auto" sm="auto" xs="auto"><span>Pas encore inscrit ? <a onClick={Michel} className="link-customize">S'inscrire</a></span></Col>
                 </Row>
             </div>
@@ -33,11 +33,11 @@ const ConnexionInscription = () =>{
         return(
             <Container className="container-customize">
                 <div className="container_resize">
-                    <Row className="justify-content-md-center justify-content-sm-center justify-content-xs-center h2">S'inscrire</Row>
-                    <Row className="justify-content-md-center justify-content-sm-center justify-content-xs-center">
+                    <Row className="justify-content-center h2">S'inscrire</Row>
+                    <Row className="justify-content-center">
                         <Col md="auto" sm="auto" xs="auto" className="col-customize"><Inscription/></Col>
                     </Row>
-                    <Row className="justify-content-md-center justify-content-sm-center justify-content-xs-center">
+                    <Row className="smaller justify-content-center">
                         <Col md="auto" sm="auto" xs="auto"><span>Déjà inscrit ?  <a onClick={Michel} className="link-customize">Se connecter</a></span></Col>
                     </Row>
                 </div>

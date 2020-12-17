@@ -2,10 +2,8 @@ import react from 'react'
 const URL="http://localhost:3006/auth"
 
 const fetcha=()=>{
-const local={
-    token: sessionStorage.Token,
-}
-const bb=JSON.stringify(local);
+    const local={token: sessionStorage.Token}
+    const bb=JSON.stringify(local);
     const config = {
         method: 'POST',
         headers: {
@@ -18,71 +16,67 @@ const bb=JSON.stringify(local);
         
     fetch(URL, config)
     .then(response => {
-        response.json().then(json => {
-            const ann=document.querySelector('.Annonces');
-        document.querySelector('#prenom').innerHTML=json.Prenom;
-           document.querySelector('#nom').innerHTML=json.Nom;
-            document.querySelector('#email').innerHTML=json.email; 
-            console.log(json.Annonces.length); 
-            if (json.Annonces.length >=3){
-                for(let i=0;i<3;i++){
-                const li = document.createElement('li');
-                const div=document.createElement('div');
-                const img = document.createElement('img');
-                const span2 = document.createElement('span');
-                const btn=document.createElement('a');
-                const btn2=document.createElement('a');
-                const title=json.Annonces[i]._id;
-                //console.log("\""+title+"\"");
-                console.log(json.Annonces[i]._id)
-                ann.appendChild(div);
-                div.appendChild(img);
-                
-                div.appendChild(span2);
-                div.appendChild(btn);
-                div.appendChild(btn2)
-                img.setAttribute('src',json.Annonces[i].image[0]);
-                img.setAttribute('class','imgAnnonce');
-                div.setAttribute('class','contain')
-                span2.innerHTML =json.Annonces[i].Titre;
-                btn.innerHTML="Y Acceder";
-                btn2.innerHTML="Modifier";
-                btn2.setAttribute('href',"/Modification/"+title);
-                btn.setAttribute('href',"/Produit/"+title);
-                btn2.setAttribute('class',"modif");
-                btn.setAttribute('class',"acces");
-            /* btn.setAttribute('href',) */
-            }}else{
-                for(let i=0;i<json.Annonces.length;i++){
-                    const li = document.createElement('li');
-                    const div=document.createElement('div');
-                    const img = document.createElement('img');
-                    const span2 = document.createElement('span');
-                    const btn=document.createElement('a');
-                    const btn2=document.createElement('a');
-                    ann.appendChild(div);
-                    div.appendChild(img);
-                    const title=json.Annonces[i]._id;
-                    div.appendChild(span2);
-                    div.appendChild(btn);
-                    div.appendChild(btn2)
-                    img.setAttribute('src',json.Annonces[i].image[0]);
-                    img.setAttribute('class','imgAnnonce');
-                    div.setAttribute('class','contain')
-                    span2.innerHTML =json.Annonces[i].Titre;
-                    btn.innerHTML="Y Acceder";
-                    btn2.innerHTML="Modifier";
-                    btn.setAttribute('href','/Product/'+title),
-                    
-                    btn2.setAttribute('href','/Modification/'+title)
-                    btn2.setAttribute('class',"modif");
-                    btn.setAttribute('class',"acces");
-                    //btn.classList.add("acces")
-                        }
-            }
+            response.json().then(json => {
+                const ann=document.querySelector('.Annonces');
+                const ann2=document.querySelector('.modificationProfil');
+                document.querySelector('#prenom').innerHTML=json[0].Prenom;
+                document.querySelector('#nom').innerHTML=json[0].Nom;
+                document.querySelector('#email').innerHTML=json[0].email;
+                if(json[0].Localisation !== undefined){
+                    document.querySelector('#localisation').innerHTML=json[0].Localisation;
+                }
+                const p=document.createElement('a');
+                const conv=document.createElement('a');
+                const modif=document.createElement('a');
+                ann.appendChild(p);
+                ann.appendChild(conv);
+                ann2.appendChild(modif);
+                const title=json[0].email;
+                modif.setAttribute('href',"/Modif/");
+                modif.setAttribute('class',"profil_set");
+                modif.innerHTML=" Modifier mon prodil";
+                const j={email:title}
+                const jts=JSON.stringify(j)
+                const conf={ method: "POST",
+                            headers: {
+                                "Accept": "application/json",
+                                "Content-Type": "application/json",
+                                "Access-Control-Allow-Origin":"http://localhost:3006/Profil/Annonce"
+                            },
+                            body:jts};
+
+                fetch("http://localhost:3006/Profil/Annonce",conf) //fetch recup annonce
+                    .then(response => response.json().then((json) => {
+                        if (json.length >0){
+                            p.setAttribute('href',"/Annonce/"+title);
+                            p.innerHTML="Mes Annonces";
+                        }else{
+                        p.setAttribute('href',"/DeposerAnnonce");
+                        p.innerHTML=" Deposer votre première Annonces";
+                        }  
+                    }))
+                const config={ method: "POST",
+                                headers: {
+                                "Accept": "application/json",
+                                "Content-Type": "application/json",
+                                "Access-Control-Allow-Origin":"http://localhost:3006/Profil/Conversations"
+                                },
+                            body:jts};
+
+                fetch("http://localhost:3006/Profil/Conversations",config)
+                    .then(response => response.json().then((json) => {
+                        console.log(json)
+                        if (json.length >=0)
+                        {
+                        conv.innerHTML="Mes Conversations";
+                        conv.setAttribute('href',"/Conv/"+title);
+                        }  
+                    }))
+
+            
             /* if(json.User.PhotoProfil !==""){
                 document.querySelector('#photo').innerHTML=json.User.PhotoProfil;} */
-      })})
-}
+            })})
+    }
 
 export default fetcha

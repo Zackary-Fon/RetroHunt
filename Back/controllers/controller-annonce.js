@@ -10,6 +10,7 @@ const upload = require('../image/multer')
 const fs = require('fs')
 module.exports = {
     async CreateAnn(req, res) {
+        console.log(req.body)
         if(req.body != []){
         const uploader = async (path) => await cloudinary.uploads(path, 'Images');
         if (req.method === 'POST') {
@@ -21,7 +22,7 @@ module.exports = {
                 const newPath = await cloudinary.uploader.upload(path, {
                     width: 300,height: 400})
                 const thumbnail = await cloudinary.uploader.upload(path, {
-                    width: 300,height: 200})
+                    width: 250,height: 250})
                 urls.push(newPath.secure_url)
                 thumb.push(thumbnail.secure_url)
                 fs.unlinkSync(path) // ??
@@ -41,7 +42,7 @@ module.exports = {
             });
             console.log('annonce postée');
             ann.save();
-            User.findOne({
+           /*  User.findOne({
                 email: req.body.mv
             }).then((user) => {
                 User.updateOne({
@@ -52,7 +53,7 @@ module.exports = {
                     }
                 }).then((user) => {})
                 console.log('add to user')
-            })
+            }) */
             res.json("OK");
         } else {
             console.log("error");
@@ -84,11 +85,9 @@ module.exports = {
         })
     },
     Getid(req, res) {
-        console.log(req.body)
         Annonce.find({
             _id: req.body._id
         }).then((anno) => {
-            console.log(anno)
             res.send(anno)
         })
     },
@@ -102,7 +101,6 @@ module.exports = {
             for(let i=0;i<anno[0].Annonces.length;i++){
                 
                 if(anno[0].Annonces[i]._id==req.body._id){
-                    console.log(anno[0].Annonces[i])
                     res.json(anno[0].Annonces[i])
                 }
                 //ppp.push(anno[0].Annonces[i]);
@@ -112,36 +110,29 @@ module.exports = {
     },
     UpdateAnn(req,res){
         console.log(req.body)
-        User.findOne({
-            Pseudo:  req.body.Prenom}
-        ).then((anno) => { 
-            console.log(anno.Annonces.length)
-       for(let i=0;i<anno.Annonces.length;i++){
-            if(anno.Annonces[i]._id==req.body._id){
-                console.log(anno.Annonces[i])
-                User.updateOne({
-                email:anno.email
-                }, {
-                    $addToSet: {
-                        "Annonces": anno.Annonces[i]
-                    }
-            } ).then((user)=>{
-                console.log(user);
-                console.log('ok')
+        Annonce.update(
+            { _id: req.body._id },
+            {
+            $set: {
+            Titre:req.body.Titre,
+            Console: req.body.Console,
+            Date: req.body.Date,
+            Prix: req.body.Prix,
+            Etat: req.body.Etat,
+            Description: req.body.Description
+            }
+            }
+        )
+            .then((user)=>{
+                console.log(user)
             })
-           }
-        }
-    }
-        ) 
     },
    deleteAnn(req,res){
-    User.findOne({
-        Pseudo:  req.body.Prenom}
+    Annonce.deleteOne({
+        _id:  req.body.id}
     ).then((anno) => { 
-        console.log(anno.Annonces.length)
-   for(let i=0;i<anno.Annonces.length;i++){
-        if(anno.Annonces[i]._id==req.body._id){
-            console.log('j en ai marre')
-        }}})
+       console.log("ok")
+       res.json("deleted")
+        })
    }
 }

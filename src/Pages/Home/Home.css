@@ -1,19 +1,27 @@
 .homeBody{
     height:auto;
     margin-top:2%;
-}
-.headBody{
-    color:black;
-    font-family: 'Righteous', sans-serif;
-    letter-spacing: 1px;
+    color: white;
 }
 
+.margin_custom{
+    margin-top: 7%;
+    margin-bottom: 5%;
+}
 
-.bodyRecent{
-    display:flex;
-    flex-direction: row;
-    width:80%;
-    margin-left:13%;
+.aboutUs{
+    margin-right:10%;
+    font-size: 1.5em;
+}
+
+.imageIntitule{
+    width: 24rem;
+    margin-bottom: 5%;
+}
+
+.imageProduit{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .listArticles{
@@ -22,72 +30,40 @@
     list-style-type: none;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding:10px;
+}
 
-}
-.imageIntitule{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin:30px;
-    border-radius:20px;
-    overflow: hidden;
-    background-color: #444B90;
-    width:100% ;
-    max-width: 300px;
-}
-.intituleAnnonce{
-    display: flex;
-    flex-direction: column;
-    font-size: small;
-    align-items: center;
-    justify-content: center;
-    padding:20px;
-}
-.PersonPubli{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.pagination{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.pagination img{
-    width:100%;
-    max-width: 45px;
-    height: auto;
-    
-}
-.center{
-    margin-top:5%;
-    margin-right:10%;
-    font-size: 1.5em;
-    color:white;
-}
-.title{
+.button_custom-width{
+    width: 100%;
     text-align: center;
-    color:white;
-    margin-left: 40%;
-    margin-top:3%
 }
+
 .mario {
     width:238px;
     height: 167px;
-    margin-left: -575px;
     position: relative;
 }
+
 .News{
     margin-left: 39%;
     width: 50%;
     margin-top: -113px;
 }
 
-.Card{
-    background-color: #444B90;
+.card{
+    background-color: #444B90 !important;
+    border-radius: 10px !important;
+}
+
+.card-title{
+    text-align: center;
+}
+
+.list-group li{
+    background-color: #444B90 !important
+}
+
+/* .Card{
+    background-color: #444B90 !important;
     margin-bottom: 100px;
     margin-top:3%;
     border-radius: 10px;
@@ -97,4 +73,26 @@
     color:white;
     margin-left:23%
     
+} */
+
+@media screen and (max-width:750px){
+    .us{
+        width:50%;
+    }
+    .nous{
+        font-size:1rem;
+    }
+    .title{
+        margin-left:22%;
+    }
+    .mario{
+        margin-left:10%
+    }
+    .Card{
+        height: 500px;
+    }
+    .News{
+        margin-top:10%;
+        margin-left:22%
+    }
 }
