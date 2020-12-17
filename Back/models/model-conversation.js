@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 
 const ConvSchema = new Schema({
     TitreAnnonce:String,
+    IdAnn:String,
     receveur:String,
     envoyeur:String,
     Message: [Message]

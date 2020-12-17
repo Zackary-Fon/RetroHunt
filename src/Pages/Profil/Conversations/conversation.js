@@ -33,13 +33,17 @@ const conv=({match}) => {
                                 li.appendChild(acheteur);
                                 acheteur.innerHTML="acheteur"+json[i].receveur;
                                 const dernier=(json[i].Message.length)-1;
-                           
+                            const aller=document.createElement('a');
                             const mess=document.createElement('p');
                             const date=document.createElement('p');
                             li.appendChild(mess)
                             li.appendChild(date)
+                            li.appendChild(aller)
                              mess.innerHTML=json[i].Message[dernier].message;
                             date.innerHTML= json[i].Message[dernier].Date;  
+                            
+                            aller.setAttribute('href',"/Chat/"+json[i].IdAnn);
+                            aller.innerHTML="y accéder"
                             
                         }
                             fetch("http://localhost:3006/Profil/Conversations/receveur",conf)
@@ -58,14 +62,17 @@ const conv=({match}) => {
                                     li.appendChild(acheteur);
                                     acheteur.innerHTML="acheteur"+json[i].receveur;
                                     const dernier=(json[i].Message.length)-1;
-                               
+                                const aller=document.createElement('a');
                                 const mess=document.createElement('p');
                                 const date=document.createElement('p');
                                 li.appendChild(mess)
                                 li.appendChild(date)
-                                 mess.innerHTML=json[i].Message[dernier].message;
+                                li.appendChild(aller)
+                    
+                                mess.innerHTML=json[i].Message[dernier].message;
                                 date.innerHTML= json[i].Message[dernier].Date;  
-                                
+                                aller.setAttribute('href',"/Conversation/"+json[i]._id);
+                                aller.innerHTML="y accéder"
                             }
                             }))
                     }))

@@ -12,6 +12,7 @@ import modifProfil from "../Pages/Profil/modifProfil";
 import Chat from "../Pages/Chat/Chat";
 import modifAnn from "../Pages/Profil/Annonces/ModificationAnnonce";
 import conv from "../Pages/Profil/Conversations/conversation";
+import ConvProf from "../Pages/Profil/Conversations/Conv";
 
 import Crash_Bandicoot1 from "./ImagesProduits/Crash_Bandicoot1.jpg";
 import Spyro1 from "./ImagesProduits/Spyro1.jpg";
@@ -42,6 +43,7 @@ const tabRoutes = [
 {id:15, name:"Chat", path:"/Chat/:id", component:Chat},
 {id:16, name:"ModifAnn", path:"/ModifAnn/:id", component:modifAnn},
 {id:17, name:"Conv", path:"/Conv/:id", component:conv},
+{id:18, name:"Conversation", path:"/Conversation/:id", component:ConvProf},
 ]
 export default tabRoutes;
 
