@@ -2,7 +2,7 @@ import react from 'react'
 
 const eye=()=>{
     const pass=document.querySelector(".toggle-password");
-    const input=document.querySelector("#Password")
+    const input=document.querySelector("#Password");
     pass.addEventListener('click',()=>{
         if(pass.classList.contains("fa-eye-slash")){
             pass.classList.remove("fa-eye-slash")
