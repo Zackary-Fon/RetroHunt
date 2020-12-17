@@ -4,20 +4,20 @@
     border: white !important;
     font-size: 1.5rem !important;
 }
+
 .field-icon {
     float: right;
-    margin-left: -25px;
-    margin-top: -25px;
-    position: relative;
-    z-index: 2;
-    margin-top: 5%;
 }
-#eyes{
+
+.eyes{
+    position: absolute;
+    left: 100%;
+    top: 25%;
     
-    width: 8%;
-    margin-left: 97%;
-    margin-top: -10%;
-    margin-bottom: 13%;
+}
+
+.eyes:before{
+    margin-left: 15px;
 }
 
 .btn-customize:hover{
@@ -42,9 +42,9 @@
     color: white;
 }
 
-.container-customize :nth-child(3){
+.smaller{
     margin-top: 15px;
-    font-size: smaller;
+    font-size: 0.9em;
 }
 
 .container-customize a{
@@ -62,6 +62,7 @@
 }
 
 .input-customize{
+    position: relative;
     flex-wrap: nowrap !important;
     align-items: space-around;
     justify-content: space-around;
@@ -78,9 +79,26 @@
     color: white;
 }
 
+.input-customize .btn-infos{
+    position: absolute !important;
+    left: 85%;
+    height: 35px;
+    background-color: transparent;
+    border: 0px !important;
+    color: white;
+}
+
+.input-customize .btn-infos:hover{
+    background-color: transparent !important;
+}
+
 .input-customize input::placeholder{
     color: white;
     opacity: 50%;
+}
+
+.form-check-input-custom{
+    width: 10% !important;
 }
 
 @media (min-width: 1200px) {

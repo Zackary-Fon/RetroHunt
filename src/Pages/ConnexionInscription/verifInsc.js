@@ -1,7 +1,7 @@
 import React from "react"
 
 const verif=()=>{
-    const name=document.getElementById('Nom');
+const name=document.getElementById('Nom');
 const prenom=document.getElementById('Prenom');
 const mdp= document.getElementById('Password');
 const mdp2=document.getElementById('mdp2');
@@ -32,18 +32,35 @@ prenom.addEventListener("keyup", ()=>{
 });
 
 mdp.addEventListener("keyup", ()=>{
-    if(mdp.value==''||mdp.value ==' '){
+    if(mdp.value == ''||mdp.value == ' '){
         mdp.classList.remove('is-valid');
         mdp.classList.add('is-invalid');
     }else{
         mdp.classList.remove('is-valid');
-        const paswd= /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
-        if(paswd.test(mdp.value)) {
+        const paswd= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+        if(paswd.test(mdp.value) === true) {
             mdp.classList.remove('is-invalid');
             mdp.classList.add('is-valid');
+        } else{
+            mdp.classList.add('is-invalid');
         }
     }
 });
+
+mdp2.addEventListener("keyup", ()=>{
+    const paswd= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+    if(mdp2.value ===! mdp.value || paswd.test(mdp.value) === false){
+        mdp2.classList.remove('is-valid');
+        mdp2.classList.add('is-invalid');
+    }else{
+        if(mdp2.value === mdp.value && paswd.test(mdp.value) === true){
+        mdp2.classList.remove('is-invalid');
+        mdp2.classList.add('is-valid');
+        } else {
+            mdp2.classList.remove('is-valid');
+            mdp2.classList.add('is-invalid');
+        }
+    } 
 
 email.addEventListener("keyup", ()=>{
     if(email.value==''||email.value ==' '){
@@ -59,17 +76,6 @@ email.addEventListener("keyup", ()=>{
     }
 });
 
-mdp2.addEventListener("keyup", ()=>{
-    if(mdp2.value ==''||mdp2.value ==' '){
-        mdp2.classList.remove('is-valid');
-        mdp2.classList.add('is-invalid');
-    }else{
-        if(mdp2.value===mdp.value){
-        mdp2.classList.remove('is-invalid');
-        mdp2.classList.add('is-valid');
-        
-    }
-    }
 
 
 });
