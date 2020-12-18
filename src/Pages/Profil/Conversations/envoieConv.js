@@ -1,6 +1,6 @@
 import react from "react"
 
-const convers=()=>{
+const env=()=>{
     document.getElementById('envoi_message').addEventListener('click',()=>{
         const ladate= new Date();
         const date=ladate.getDate()+"/"+(ladate.getMonth()+1)+"/"+ladate.getFullYear()
@@ -9,8 +9,8 @@ const convers=()=>{
             receveur:document.getElementById('Receveur').value,
             Titre:document.getElementById('titre').innerHTML,
             IdAnn:document.getElementById('idAnn').value,
-            Message:[{message:document.getElementById('message').value,aEnvoye:document.getElementById('envoyeur').value,
-        Date:date}]
+            Message:[{message:document.getElementById('message').value,
+            aEnvoye:document.getElementById('Receveur').value}]
         }
         const jsConv=JSON.stringify(Conv);
         
@@ -32,6 +32,7 @@ const mess={
     receveur:document.getElementById('Receveur').value,
     envoyeur:document.getElementById('envoyeur').value,
     message:document.getElementById('message').value,
+    envoyé:document.getElementById('Receveur').value,
 Date:date}
   const jsmess=JSON.stringify(mess)
 console.log(jsmess)
@@ -66,6 +67,7 @@ console.log('ok')
 
 )
 })
+
 }
 
-export default convers
+export default env

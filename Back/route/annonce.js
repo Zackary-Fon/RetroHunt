@@ -1,10 +1,10 @@
-const {CreateAnn,GetPlay,Getall,Getdate,Getid,Getidbyuser, UpdateAnn, deleteAnn} = require('../controllers/controller-annonce');
+const {CreateAnn,GetPlay,Getall,Getid, UpdateAnn, deleteAnn} = require('../controllers/controller-annonce'); //recup de mees fonction controller 
 const {CreateUser,GetUser,Log,UpdateUser, authenticateToken,deleteUser, GetAnn}= require('../controllers/controller-user');
-const {Createconv,AddMessage,Getconv, GetEnvoie,GetEnvoiereceveur}=require('../controllers/controller-message');
+const {Createconv,AddMessage,Getconv, GetEnvoie,GetEnvoiereceveur, GetConvbyId}=require('../controllers/controller-message');
 const express=require('express');
 const { route } = require('../app/app');
-const router=express.Router();
-const cloudinary = require("../image/upload"); 
+const router=express.Router();//instanciation de router
+const cloudinary = require("../image/upload");  
 const upload=require('../image/multer')
 
 router.route('/user') 
@@ -32,14 +32,8 @@ router.route('/categorie')
 router.route('/all')
     .get(Getall)
 
-router.route('/date')
-    .get(Getdate)
-
 router.route('/id')
 .post(Getid)
-
-router.route('/idUser')
-.post(Getidbyuser)
 
 router.route('/Update')
 .post(UpdateAnn)
@@ -61,6 +55,9 @@ router.route('/message/new')
 
 router.route('/message/find')
 .post(Getconv)
+
+router.route('/message/find/id')
+.post(GetConvbyId)
 
 router.route('/message')
 .post(AddMessage)

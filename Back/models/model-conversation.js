@@ -5,9 +5,10 @@ const Schema = mongoose.Schema;
 
 const ConvSchema = new Schema({
     TitreAnnonce:String,
+    IdAnn:String,
     receveur:String,
     envoyeur:String,
-    Message: [Message]
+    Message: [Message] //tableau de message
 },{collection: "CONVERSATION"});
 
 const Conv = mongoose.model('conversation',ConvSchema);

@@ -38,7 +38,6 @@ document.getElementById('myForm').addEventListener('change',()=>{
         console.log(Prix.value)
         console.log(Etat.value)
         console.log(Console.value)
-        
         console.log(description.value)
         console.log(photo.value)
         sub.disabled=true;

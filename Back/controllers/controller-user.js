@@ -1,34 +1,36 @@
-const env = require('dotenv').config();
-const User = require('../models/model-user');
-const Annonce=require('../models/model-annonce');
-const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
-const data = require('../data/bd');
-const jwt = require('jsonwebtoken');
+const env = require('dotenv').config(); //declaration du dot env
+const User = require('../models/model-user'); //declaration du modeel user
+const Annonce=require('../models/model-annonce'); //declaration du model annonce
+const bcrypt = require('bcrypt'); //instanciation de bcrypt
+const jwt = require('jsonwebtoken'); //instanciation de jwt
 
 
 module.exports = {
-    GetAnn(req,res){
-        console.log(req.body)
+
+    GetAnn(req,res){ //recuparation d une annonce par son email vendeur
         Annonce.find({
             MailVendeur: req.body.email
         }).then((is)=>{
             res.send(is)
         })
     },
-    async CreateUser(req, res) {
-        if(req.body !=[]){
+
+    CreateUser(req, res) { //creeation utilisateur
+        if(req.body !=[]){ //si pas vide
            User.findOne({
                 email: req.body.email
             }).then((us)=>{
-                if(us != null){
+                if(us != null){ //si user  deja crée
                 console.log(us)
                 res.json("L'utilisateur existe déjà");
-            } else {
+            } else { //si pas deja crée
                 const mail=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                //instanciation de ma regex mail
                 const paswd= /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+                //instanciation de ma regex de everifiation de mot de passe fort
                 if(mail.test(req.body.email) && paswd.test(req.body.Password))  {
-                const user = new User({
+                    //verification si les mail t password verifie  les regex
+                const user = new User({ //creation de l user
                     email: req.body.email,
                     Password: req.body.Password,
                     Nom: req.body.Nom,
@@ -39,29 +41,31 @@ module.exports = {
                     Annonces: req.body.Annonces
                 });
                 console.log('user saved');
-                user.save();
+                user.save(); //sauvegarde bdd
                 res.json("Ok");
-            }else{
+            }else{ //si regex pas ok
                 console.log("ce n est pas des données possible")
             }
             }
         })
     
-    }else  {
+        }else  { //si req.body vide
         console.log("vide");
         res.json('vide')
-    }
+        }
     },
-    UpdateUser(req,res){
-        console.log(req.body);
-        User.replaceOne({_id:req.body.id},
+    UpdateUser(req,res){ //modifier user 
+        User.replaceOne(
+            {_id:req.body.id}, //je cherche user par son id
             {_id:req.body.id , Nom: req.body.Nom , Prenom:req.body.Prenom , 
-                email:req.body.email,Password:req.body.Password,Localisation: req.body.Localisation })
+                email:req.body.email,Password:req.body.Password,
+                Localisation: req.body.Localisation }) //je modifie ses info en bdd
                 .then((user)=>{
                     console.log(user)
                 })
     },
-    GetUser(req, res) {
+
+    GetUser(req, res) { //chercheer user par jwt 
         User.find({
             email:req.user.User.email // recherche d un utilisateur grace au token 
         }).then((user) => {
@@ -69,16 +73,14 @@ module.exports = {
         })
     },
     Log(req, res) {
-        console.log(req.body)
         User.findOne({
             email: req.body.email  // je cherche mon user
         }).then((user) => {
             console.log(user)  
-            if (user !== null) {  //si j ai quelquechose
-                bcrypt.compare(req.body.Password, user.Password, (function (error, same) { //je verifie son mot de pass
-                    if (same == true) { // si c'est pareil
+            if (user !== null) {  //si j ai quelque chose
+                bcrypt.compare(req.body.Password, user.Password, (function (error, same) { //je verifie son mot de passe 
+                    if (same == true) { // si c'est le bon mdp
                         console.log('good password'); 
-                        console.log(user)
                         const People = { // j enregistre mon user dans un objet
                             User: user
                         };
@@ -99,8 +101,8 @@ module.exports = {
         });
 
     },
-    authenticateToken(req, res,next) {
-        console.log
+
+    authenticateToken(req, res,next) { //verification validiter du token
         const token = req.body.token; // je recupere le token envoyer par le front
         if (token == null) { // si j ai rien
             return res.sendStatus(401)
@@ -115,13 +117,10 @@ module.exports = {
         }) 
 
     },
-    deleteUser(req,res){
-        console.log(req.body)
+
+    deleteUser(req,res){ //suppression d un user
         User.deleteOne({email:req.body.email}).then(()=>{
             console.log('user delete')
             res.json("Deleted")})
     },
 }
-
-/// JWT -> LogIn 
-//token -> Ci avec temps 

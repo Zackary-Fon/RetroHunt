@@ -4,11 +4,7 @@ const URL='http://localhost:3006/message/find';
 const URL2 = "http://localhost:3006/auth";
 
 const mess=()=>{
-    
-    
-    const Conver=document.getElementById('conv');
-    Conver.addEventListener('click',()=>{
-        
+
     const receveur=document.getElementById('Receveur').innerHTML;
     const envoyeur=document.getElementById('envoyeur');
         console.log('load')
@@ -31,7 +27,8 @@ body:Jsconv}
 
 fetch(URL,config)
 .then(response => response.json().then((json) => {
-    console.log(json.Message)
+    console.log(json) 
+    if(json !== null){
      for(let i=0;i<json.Message.length;i++){
          const ul=document.getElementById('zone_chat');
          const li= document.createElement('li');
@@ -41,13 +38,19 @@ fetch(URL,config)
          li.appendChild(date)
          li.appendChild(mess);
          mess.innerHTML=json.Message[i].message;
-         date.innerHTML=json.Message[i].Date;
+         date.innerHTML=json.Message[i].Date; 
+        const Moi=document.getElementById('envoyeur');
+        if(Moi.value == json.Message[i].aEnvoye){
+            console.log('c\'est moi')
+        }
     } 
 
+     }
+     else{
+         console.log("vide")
+     }
 
 }))
-})
-
 }
 
 export default mess

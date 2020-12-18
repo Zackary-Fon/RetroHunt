@@ -1,33 +1,30 @@
-const Annonce = require('../models/model-annonce');
-const User = require('../models/model-user');
-const data = require('../data/bd');
-const env = require('dotenv').config();
-const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const cloudinary = require('../image/upload');
-const upload = require('../image/multer')
-const fs = require('fs')
-module.exports = {
-    async CreateAnn(req, res) {
-        console.log(req.body)
-        if(req.body != []){
-        const uploader = async (path) => await cloudinary.uploads(path, 'Images');
-        if (req.method === 'POST') {
-            const files = req.files
-            const urls = []
-            const thumb = []
-            for (const file of files) {
-                const {path} = file
+const Annonce = require('../models/model-annonce'); //declaration des modeel annonce
+const User = require('../models/model-user'); //declaration des model useer
+const env = require('dotenv').config(); //recup des dot env
+const cloudinary = require('../image/upload'); //declaration cloudinary
+const data=require('../data/bd');
+const upload = require('../image/multer'); //declaration multer 
+const fs = require('fs') //declaration fs
+
+module.exports = {  //exportation du controller pour annonce 
+    async CreateAnn(req, res) { //creation d'unee annonce
+        if(req.body != []){ //si pas vide
+        const uploader = async (path) => await cloudinary.uploads(path, 'Images'); //instanciation de la formule d envoi cloudinary
+        if (req.method === 'POST') { //SI c'est bien formulaire method POST
+            const files = req.files //recup dees files
+            const urls = [] //creation tableau url
+            const thumb = [] //creation tableau thumbnail
+            for (const file of files) { //Pour chaque fichier dans mon files
+                const {path} = file //jee créee un objet qui prend le file
                 const newPath = await cloudinary.uploader.upload(path, {
-                    width: 300,height: 400})
+                    width: 300,height: 400}) //j envoiee a cloudinary la photo et je la redimension
                 const thumbnail = await cloudinary.uploader.upload(path, {
-                    width: 250,height: 250})
-                urls.push(newPath.secure_url)
-                thumb.push(thumbnail.secure_url)
-                fs.unlinkSync(path) // ??
+                    width: 250,height: 250}) //j envoie la miniature a cloudinary redimensionné
+                urls.push(newPath.secure_url) //je meet dans url l'url scure que cloudniary m envoie
+                thumb.push(thumbnail.secure_url) //je met dans thumb l url secure des miniaturee
+                fs.unlinkSync(path) // je supprime le fichieer qui vient d etre fait
             }
-            const ann = new Annonce({
+            const ann = new Annonce({ //creation de l annonce
                 Titre: req.body.TitreAnnonce,
                 Console: req.body.Console,
                 Date: req.body.Date,
@@ -40,75 +37,42 @@ module.exports = {
                 thumbnail: thumb
                 //cloudinary_id:result.public_id
             });
-            console.log('annonce postée');
-            ann.save();
-           /*  User.findOne({
-                email: req.body.mv
-            }).then((user) => {
-                User.updateOne({
-                    email: req.body.mv
-                }, {
-                    $push: {
-                        "Annonces": ann
-                    }
-                }).then((user) => {})
-                console.log('add to user')
-            }) */
-            res.json("OK");
-        } else {
-            console.log("error");
+            console.log('annonce postée'); 
+            ann.save(); //sauvegarde dans la bdd
+            res.json("OK"); //envoie au front OK
+        } else { //si erreur
+            console.log("error"); 
             res.send("error");
 
         }}
-    else {
+    else { //si vide
         console.log('vide');
         res.json('vide')
     }
     },
-    GetPlay(req, res) {
+
+    GetPlay(req, res) { //recuperation des jeux par console
         Annonce.find({
             Console: req.body.title
         }).then((ann) => {
             res.send(ann)
         })
     },
-    Getall(req, res) {
-        Annonce.find().then((ann) => {
+
+    Getall(req, res) { //reecuperation de toute les annonces
+        Annonce.find()
+        .then((ann) => {
             res.send(ann)
         })
     },
-    Getdate(req, res) {
-        Annonce.find({
-            Date: "2050"
-        }).then((anno) => {
-            res.send(anno)
-        })
-    },
-    Getid(req, res) {
+    Getid(req, res) { //recup annonce par ID
         Annonce.find({
             _id: req.body._id
         }).then((anno) => {
             res.send(anno)
         })
     },
-    Getidbyuser(req, res) {
-        const ppp=[];
-
-       User.find({
-             Annonces:  {$elemMatch :{_id:req.body._id}}
-        }).then((anno) => {
-            //console.log(anno[0].Annonces)
-            for(let i=0;i<anno[0].Annonces.length;i++){
-                
-                if(anno[0].Annonces[i]._id==req.body._id){
-                    res.json(anno[0].Annonces[i])
-                }
-                //ppp.push(anno[0].Annonces[i]);
-            }
-            //res.json(ppp)
-        })
-    },
-    UpdateAnn(req,res){
+    UpdateAnn(req,res){ //met a jour une annonce ( modif annonce)
         console.log(req.body)
         Annonce.update(
             { _id: req.body._id },
@@ -127,7 +91,8 @@ module.exports = {
                 console.log(user)
             })
     },
-   deleteAnn(req,res){
+
+    deleteAnn(req,res){ //supprimer une annonce
     Annonce.deleteOne({
         _id:  req.body.id}
     ).then((anno) => { 
