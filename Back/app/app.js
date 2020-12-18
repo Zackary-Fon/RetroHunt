@@ -4,12 +4,13 @@ const UsersRoutes = require('../route/annonce');
 const bodyParser = require('body-parser');
 const cors= require('cors');
 const io=require('socket.io');
-const corsOptions={ //options d autorisation d acces
+var corsOptions={ //options d autorisation d acces
   origin:"http://localhost:3000" //URL front 
 }
 app.use(cors(corsOptions)) //instanciation reglees d acces
 app.use(bodyParser.json()); //instanciation
 app.use(express.json());//instanciation express
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true })) //instanciation parametre du body parser
 app.use(function(req, res, next) { //autorisation pour fetch
     res.header("Access-Control-Allow-Origin", "*");

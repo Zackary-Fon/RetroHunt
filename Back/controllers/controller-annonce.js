@@ -2,6 +2,7 @@ const Annonce = require('../models/model-annonce'); //declaration des modeel ann
 const User = require('../models/model-user'); //declaration des model useer
 const env = require('dotenv').config(); //recup des dot env
 const cloudinary = require('../image/upload'); //declaration cloudinary
+const data=require('../data/bd');
 const upload = require('../image/multer'); //declaration multer 
 const fs = require('fs') //declaration fs
 
