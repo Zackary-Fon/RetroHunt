@@ -1,6 +1,12 @@
+.padding-footer{
+  height: 120px;
+}
 
 .site-footer
 {
+  position: absolute;
+  width: 100%;
+  bottom: 0%;
   background: linear-gradient(to right, #594BBD, #3E338C);
   padding:45px 0 20px;
   font-size:15px;

@@ -33,7 +33,6 @@ const Recent = () => {
         return (
             <div key={produit._id} className="imageIntitule card card-custom">
                 <div className="imageProduit " > <div style={{background: `url(${produit.thumbnail[0]})`, backgroundPosition:"center",backgroundRepeat:"no-repeat", backgroundSize:"80%", height:"200px"}}></div> </div>
-                {/* <img className="imageProduit card-img-top" src="url(${produit.image[0]})" alt="Card image cap" ></img> */}
                 <div className="intituleAnnonce card-body">
                         <h1 className="card-title">{produit.Titre}</h1>
                         <ul className="list-group list-group-flush">
