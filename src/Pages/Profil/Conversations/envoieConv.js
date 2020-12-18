@@ -1,7 +1,11 @@
 import react from "react"
 
 const env=()=>{
+<<<<<<< Updated upstream
     document.getElementById('envoi_message').addEventListener('click',()=>{
+=======
+    document.getElementById('envoi_message').addEventListener('click',()=>{ //efetch nvoie conv comme pour chat mais pour conversations
+>>>>>>> Stashed changes
         const ladate= new Date();
         const date=ladate.getDate()+"/"+(ladate.getMonth()+1)+"/"+ladate.getFullYear()
         const Conv={

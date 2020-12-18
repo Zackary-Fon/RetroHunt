@@ -1,10 +1,17 @@
 import react,{useEffect} from "react"
 import "../../Chat/Chat.css"
 import env from "./envoieConv"
+<<<<<<< Updated upstream
 const ConvProf=({match})=>{
 
 
     useEffect(()=>{
+=======
+const ConvProf=({match})=>{ //pareil que chat mais si c'est moi qui recoit
+
+
+    useEffect(()=>{ 
+>>>>>>> Stashed changes
         env()
         const idAnn=match.params.id;
         const rec={id:idAnn};
