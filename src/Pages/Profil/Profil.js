@@ -10,7 +10,7 @@ const Profil = () => {
 
     useEffect(()=>{
         fetcha();
-       
+        
            // fetchu();
             
     })
@@ -21,7 +21,7 @@ const Profil = () => {
 
             <Row className="CardHeader" lg={12} xs={6}>
                 <Col className="back_btn" md={3} xs={12}><Link to="/"><i class="fas fa-chevron-left"></i> Retour</Link></Col>
-                <Col md={6} xs={12}><h2 className="profil_title" >Mon Profil</h2></Col>
+                <Col md={6} xs={12}><h2 className="profil_title">Mon Profil</h2></Col>
                 <Col md={3} xs={12}>
                     <div className="modificationProfil">
                         <Row className="justify-content-center"><Link to="/DeleteProfile" className="delete">Supprimer mon compte</Link></Row>

@@ -2,9 +2,6 @@ import React,{useEffect} from "react";
 import Recent from "./Recent";
 import './Home.css';
 /* import GetUser from './../../fetch.js'; */
-import chevronGauche from "../../Images/chevronGauche.png";
-import chevronDroite from "../../Images/chevronDroite.png";
-import chevronHaut from "../../Images/chevronHaut.png";
 import Col from 'react-bootstrap/Col';
 import Row from "react-bootstrap/Row";
 import home from "./../../Images/home.png";
