@@ -9,8 +9,8 @@ const env=()=>{
             receveur:document.getElementById('Receveur').value,
             Titre:document.getElementById('titre').innerHTML,
             IdAnn:document.getElementById('idAnn').value,
-            Message:[{message:document.getElementById('message').value,
-            aEnvoye:document.getElementById('Receveur').value}]
+            Message:[{message:document.getElementById('message').value,aEnvoye:document.getElementById('Receveur').value,
+        Date:date}]
         }
         const jsConv=JSON.stringify(Conv);
         
@@ -26,35 +26,6 @@ fetch("http://localhost:3006/message/new",conf)
 console.log(json)
  if(json ==="deja une conv"){
    console.log('mess')
-const mess={
-  Titre:document.getElementById('titre').innerHTML,
-  IdAnn:document.getElementById('idAnn').value,
-    receveur:document.getElementById('Receveur').value,
-    envoyeur:document.getElementById('envoyeur').value,
-    message:document.getElementById('message').value,
-    envoyé:document.getElementById('Receveur').value,
-Date:date}
-  const jsmess=JSON.stringify(mess)
-console.log(jsmess)
-
-  const config={ method: "POST",
-headers: {
-"Accept": "application/json",
-"Content-Type": "application/json",
-"Access-Control-Allow-Origin":"http://localhost:3006/message"
-},
-body:jsmess};
-fetch("http://localhost:3006/message",config)
-.then(response => response.json().then((json) => {
-    if(json=="OK"){
-      //document.location.href='/Profil'
-      console.log('ok')
-    }
-    else{
-      console.log(json)
-    }
-}))
-
 
 
 }

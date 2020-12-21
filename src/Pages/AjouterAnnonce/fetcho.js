@@ -4,8 +4,11 @@ const URL="http://localhost:3006/deposer"; //url back
 
 const fetcho=()=>{
     document.getElementById("submit").addEventListener('click',()=>{//evenement au click
+       
         let form = document.getElementById("myForm"); //je recupere mon formulaire
+        console.log(form)
         let formData = new FormData(form); //je transforme mon formulaire en formData
+        console.log(formData)
         const config = { //config fetch
             method: 'POST', //j envoie des données
             headers: {

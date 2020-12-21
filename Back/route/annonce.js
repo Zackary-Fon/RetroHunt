@@ -59,6 +59,4 @@ router.route('/message/find')
 router.route('/message/find/id')
 .post(GetConvbyId)
 
-router.route('/message')
-.post(AddMessage)
     module.exports=router;

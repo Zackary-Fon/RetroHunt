@@ -30,6 +30,7 @@ const ConvProf=({match})=>{
                 ann.appendChild(mess);
                 ann.appendChild(date);
                 ann.appendChild(envoie);
+                date.setAttribute('class',"date")
                 const idann=document.getElementById('idAnn');
 
                 document.getElementById('Receveur').value=json.receveur;

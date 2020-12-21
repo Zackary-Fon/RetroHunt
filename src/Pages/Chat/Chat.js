@@ -2,8 +2,9 @@
 import React,{useEffect,useState} from "react";
 import "./Chat.css"
 import Info from "./recupinfo"
-import mess from "./recupmess"
 import convers from './nouvelleConv'
+import {Link} from "react-router-dom";
+
 const Chat = ({match}) =>{
     const[data,setdata]=useState([])
 
@@ -78,16 +79,23 @@ const Chat = ({match}) =>{
                                     const li= document.createElement('li');
                                     const date=document.createElement('p');
                                     const mess=document.createElement('p');
-                                    ul.appendChild(li)
-                                    li.appendChild(date)
+                                    mess.setAttribute('class',"msg");
+                                    ul.appendChild(li);
                                     li.appendChild(mess);
+                                    li.appendChild(date);
+                                    date.setAttribute('class',"date")
                                     mess.innerHTML=json.Message[i].message;
                                     date.innerHTML=json.Message[i].Date; 
                                     const Moi=document.getElementById('envoyeur');
                                     
                                     const qui=document.createElement('p');
                                     li.appendChild(qui);
-                                    qui.innerHTML=json.Message[i].aEnvoye
+                                    const moi= document.getElementById('envoyeur').value;
+                                    if(moi== json.Message[i].aEnvoye){
+                                        li.setAttribute('class',"en");
+                                        console.log('ok')
+                                    }
+                                    
                                     
                                 } 
                             }else{
@@ -103,17 +111,20 @@ const Chat = ({match}) =>{
 
     return(
     <div className="chat">
-        <div>
+        <div className="menu">
+        <Link to="../"><i class="fas fa-chevron-left"></i> </Link>
             <h3 id="titre"></h3>
             <input type="hidden" id="Receveur"></input>
             <input type="hidden" id="envoyeur"></input>
             <input type="hidden" id="idAnn"></input>
         </div>
+        <div  id="chat">
         <ul id="zone_chat">
             </ul>
+            </div>
         <form action="/" method="post" className="envoi">
             <input type="text" name="message" id="message" placeholder="Votre message..." size="50" autofocus />
-            <input  id="envoi_message" value="Envoyer" />
+            <div  id="envoi_message">Envoyer</div>
         </form>
 
      

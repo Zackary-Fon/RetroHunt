@@ -19,31 +19,28 @@ module.exports = {
                     res.json("OK"); //rep front
                 }else{ //si une conv
                     console.log('deja');
-                    res.json("deja une conv")
+                    console.log(req.body.Message[0].message)
+                    const mess=new Message({ //creation du message
+                        message: req.body.Message[0].message,
+                        Date:req.body.Message[0].Date,
+                        aEnvoye:req.body.Message[0].aEnvoye,
+                    })
+                   console.log(mess)
+                   Conv.updateOne(
+                       {receveur:req.body.receveur, 
+                        envoyeur:req.body.envoyeur,
+                        TitreAnnonce:req.body.Titre},  //recherche la conv avec ces info la
+                        {
+                        $push: {  //je push dans mon tableau message le nouveau message
+                            "Message": mess
+                        }
+                    }).then(() => {
+                        console.log('add to user')
+                        res.json("OK") 
+                    }) 
                 }
             })
        
-    },
-    AddMessage(req,res){ //Ajout message a unee anonnce
-        const mess=new Message({ //creation du message
-            message: req.body.message,
-            Date:req.body.Date,
-            aEnvoye:req.body.envoyé,
-        })
-       
-       Conv.updateOne(
-           {receveur:req.body.receveur, 
-            envoyeur:req.body.envoyeur,
-            TitreAnnonce:req.body.Titre},  //recherche la conv avec ces info la
-            {
-            $push: {  //je push dans mon tableau message le nouveau message
-                "Message": mess
-            }
-        }).then(() => {
-            console.log('add to user')
-            res.json("OK") 
-        }) 
-        
     },
     Getconv(req,res){ //recherche de conversation
         Conv.findOne({receveur:req.body.receveur,

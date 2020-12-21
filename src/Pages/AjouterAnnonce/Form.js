@@ -13,10 +13,10 @@ import Tooltip from "react-bootstrap/Tooltip"
 
 const Formulaire = () =>{
     useEffect(() => {
-       Apercu()
-        recup()
-        fetcho()
-        verif()
+       Apercu()  //apercu mdp
+        recup() //recup avec token 
+        fetcho() //envoie de l annonce
+        verif() //verif de l annonce
     })
     const renderTooltip = props => (
         <Tooltip {...props}>La date doit être comprise entre 1900 et 2010</Tooltip>

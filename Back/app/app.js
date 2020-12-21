@@ -11,7 +11,7 @@ app.use(cors(corsOptions)) //instanciation reglees d acces
 app.use(bodyParser.json()); //instanciation
 app.use(express.json());//instanciation express
 app.use(cors())
-app.use(bodyParser.urlencoded({ extended: true })) //instanciation parametre du body parser
+app.use(bodyParser.urlencoded({ extended: false })) //instanciation parametre du body parser
 app.use(function(req, res, next) { //autorisation pour fetch
     res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
