@@ -1,6 +1,5 @@
 import React,{useEffect,useState} from "react";
 import "./Chat.css"
-import Info from "./recupinfo"
 import convers from './nouvelleConv'
 import {Link} from "react-router-dom";
 

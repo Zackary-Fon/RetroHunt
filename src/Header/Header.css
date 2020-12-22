@@ -119,13 +119,26 @@ a{
     display:none;
 }
 
-#searchBarBurger2{
+.searchBarB{
     display: none;
 }
 
 .btn-btn1{
     display:none !important;
 }
+
+#connexion2{
+    display:none !important;
+}
+
+#profil2{
+    display:none !important;
+}
+
+#Jeux{
+    display:none !important;
+}
+
 @media screen and (max-width:750px){
     
     .burger{
@@ -179,11 +192,20 @@ a{
         margin-top: 28%;
     }
 
-    #searchBar{
-        display:none  !important;
+
+    #profil2{
+        display:block !important;
     }
-    #searchBarBurger2{
+    
+    #Jeux{
+        display:block !important;
+    }
+
+    #searchBar{
+        display:none ;
+    }
+    .searchBarB{
         margin-top: 2%;
-        display: block;
+        display: block !important;
     }
 }

@@ -15,7 +15,6 @@ import conv from "../Pages/Profil/Conversations/conversation";
 import ConvProf from "../Pages/Profil/Conversations/Conv";
 import AjouterAnnonce from "../Pages/AjouterAnnonce/AjouterAnnonce";
 import SuppProfil from "../Pages/Profil/SupprimerProfil";
-import contact from "../Pages/Contact/Contact"
 
 //tableau des routes
 const tabRoutes = [
@@ -29,7 +28,6 @@ const tabRoutes = [
 {id:7, name:"Legal", path:"/Legal", component:Legal},
 {id:8, name:"SuppProfil", path:"/DeleteProfile", component:SuppProfil},
 {id:9,name:"Referentiel", path:"/Referentiel", component:ref},
-{id:10,name:"Contact", path:"/Contact", component:contact},
 {id:11, name:"Produit", path:"/Produit/:id", component:Produit},
 {id:13, name:"Annonce", path:"/Annonce/:id", component:Annonce},
 {id:14, name:"ModifProfil", path:"/Modif/", component:modifProfil},

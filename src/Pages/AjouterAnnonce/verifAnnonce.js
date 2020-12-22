@@ -21,7 +21,6 @@ photo.addEventListener('change',()=>{ //verif si jpg,jpeg ou png
     }
 })
 
-<<<<<<< Updated upstream
 Date.addEventListener('keyup',()=>{
     if (Date.value <=1900 || Date.value >= 2010){
         console.log("date trop grande")
@@ -29,10 +28,6 @@ Date.addEventListener('keyup',()=>{
 })
 document.getElementById('myForm').addEventListener('change',()=>{
     if(Titre.value !="" && (Date.value>1900 && Date.value < 2010) &&
-=======
-document.getElementById('myForm').addEventListener('change',()=>{ //verif a chaque fois que le form change
-     if(Titre.value !="" && (Date.value>1900 && Date.value < 2010) &&
->>>>>>> Stashed changes
     Prix.value !="" && Etat.value!=" " && Console.value !=" "
     && description.value!="" && photo.value != ""){ //verification de toutes les données ok et pas vide
         console.log("OK")
@@ -45,15 +40,7 @@ document.getElementById('myForm').addEventListener('change',()=>{ //verif a chaq
         console.log(Console.value)
         console.log(description.value)
         console.log(photo.value)
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-        console.log("vas te faire");
->>>>>>> Stashed changes
-        sub.disabled=true;
-=======
         sub.disabled=true; //bouton disabled
->>>>>>> Stashed changes
     }
 })
 

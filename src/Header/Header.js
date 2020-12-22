@@ -26,7 +26,7 @@ const Header = () => {
             <div class="menuB">
             <Form inline>
             <Link to={`/Search`} ><Button variant="btn1 btn-custom"><i className="fas fa-search"></i></Button></Link>
-                <FormControl type="text" id="searchBarBurger2" placeholder="Rechercher" className="mr-sm-2" />
+                <FormControl type="text" id="searchBar" placeholder="Rechercher" className="mr-sm-2 searchBarB" />
             </Form>
             <Link  id="connexion2" to="/ConnexionInscription">Connexion/inscription</Link>
             <Link  id="profil2" to="/Profil">Profil</Link>
