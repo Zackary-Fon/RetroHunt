@@ -12,6 +12,7 @@ const App = () => {
       <Header/>
       <Main />
       <Footer/>
+      <script src="https://kit.fontawesome.com/871e5d20ad.js" crossorigin="anonymous"></script>
     </div>
     
   );

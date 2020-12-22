@@ -11,16 +11,28 @@ import FormControl from 'react-bootstrap/FormControl';
 import {Link} from "react-router-dom";
 import List from "./ListMenu";
 import Search from "./Search";
-
+import Burger from "./Burger"
 import Alert from 'react-bootstrap/Alert';
-
+import menu from "../Images/bars-solid.svg"
 const Header = () => {
     useEffect(()=>{
         Search()
+        Burger()
     })
     return ( 
     <header>
             <Navbar className="menu_head  mr-auto" expand="lg">
+            <div class="bg"><div class="burger"><i class="fas fa-bars"></i></div>
+            <div class="menuB">
+            <Form inline>
+            <Link to={`/Search`} ><Button variant="btn1 btn-custom"><i className="fas fa-search"></i></Button></Link>
+                <FormControl type="text" id="searchBarBurger2" placeholder="Rechercher" className="mr-sm-2" />
+            </Form>
+            <Link  id="connexion2" to="/ConnexionInscription">Connexion/inscription</Link>
+            <Link  id="profil2" to="/Profil">Profil</Link>
+            <div id="Jeux">Jeux</div>
+            </div>
+            </div>
                 <Navbar.Brand className="logo_resize" href="/">
                     <img id="logo" src={logo_dm} alt="Logo"/>
                 </Navbar.Brand>
@@ -37,9 +49,7 @@ const Header = () => {
             {/* <HeadMenu/>
             <Burger/> */}
             </Navbar>
-            <Alert className="deco" variant={'danger'}>
-    vosu etes 
-  </Alert>
+            
     </header>
     )
 }

@@ -78,6 +78,7 @@ a{
     border-radius: 0% !important;
 }
 
+
 .searching{
     width: 100%;
     height: 25%;
@@ -114,58 +115,75 @@ a{
     display:none;
 }
 
+.menuB{
+    display:none;
+}
 
+#searchBarBurger2{
+    display: none;
+}
+
+.btn-btn1{
+    display:none !important;
+}
 @media screen and (max-width:750px){
     
-.logo_resize{
-    width: 150px;
-    padding: 10px;
-    padding-left: 45px;
-    margin-top: -10%;
-}
-.dropdowns{
-    font-size: 1rem;
-    margin-top: -10%;
-}
-
-#logo{
-    width:100%;
-}
-    .head_menu{
+    .burger{
+        z-index: 100;
+    width: 90%;
+    height: 102%;
+    display: block;
+    padding: 29px;
+    
+    }
+    .fa-bars{
+        margin-left: 47%;
+    }
+    .menuB{
+        position: absolute;
+        width: 100%;
+        height: 392px;
+        background-color:#513592;
+        
+        color:white;
         display:none;
     }
-    .menu_head{
-        justify-content:left;
-        position: relative;
-        width: 100%;
-    }
-    .burger{
-        display:block;
-        position:absolute;
-        top:0px;
-        right:0px;
-        width:20px;
-        height:20px;
-        padding: 10px;
-    }
-    header{
-        justify-content: baseline;
-    }
-    .burgerMenu{
-        list-style-type: none;
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width:100%;
-        background-color:#7a57d1;
-        position: absolute;
-        left:0px;
-        top:0px;
-        height: auto;
 
+    .form-inline .form-control {
+        width: 85% !important;
     }
-    
-.navbar-nav{flex-direction: row;
+
+    .navbar-light .navbar-brand {
+        color: rgba(0,0,0,.9);
+         width: 0%; 
+        margin-left: 20%;
+    }
+
+    #logo {
+    width: 80%;
 }
+    .dropbtn{
+        display: none;
+    }
+    #connexion{
+        display:none !important;
+    }
+    #connexion2{
+        display:block !important;
+    }
+    .btn-btn{
+        display:none !important;
+    }
+    .btn-btn1{
+        display:block !important;
+        margin-top: 28%;
+    }
+
+    #searchBar{
+        display:none  !important;
+    }
+    #searchBarBurger2{
+        margin-top: 2%;
+        display: block;
+    }
 }
