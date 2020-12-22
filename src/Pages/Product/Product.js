@@ -1,33 +1,27 @@
 import React,{useEffect,useState} from "react";
-import {ObjectProduct} from "../../Rooting/const";
 import './Product.css';
 import '../../general.css'
 import {Link} from "react-router-dom";
-import ver from './verifP'
-import verif from "../ConnexionInscription/verifInsc";
 
 const Product = ({match}) => {
     
-    console.log(match.params.id)
-     const[data,setdata]=useState([]);
-     const user={
-         _id:match.params.id
-     };
-     console.log(user)
-     const formjs=JSON.stringify(user)
+    const[data,setdata]=useState([]);
+    const user={
+        _id:match.params.id
+    };
+    const formjs=JSON.stringify(user)
     useEffect(async () => {
-         fetch("http://localhost:3006/id",{ method: "POST",
+        fetch("http://localhost:3006/id",{ method: "POST",
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin":"http://localhost:3006/id"
         },body:formjs
-                })
+                }) //je recupere les annonces graces a leurs id
         .then(response => {response.json().then(json => {
             setdata(json)
         })})
     })
-    console.log( data) 
 
     // recupérer id du produit
     const {params: id } = match;
@@ -70,7 +64,6 @@ const Product = ({match}) => {
         return ProduitResult
     }
     
-    console.table(ObjectProduct);
     return (<div>
         {ShowProduct()}
         

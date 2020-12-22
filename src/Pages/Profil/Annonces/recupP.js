@@ -2,7 +2,7 @@ import react from 'react'
 
 const URL2 = "http://localhost:3006/auth";
 
-const recup = () => {
+const recup = () => {  //recup info de l'user actuel
     const local = {
         token: sessionStorage.Token,
     }

@@ -4,7 +4,7 @@ import Search,{AnnFilt} from "../../Header/Search";
 import {Link} from "react-router-dom";
 
 
-    const Searching = () =>{
+    const Searching = () =>{ //page d resultat de la barre de recherche
         const SearchResult = AnnFilt.map((produit) => {
             
             return(

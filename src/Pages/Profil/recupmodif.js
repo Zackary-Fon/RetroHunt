@@ -21,8 +21,7 @@ const recmod=()=>{
 
     fetch(URL2, conf)
         .then(response => {
-            response.json().then(json => {
-            console.log(json)
+            response.json().then(json => { //Recup toutes les infos de l user grace a son token et les injecte dans lee front
             const email=document.getElementById('email');
             const nom=document.getElementById('nom');
             const prenom=document.getElementById('Prenom');

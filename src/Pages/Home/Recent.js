@@ -11,25 +11,26 @@ const Rec=[];
 
 const Recent = () => {
     const[data,setdata]=useState([])
+
     useEffect(async () => {
         fetch("http://localhost:3006/all",{ method: "GET",
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin":"http://localhost:3006/all"
-        }})
+        }}) //recup de toutes les annonces
         .then(response => {response.json().then(json => {
-            const taille=(json.length -1);
-            let Recent=taille-5;
-            for(let i=1;i<=6;i++){
-                Rec.push(json[Recent])
-                Recent++;
+            const taille=(json.length -1); //definition de la taille
+            let Recent=taille-5;//definition du depart dès la 6e en partant de la fin
+            for(let i=1;i<=6;i++){ //boucle pour la recup des 6 deernieres
+                Rec.push(json[Recent]) //je met dans mon tableau l'annonce Recent
+                Recent++; //j increment recent
                 }
-            setdata(Rec);
+            setdata(Rec); //je met rec dans data
         })})
     });
-    console.log(data)
-    const Articles = data.map((produit)=>{
+    
+    const Articles = data.map((produit)=>{ //pour chaque annonce je crée une card
         return (
             <div key={produit._id} className="imageIntitule card card-custom">
                 <div className="imageProduit " > <div style={{background: `url(${produit.thumbnail[0]})`, backgroundPosition:"center",backgroundRepeat:"no-repeat", backgroundSize:"80%", height:"200px"}}></div> </div>

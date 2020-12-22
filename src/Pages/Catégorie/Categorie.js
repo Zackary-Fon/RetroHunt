@@ -5,8 +5,6 @@ import {Link} from "react-router-dom";
 import "./Categorie.css";
 
 const Categorie = ({match}) => {
-    console.log(match)
-    
     const[data,setdata]=useState([]);
     const user={
         title:match.params.title
@@ -23,8 +21,7 @@ const Categorie = ({match}) => {
         },body:formjs
                 })
         .then(response => {response.json().then(json => {
-            console.log('cat')
-            console.log(data)
+            //j recup  annonces de la consolee et  je lees mets dans data
             setdata(json)
         })})
 
@@ -32,8 +29,7 @@ const Categorie = ({match}) => {
 
     // recupérer id du produit
     const {params: title } = match;
-    console.log(match);
-    const categorieResult = data.map((produit) => {
+    const categorieResult = data.map((produit) => { //creation des cards
             
                 return(
                 <div key={produit._id} className="imageIntitule card card-custom">
@@ -53,7 +49,7 @@ const Categorie = ({match}) => {
                 )
             
         })
-    return (
+    return ( //affichage des cards
             <div className="Contain">
             {categorieResult}
             </div>

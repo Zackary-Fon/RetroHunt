@@ -1,10 +1,8 @@
 import react from "react"
 
-const envoimod=()=>{
+const envoimod=()=>{ //ftch envoie modif profil a la bdd
 const btn= document.getElementById('submit');
 btn.addEventListener('click',()=>{
-    console.log('test envoi')
-    const prof=document.getElementById('myform');
     const form={
         id:document.getElementById('user').value,
         Nom:document.getElementById('nom').value,

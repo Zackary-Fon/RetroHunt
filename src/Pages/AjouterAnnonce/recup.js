@@ -4,11 +4,10 @@ const URL2 = "http://localhost:3006/auth";
 
 const recup = () => {
     const local = {
-        token: sessionStorage.Token,
+        token: sessionStorage.Token, //recup du token
     }
-    console.log(local)
-    const bb = JSON.stringify(local);
-    const conf = {
+    const bb = JSON.stringify(local); //stringidy du token
+    const conf = { //config de la fetch
         method: 'POST',
         headers: {
             "Accept": "application/json",
@@ -21,11 +20,8 @@ const recup = () => {
     fetch(URL2, conf)
         .then(response => {
             response.json().then(json => {
-                const loc = json[0].Prenom;
-                console.log(json)
-                document.querySelector('#loc').value = loc;
-                document.querySelector('#mv').value = json[0].email;
-                console.log(typeof document.querySelector('#loc').value)
+                document.querySelector('#loc').value = json[0].Prenom;//mettr prenom dans input hidden
+                document.querySelector('#mv').value = json[0].email;//mettre email dan input hidden
             })
         })
 }

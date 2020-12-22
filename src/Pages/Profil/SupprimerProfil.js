@@ -3,10 +3,11 @@ import recsup from "./recupsup"
 import sup from "./FetchSupp"
 
 const SuppProfil = () =>{
-useEffect(()=>{
-    recsup()
-    sup()
-})
+    useEffect(()=>{
+        recsup()
+        sup()
+    })
+    
     return(
         <div className="Card">
             <h3>Retour</h3>

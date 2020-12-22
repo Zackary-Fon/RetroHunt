@@ -1,4 +1,3 @@
-
 import React,{useEffect,useState} from "react";
 import "./Chat.css"
 import Info from "./recupinfo"
@@ -9,13 +8,12 @@ const Chat = ({match}) =>{
     const[data,setdata]=useState([])
 
     useEffect(()=>{
-        Info()
-        convers()
-        const idAnn=match.params.id;
+        convers() //fetchee creation conv ou insertion message
+        const idAnn=match.params.id;  //recup de l id de l annonce
         const ann=document.getElementById('idAnn');
-        ann.value=idAnn;
-        const rec={_id:idAnn};
-        const jsrec=JSON.stringify(rec)
+        ann.value=idAnn; //mettre dans un input hidden pour nvoyeer apres
+        const rec={_id:idAnn}; //mis dans un objet pour fetcher
+        const jsrec=JSON.stringify(rec) //changer en string
         
         const con={ method: "POST",
                     headers: {
@@ -25,21 +23,18 @@ const Chat = ({match}) =>{
                     },
                     body:jsrec};
         fetch("http://localhost:3006/id",con)
-        .then(response => response.json().then((json) => {
+        .then(response => response.json().then((json) => { //recup dee l annonce par son id
             const titre=document.getElementById('titre');
             const receveur=document.getElementById('Receveur');
-            receveur.value=json[0].MailVendeur
-            titre.innerHTML=json[0].Titre;
-            const local={
+            receveur.value=json[0].MailVendeur //envoie du mailvendeur dans input hidden
+            titre.innerHTML=json[0].Titre; //envoie du titre Annonce dans un h3
+            const local={ //recup du session Storage
                 token: sessionStorage.Token
             }
-        
             const loc=sessionStorage;
-            console.log(loc)
-            if (loc.length <1 && loc.Token == undefined){
-                document.location.href="/ConnexionInscription"
-            } else{
-                console.log(local)
+            if (loc.length <1 && loc.Token == undefined){ //si pas connecter 
+                document.location.href="/ConnexionInscription" //redirection pour se conneecter ou s inscrire
+            } else{//sinon
                 const bb = JSON.stringify(local);
                 const confi = {
                     method: 'POST',
@@ -53,10 +48,9 @@ const Chat = ({match}) =>{
                 
                 fetch("http://localhost:3006/auth", confi)
                     .then(response => {
-                    response.json().then(json => {
-                        console.log(json)
-                        document.getElementById('envoyeur').value=json[0].email;
-                        const conv={
+                    response.json().then(json => { //recuperation de l user actuel par le session storage
+                        document.getElementById('envoyeur').value=json[0].email; //met email de l utilisateur dans input hidden
+                        const conv={ //Quand j ai recuperer toute les infos je les mets dans un objet
                             receveur: receveur.value,
                             envoyeur: document.getElementById('envoyeur').value,
                             Titre:document.getElementById('titre').innerHTML,
@@ -126,8 +120,6 @@ const Chat = ({match}) =>{
             <input type="text" name="message" id="message" placeholder="Votre message..." size="50" autofocus />
             <div  id="envoi_message">Envoyer</div>
         </form>
-
-     
     </div>
     )
 }

@@ -4,28 +4,23 @@ import chevronGauche from "../../Images/chevronGauche.png";
 import chevronDroite from "../../Images/chevronDroite.png";
 
 const Produit = ({match}) => {
-    console.log(match.params.id)
-     const[data,setdata]=useState([]);
-     console.log(data)
-     const user={
-         _id:match.params.id
-     };
-     console.log(user)
-     const formjs=JSON.stringify(user)
+    const[data,setdata]=useState([]);
+    const user={
+        _id:match.params.id
+    };
+    const formjs=JSON.stringify(user)
     useEffect(async () => {
         fetch("http://localhost:3006/idUser",{ method: "POST",
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin":"http://localhost:3006/idUser"
-        },body:formjs
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin":"http://localhost:3006/idUser"
+            },body:formjs
                 })
         .then(response => {response.json().then(json => {
-            console.log(json)
             setdata([json])
         })})
     });
-    console.log(data) 
 
     // recupérer id du produit
     const {params: id } = match;
@@ -38,7 +33,6 @@ const Produit = ({match}) => {
         const ProduitResult = data.map(produit => {
                 return(
                     <div className="bodyProduct">
-                        {/*Là on met le chemin comme sur le figma*/}
 
                         <div className="back_btn"><Link to="/"><i class="fas fa-chevron-left"></i> Retour</Link></div>
                         <div className="Images">
@@ -64,7 +58,7 @@ const Produit = ({match}) => {
                         
                     </div>
                 )
-           
+            
         })
         return ProduitResult
     }

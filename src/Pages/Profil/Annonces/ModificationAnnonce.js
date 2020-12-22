@@ -7,21 +7,21 @@ import recModAnn from "./recupmodifAnn"
 const ModifAnnonce = ({match}) => {
 
     useEffect( () => {
-        fetche()
-        recModAnn()
+        fetche() //envoi les données modifier a la bdd
+        recModAnn() //Recup les donnéees de l user
         const user={
             _id:match.params.id
         };
         console.log(user)
         const formjs=JSON.stringify(user)
-         fetch("http://localhost:3006/id",{ method: "POST",
+         fetch("http://localhost:3006/id",{ method: "POST", //recup les infos a modifier
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin":"http://localhost:3006/id"
-        },body:formjs
+        },body:formjs 
                 })
-        .then(response => {response.json().then(json => {
+        .then(response => {response.json().then(json => { 
             console.log(json)
             const Titre=document.getElementById('titre');
             const Prix=document.getElementById('Prix');

@@ -1,6 +1,6 @@
+import react from "react"
 
-
-const eyeConfirm=()=>{
+const eyeConfirm=()=>{ //PAREIL QUE EYE
   const pass=document.querySelector(".toggle-password-confirm");
   const input=document.querySelector("#mdp2");
   pass.addEventListener('click',()=>{

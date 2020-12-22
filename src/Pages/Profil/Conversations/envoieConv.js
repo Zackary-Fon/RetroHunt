@@ -1,7 +1,7 @@
 import react from "react"
 
 const env=()=>{
-    document.getElementById('envoi_message').addEventListener('click',()=>{
+    document.getElementById('envoi_message').addEventListener('click',()=>{ //efetch nvoie conv comme pour chat mais pour conversations
         const ladate= new Date();
         const date=ladate.getDate()+"/"+(ladate.getMonth()+1)+"/"+ladate.getFullYear()
         const Conv={
@@ -9,8 +9,8 @@ const env=()=>{
             receveur:document.getElementById('Receveur').value,
             Titre:document.getElementById('titre').innerHTML,
             IdAnn:document.getElementById('idAnn').value,
-            Message:[{message:document.getElementById('message').value,aEnvoye:document.getElementById('Receveur').value,
-        Date:date}]
+            Message:[{message:document.getElementById('message').value,
+            aEnvoye:document.getElementById('Receveur').value}]
         }
         const jsConv=JSON.stringify(Conv);
         

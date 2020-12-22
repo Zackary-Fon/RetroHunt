@@ -6,8 +6,8 @@ import envoimod from "./envoiemodif"
 
 const modifProfil=()=>{
     useEffect( () => {
-    recmod()
-    envoimod()
+    recmod() //fetch recup info a modifier
+    envoimod() //feetch qui eenvoiee profil modifier a la bdd
     });
     return (
         <div className="Card">

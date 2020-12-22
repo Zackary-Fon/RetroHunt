@@ -3,34 +3,29 @@ import React,{useEffect,useState} from "react";
 import recup from "./recupP";
 import delet from "./fetchsuppAnn";
 import "../Profil.css";
-    
-const Rec=[];
 
 const Annonce = ({match}) => {
-    
-const[data,setdata]=useState([])
+    const[data,setdata]=useState([])
 
-useEffect( () => {
-    delet();
+    useEffect( () => {
+        delet(); //supp annone
         const user={
             email: match.params.id
         }
-const jts=JSON.stringify(user)
-const conf={ method: "POST",
+        const jts=JSON.stringify(user)
+        const conf={ method: "POST",
             headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin":"http://localhost:3006/Profil/Annonce"
             },
             body:jts};
-            fetch("http://localhost:3006/Profil/Annonce",conf)
-            .then(response => response.json().then((json) => {
-                
+        fetch("http://localhost:3006/Profil/Annonce",conf)
+        .then(response => response.json().then((json) => {
                     setdata(json)
-                
     }))
 });
-console.log(data)
+
 const {params:id } = match;
 const Articles = data.map((produit)=>{
     return (
