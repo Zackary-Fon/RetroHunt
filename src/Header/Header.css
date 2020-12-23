@@ -206,9 +206,11 @@ a{
         display:block !important;
     }
 
-    .searchBar{
+    #searchBar{
         display:none ;
     }
+
+
     #searchBarB{
         margin-top: 2%;
         display: block !important;

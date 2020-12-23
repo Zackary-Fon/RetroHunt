@@ -22,7 +22,7 @@ const Footer=()=>{
                         <div class="col-xs-6 col-md-3">
                             <ul class="footer-links">
                                 <li><a href="http://scanfcode.com/category/c-language/">Mentions legales</a></li>
-                                <li>Nous contacter: <a href="#">liencontact@gmail.com</a></li>
+                                <li> <a href="mailto:retrohunto@gmail.com">Nous contacter</a></li>
                             </ul>
                         </div>
 
