@@ -5,8 +5,6 @@ const Search=()=>{
 const searchBar= document.getElementById('searchBar');
 searchBar.addEventListener('keyup',(e)=>{
     const search=e.target.value;
-    
-    
     const test=[];
     all.filter((ann)=>{
         

@@ -15,8 +15,8 @@ const Home = () => {
                 <Col className="d-flex justify-content-center align-items-center"><img src={home} /></Col>
                 <Col className="center aboutUs">
                     <p>Qui nous sommes:<br></br>
-                    3 grand passionnés de retro gaming qui pensent que, comme tout le monde, rechercher sur internet ne doit pas prendre des heures. 
-                    Alors ici se trouve une communauté qui partage la même passion!
+                    nous sommes des  passionnés de retro gaming qui pensent que, comme tout le monde, rechercher sur internet ne doit pas prendre des heures. 
+                    Alors ici se trouve une communautée qui partage la même passion!
                     </p>
                 </Col>
             </Row>

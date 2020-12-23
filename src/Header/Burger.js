@@ -13,8 +13,12 @@ const Burger = () =>{
             menuB.style.display="none";
         }
         const Jeux=document.getElementById('Jeux');
+
         Jeux.addEventListener('click',()=>{
             console.log('jeux')
+            const jj=document.getElementById('jj');
+            jj.style.color="blue";
+            
         })
     })
     

@@ -30,7 +30,8 @@ const Header = () => {
             </Form>
             <Link  id="connexion2" to="/ConnexionInscription">Connexion/inscription</Link>
             <Link  id="profil2" to="/Profil">Profil</Link>
-            <div id="Jeux">Jeux</div>
+            <div id="Jeux">
+                <p id="jj">Jeux</p></div>
             </div>
             </div>
                 <Navbar.Brand className="logo_resize" href="/">

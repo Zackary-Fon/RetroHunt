@@ -3,7 +3,6 @@ import tabRoutes from "../Rooting/const";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 // import BigMenu from "./BigMenu";
-import Searchbar from "./Searchbar";
 import BigMenuDropdown from "./BigMenuDropdown";
 import verifo from "./verifNav";
 import './BigMenu.css';

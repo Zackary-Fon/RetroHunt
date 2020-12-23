@@ -120,7 +120,7 @@ a{
 }
 
 .searchBarB{
-    display: none;
+    display: none !important;
 }
 
 .btn-btn1{
