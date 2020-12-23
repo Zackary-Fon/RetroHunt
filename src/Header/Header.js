@@ -32,6 +32,18 @@ const Header = () => {
             <Link  id="profil2" to="/Profil">Profil</Link>
             <div id="Jeux">
                 <p id="jj">Jeux</p></div>
+                <ul id="ListeCate">
+                <li> <Link to="/Categorie/Playstation 1">Playstation 1 </Link></li>
+                <li> <Link to="/Categorie/Playstation 2">Playstation 2</Link></li>
+                <li> <Link to="/Categorie/Xbox">Xbox</Link></li>
+                <li> <Link to="/Categorie/Gamecube">Gamecube</Link></li>
+                <li> <Link to="/Categorie/Nintendo 64">Nintendo 64</Link></li>
+                <li> <Link to="/Categorie/Nes">Nes</Link></li>
+                <li> <Link to="/Categorie/Gameboy">Gameboy</Link></li>
+                <li> <Link to="/Categorie/Super Nes">Super Nes</Link></li>
+                <li> <Link to="/Categorie/MegaDrive">MegaDrive</Link></li>
+                <li> <Link to="/Categorie/NEO GEO">NEO GEO</Link></li>
+                </ul>
             </div>
             </div>
                 <Navbar.Brand className="logo_resize" href="/">

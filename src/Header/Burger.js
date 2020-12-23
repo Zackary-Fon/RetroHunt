@@ -15,10 +15,10 @@ const Burger = () =>{
         const Jeux=document.getElementById('Jeux');
 
         Jeux.addEventListener('click',()=>{
-            console.log('jeux')
             const jj=document.getElementById('jj');
             jj.style.color="blue";
-            
+            const liste=document.getElementById('ListeCate');
+            liste.style.display="block";
         })
     })
     

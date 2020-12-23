@@ -141,6 +141,10 @@ a{
 
 @media screen and (max-width:750px){
     
+    #ListeCate{
+        display:none;
+    }
+
     .burger{
         z-index: 100;
     width: 90%;
