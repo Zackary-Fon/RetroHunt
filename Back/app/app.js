@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const cors= require('cors');
 const io=require('socket.io');
 var corsOptions={ //options d autorisation d acces
-  origin:"http://localhost:3000" //URL front 
+  origin:"https://retrohunt.herokuapp.com/" //URL front 
 }
 app.use(cors(corsOptions)) //instanciation reglees d acces
 app.use(bodyParser.json()); //instanciation

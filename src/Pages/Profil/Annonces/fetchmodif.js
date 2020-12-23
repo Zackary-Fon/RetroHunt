@@ -1,5 +1,5 @@
 import react from "react"
-const URL='http://localhost:3006/Update'
+const URL='https://apiretrohunt.herokuapp.com/Update'
 
 const fetche=()=>{  //Envoi annonce modifier a la bdd
     document.getElementById('envoi').addEventListener('click',()=>{
@@ -17,7 +17,7 @@ const fetche=()=>{  //Envoi annonce modifier a la bdd
             headers: {
                 "Accept": "application/json", //j'accepte de recevoir du json
                 "Content-Type": "application/json",
-                "Access-Control-Allow-Origin":"http://localhost:3006/Update"
+                "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/Update"
             },body:js}
         fetch(URL, config) 
         .then(response => response.json().then((response)=>{

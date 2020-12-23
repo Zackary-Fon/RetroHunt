@@ -10,11 +10,11 @@ const Produit = ({match}) => {
     };
     const formjs=JSON.stringify(user)
     useEffect(async () => {
-        fetch("http://localhost:3006/idUser",{ method: "POST",
+        fetch("https://apiretrohunt.herokuapp.com/idUser",{ method: "POST",
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json",
-                "Access-Control-Allow-Origin":"http://localhost:3006/idUser"
+                "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/idUser"
             },body:formjs
                 })
         .then(response => {response.json().then(json => {

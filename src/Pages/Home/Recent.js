@@ -13,11 +13,11 @@ const Recent = () => {
     const[data,setdata]=useState([])
 
     useEffect(async () => {
-        fetch("http://localhost:3006/all",{ method: "GET",
+        fetch("https://apiretrohunt.herokuapp.com/all",{ method: "GET",
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin":"http://localhost:3006/all"
+            "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/all"
         }}) //recup de toutes les annonces
         .then(response => {response.json().then(json => {
             const taille=(json.length -1); //definition de la taille

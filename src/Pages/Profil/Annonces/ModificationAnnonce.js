@@ -14,11 +14,11 @@ const ModifAnnonce = ({match}) => {
         };
         console.log(user)
         const formjs=JSON.stringify(user)
-         fetch("http://localhost:3006/id",{ method: "POST", //recup les infos a modifier
+         fetch("https://apiretrohunt.herokuapp.com/id",{ method: "POST", //recup les infos a modifier
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin":"http://localhost:3006/id"
+            "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/id"
         },body:formjs 
                 })
         .then(response => {response.json().then(json => { 

@@ -14,10 +14,10 @@ const ConvProf=({match})=>{
                     headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin":"http://localhost:3006/message/find/id"
+                    "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/message/find/id"
                     },
                     body:jsrec};
-        fetch("http://localhost:3006/message/find/id",con)
+        fetch("https://apiretrohunt.herokuapp.com/message/find/id",con)
         .then(response => response.json().then((json) => {
             console.log(json);
             document.getElementById('titre').innerHTML=json.TitreAnnonce;

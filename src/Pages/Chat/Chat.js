@@ -18,10 +18,10 @@ const Chat = ({match}) =>{
                     headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin":"http://localhost:3006/id"
+                    "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/id"
                     },
                     body:jsrec};
-        fetch("http://localhost:3006/id",con)
+        fetch("https://apiretrohunt.herokuapp.com/id",con)
         .then(response => response.json().then((json) => { //recup dee l annonce par son id
             const titre=document.getElementById('titre');
             const receveur=document.getElementById('Receveur');
@@ -40,12 +40,12 @@ const Chat = ({match}) =>{
                     headers: {
                         "Accept": "application/json",
                         "Content-Type": "application/json",
-                        "Access-Control-Allow-Origin": "http://localhost:3006/auth",
+                        "Access-Control-Allow-Origin": "https://apiretrohunt.herokuapp.com/auth",
                     },
                     body: bb
                 }
                 
-                fetch("http://localhost:3006/auth", confi)
+                fetch("https://apiretrohunt.herokuapp.com/auth", confi)
                     .then(response => {
                     response.json().then(json => { //recuperation de l user actuel par le session storage
                         document.getElementById('envoyeur').value=json[0].email; //met email de l utilisateur dans input hidden
@@ -60,10 +60,10 @@ const Chat = ({match}) =>{
                                 headers: {
                                     "Accept": "application/json",
                                     "Content-Type": "application/json",
-                                    "Access-Control-Allow-Origin":"http://localhost:3006/message/find"
+                                    "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/message/find"
                                 },
                                 body:Jsconv}
-                        fetch("http://localhost:3006/message/find",config)
+                        fetch("https://apiretrohunt.herokuapp.com/message/find",config)
                         .then(response => response.json().then((json) => {
                             console.log(json) 
                             if(json !== null){

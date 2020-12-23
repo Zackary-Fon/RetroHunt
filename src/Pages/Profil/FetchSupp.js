@@ -1,5 +1,5 @@
 import react from "react"
-const URL="http://localhost:3006/delete"
+const URL="https://apiretrohunt.herokuapp.com/delete"
 
 const supp=()=>{
   const btn=document.querySelector('#sup');
@@ -14,7 +14,7 @@ const supp=()=>{
     headers: {
       "Accept": "application/json",
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin":"http://localhost:3006/delete"
+      "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/delete"
     },
     body: Formjson,
   }

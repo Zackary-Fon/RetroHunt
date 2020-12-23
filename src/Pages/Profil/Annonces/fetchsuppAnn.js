@@ -1,5 +1,5 @@
 import react from "react"
-const URL='http://localhost:3006/delete/annonce'
+const URL='https://apiretrohunt.herokuapp.com/delete/annonce'
 
 const delet=()=>{ //fetch qui supprime une annonce
     const del=document.querySelectorAll('.del');
@@ -13,10 +13,10 @@ const delet=()=>{ //fetch qui supprime une annonce
                     headers: {
                     "Accept": "application/json", //j'accepte de recevoir du json
                     "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin":"http://localhost:3006/delete/annonce"
+                    "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/delete/annonce"
                     },
                     body:js}
-     fetch("http://localhost:3006/delete/annonce", config) 
+     fetch("https://apiretrohunt.herokuapp.com/delete/annonce", config) 
         .then(response => response.json().then((json)=>{
             if(json =="deleted"){
                 document.location.href="/Profil"
