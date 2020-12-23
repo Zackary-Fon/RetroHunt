@@ -30,7 +30,6 @@ const Header = () => {
             </Form>
             <Link  id="connexion2" to="/ConnexionInscription">Connexion/inscription</Link>
             <Link  id="profil2" to="/Profil">Profil</Link>
-            <Link  id="deco2" >Deconnexion</Link>
             <div id="Jeux">
                 <p id="jj">Jeux</p></div>
                 <ul id="ListeCate">
