@@ -11,11 +11,11 @@ const Product = ({match}) => {
     };
     const formjs=JSON.stringify(user)
     useEffect(async () => {
-        fetch("https://apiretrohunt.herokuapp.com/id",{ method: "POST",
+        fetch("http://localhost:3006/id",{ method: "POST",
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/id"
+            "Access-Control-Allow-Origin":"http://localhost:3006/id"
         },body:formjs
                 }) //je recupere les annonces graces a leurs id
         .then(response => {response.json().then(json => {

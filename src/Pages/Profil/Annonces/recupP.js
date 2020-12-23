@@ -1,6 +1,6 @@
 import react from 'react'
 
-const URL2 = "https://apiretrohunt.herokuapp.com/auth";
+const URL2 = "http://localhost:3006/auth";
 
 const recup = () => {  //recup info de l'user actuel
     const local = {
@@ -13,7 +13,7 @@ const recup = () => {  //recup info de l'user actuel
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://apiretrohunt.herokuapp.com/auth",
+            "Access-Control-Allow-Origin": "http://localhost:3006/auth",
         },
         body: bb
     }

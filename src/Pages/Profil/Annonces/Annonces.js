@@ -17,10 +17,10 @@ const Annonce = ({match}) => {
             headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/Profil/Annonce"
+            "Access-Control-Allow-Origin":"http://localhost:3006/Profil/Annonce"
             },
             body:jts};
-        fetch("https://apiretrohunt.herokuapp.com/Profil/Annonce",conf)
+        fetch("http://localhost:3006/Profil/Annonce",conf)
         .then(response => response.json().then((json) => {
                     setdata(json)
     }))

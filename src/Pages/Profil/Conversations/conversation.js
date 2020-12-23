@@ -14,10 +14,10 @@ const conv=({match}) => { //page qui reunit toute mes conversation
                     headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/Profil/Conversations"
+                    "Access-Control-Allow-Origin":"http://localhost:3006/Profil/Conversations"
                     },
                     body:jts};
-                    fetch("https://apiretrohunt.herokuapp.com/Profil/Conversations",conf)
+                    fetch("http://localhost:3006/Profil/Conversations",conf)
                     .then(response => response.json().then((json) => {
                         console.log(json)
                         const Conv=document.querySelector('.listArticles');
@@ -46,7 +46,7 @@ const conv=({match}) => { //page qui reunit toute mes conversation
                             aller.innerHTML="y accéder"
                             
                         }
-                            fetch("https://apiretrohunt.herokuapp.com/Profil/Conversations/receveur",conf)
+                            fetch("http://localhost:3006/Profil/Conversations/receveur",conf)
                             .then(response => response.json().then((json) => {
                             console.log(json)
                             const Conv=document.querySelector('.listArticles');

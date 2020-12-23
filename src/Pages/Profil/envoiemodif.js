@@ -19,11 +19,11 @@ btn.addEventListener('click',()=>{
         headers: {
             "Accept": "application/json", //j'accepte de recevoir du json
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://apiretrohunt.herokuapp.com/user/modif",
+            "Access-Control-Allow-Origin": "http://localhost:3006/user/modif",
         },
         body: formjs
     }
-    fetch('https://apiretrohunt.herokuapp.com/user/modif',conf)
+    fetch('http://localhost:3006/user/modif',conf)
     .then(response => {
         response.json().then(json => {
             console.log(json)

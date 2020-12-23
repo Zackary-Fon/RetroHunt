@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react"; 
 /* import form from "./Inscription";
  */
-const URL="https://apiretrohunt.herokuapp.com/login";  //url da la route de la requete en back
+const URL="http://localhost:3006/login";  //url da la route de la requete en back
 
 
 const fetchie=()=>{ //instancier le js en react
@@ -18,7 +18,7 @@ const fetchie=()=>{ //instancier le js en react
     headers: {  //autorisation
     "Accept": "application/json", //j'accepte de recevoir du json
     "Content-Type": "application/json", //j'envoie du json
-    "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/login", //j autorise a aller sur mon back
+    "Access-Control-Allow-Origin":"http://localhost:3006/login", //j autorise a aller sur mon back
     },
     body: Formjson,// j'envoie dans le back body ==req.body
   } 
@@ -57,7 +57,7 @@ const fetchie=()=>{ //instancier le js en react
         headers: {  //autorisation
                   "Accept": "application/json", //j'accepte de recevoir du json
                   "Content-Type": "application/json", //j'envoie du json
-                  "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/login", //j autorise a aller sur mon back
+                  "Access-Control-Allow-Origin":"http://localhost:3006/login", //j autorise a aller sur mon back
                   },
         body: Formjson,// j'envoie dans le back body ==req.body
       } 

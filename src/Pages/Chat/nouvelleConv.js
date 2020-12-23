@@ -18,10 +18,10 @@ const conf={ method: "POST",
 headers: {
 "Accept": "application/json",
 "Content-Type": "application/json",
-"Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/message/new"
+"Access-Control-Allow-Origin":"http://localhost:3006/message/new"
 },
 body:jsConv};
-fetch("https://apiretrohunt.herokuapp.com/message/new",conf)
+fetch("http://localhost:3006/message/new",conf)
 .then(response => response.json().then((json) => {
 console.log(json)
  if(json ==="deja une conv"){

@@ -1,5 +1,5 @@
 import react from 'react'
-const URL="https://apiretrohunt.herokuapp.com/auth"
+const URL="http://localhost:3006/auth"
 
 const fetcha=()=>{
     const local={token: sessionStorage.Token} //recup token
@@ -9,7 +9,7 @@ const fetcha=()=>{
         headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/auth",
+        "Access-Control-Allow-Origin":"http://localhost:3006/auth",
         },
         body: bb
     }
@@ -41,11 +41,11 @@ const fetcha=()=>{
                             headers: {
                                 "Accept": "application/json",
                                 "Content-Type": "application/json",
-                                "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/Profil/Annonce"
+                                "Access-Control-Allow-Origin":"http://localhost:3006/Profil/Annonce"
                             },
                             body:jts};
 
-                fetch("https://apiretrohunt.herokuapp.com/Profil/Annonce",conf) //fetch recup annonce
+                fetch("http://localhost:3006/Profil/Annonce",conf) //fetch recup annonce
                     .then(response => response.json().then((json) => {
                         if (json.length >0){ //si j ai des annonces
                             p.setAttribute('href',"/Annonce/"+title);
@@ -59,11 +59,11 @@ const fetcha=()=>{
                                 headers: {
                                 "Accept": "application/json",
                                 "Content-Type": "application/json",
-                                "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/Profil/Conversations"
+                                "Access-Control-Allow-Origin":"http://localhost:3006/Profil/Conversations"
                                 },
                             body:jts};
 
-                fetch("https://apiretrohunt.herokuapp.com/Profil/Conversations",config) //recup conveersations
+                fetch("http://localhost:3006/Profil/Conversations",config) //recup conveersations
                     .then(response => response.json().then((json) => {
                         console.log(json)
                         if (json.length >=0) //si j ai des conversations

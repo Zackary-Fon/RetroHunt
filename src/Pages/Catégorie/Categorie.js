@@ -13,11 +13,11 @@ const Categorie = ({match}) => {
     const formjs=JSON.stringify(user)
     
     useEffect(async () => {
-        fetch("https://apiretrohunt.herokuapp.com/categorie",{ method: "POST",
+        fetch("http://localhost:3006/categorie",{ method: "POST",
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/categorie"
+            "Access-Control-Allow-Origin":"http://localhost:3006/categorie"
         },body:formjs
                 })
         .then(response => {response.json().then(json => {

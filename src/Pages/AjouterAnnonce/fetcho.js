@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 
-const URL="https://apiretrohunt.herokuapp.com/deposer"; //url back 
+const URL="http://localhost:3006/deposer"; //url back 
 
 const fetcho=()=>{
     document.getElementById("submit").addEventListener('click',()=>{//evenement au click
@@ -12,7 +12,7 @@ const fetcho=()=>{
         const config = { //config fetch
             method: 'POST', //j envoie des données
             headers: {
-            "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/deposer" //j autorise l accès 
+            "Access-Control-Allow-Origin":"http://localhost:3006/deposer" //j autorise l accès 
         },
         body: formData,// j envoie dans body mon formdata (sur post man je pas oublier de mettre formdata et pas raw)
         }
@@ -37,7 +37,7 @@ window.addEventListener("keydown", (eve)=> {//evenement au click
     const config = { //config fetch
         method: 'POST', //j envoie des données
         headers: {
-        "Access-Control-Allow-Origin":"https://apiretrohunt.herokuapp.com/deposer" //j autorise l accès 
+        "Access-Control-Allow-Origin":"http://localhost:3006/deposer" //j autorise l accès 
     },
     body: formData,// j envoie dans body mon formdata (sur post man je pas oublier de mettre formdata et pas raw)
     }
