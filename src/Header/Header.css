@@ -206,10 +206,10 @@ a{
         display:block !important;
     }
 
-    #searchBar{
+    .searchBar{
         display:none ;
     }
-    .searchBarB{
+    #searchBarB{
         margin-top: 2%;
         display: block !important;
     }
