@@ -27,7 +27,8 @@ console.log(local)
 
         Jeux.addEventListener('click',()=>{
             const jj=document.getElementById('jj');
-            jj.style.color="blue";
+            jj.style.color="#61F2F5";
+            jj.style.textshadow="0px 0px 5px #61F2F5";
             const liste=document.getElementById('ListeCate');
             liste.style.display="block";
         })

@@ -139,14 +139,22 @@ a{
     display:none !important;
 }
 
+.list_game{
+    display: none !important;
+    list-style-type: none;
+    line-height: 25px;
+    margin-top: 4%;
+}
+
+.list_game li a:hover{
+    color: #61F2F5 !important;
+}
+
 @media screen and (max-width:750px){
     
-    #ListeCate{
-        display:none;
-    }
 
     .burger{
-        z-index: 100;
+    z-index: 100;
     width: 90%;
     height: 102%;
     display: block;
@@ -159,7 +167,8 @@ a{
     .menuB{
         position: absolute;
         width: 100%;
-        height: 392px;
+        height: 450px;
+        left: 0;
         background-color:#513592;
         
         color:white;
@@ -189,12 +198,14 @@ a{
     #connexion2{
         display:block !important;
     }
+    .list_game{
+        display: block !important;
+    }
     .btn-btn{
         display:none !important;
     }
     .btn-btn1{
         display:block !important;
-        margin-top: 28%;
     }
 
 
@@ -210,7 +221,6 @@ a{
         display:none ;
     }
     .searchBarB{
-        margin-top: 2%;
         display: block !important;
     }
 }
