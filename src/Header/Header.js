@@ -60,7 +60,7 @@ const Header = () => {
                 </Nav>
             <Form inline>
             <Link to={`/Search`} ><Button variant="btn btn-custom"><i className="fas fa-search"></i></Button></Link>
-                <FormControl type="text" id="searchBar" placeholder="Rechercher" className="mr-sm-2" />
+                <FormControl type="text" id="searchBar" placeholder="Rechercher" className="mr-sm-2 searchBar" />
             </Form>
             <Nav>
                 <Nav.Link id="deco" > Déconnexion</Nav.Link>

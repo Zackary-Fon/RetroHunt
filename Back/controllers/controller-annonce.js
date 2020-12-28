@@ -32,8 +32,8 @@ module.exports = {  //exportation du controller pour annonce
                 Prix: req.body.Prix,
                 Etat: req.body.Etat,
                 Description: req.body.description,
-                PseudoVendeur: user.Prenom,
-                MailVendeur: user.email,
+                PseudoVendeur: req.body.loc,
+                MailVendeur:req.body.mv,
                 image: urls,
                 thumbnail: thumb
                 //cloudinary_id:result.public_id
