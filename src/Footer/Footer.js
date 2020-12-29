@@ -10,7 +10,7 @@ const Footer=()=>{
     const afficheur=icones.map((any, index)=>
     <div className="Footer" key={index}><img src={any} alt="réseaux sociaux"/></div>);
     return (
-        <div>
+        <div >
             <div className="padding-footer"></div>
             <footer class="site-footer">
                 <div class="">

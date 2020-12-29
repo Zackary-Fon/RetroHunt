@@ -52,7 +52,7 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-                <Navbar.Brand className="logo_resize" href="/">
+                <Navbar.Brand className="logo-resize text-center" href="/">
                     <img id="logo" src={logo_dm} alt="Logo"/>
                 </Navbar.Brand>
                 <Nav>

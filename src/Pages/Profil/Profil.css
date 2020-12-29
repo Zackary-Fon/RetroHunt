@@ -4,12 +4,11 @@
     width: 40%;
 }
 .Card{
-    position: relative;
-    background-color: #444B90;
+    background-color: #240046;
     color: white;
     margin-top: 100px;
     margin-bottom: 100px;
-    border-radius: 10px;
+    border-radius: 7px;
     padding-top: 40px;
     padding-bottom: 40px;
     width: 80%;

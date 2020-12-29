@@ -4,9 +4,9 @@
 
 .site-footer
 {
-  position: absolute;
+  /* position: absolute;
   width: 100%;
-  bottom: 0%;
+  bottom: 0%; */
   background: linear-gradient(to right, #240046, #3c096c);
   padding:45px 0 20px;
   font-size:15px;
