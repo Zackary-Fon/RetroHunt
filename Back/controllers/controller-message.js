@@ -1,8 +1,9 @@
 const Message = require('../models/model-message'); //instanciation du model message
 const Conv = require('../models/model-conversation'); //instanciation du model COnv
+const env = require('dotenv').config();
 
 module.exports = { 
-    Createconv(req,res){   //Creation d'une conversation
+    async Createconv(req,res){   //Creation d'une conversation
         Conv.findOne({receveur:req.body.receveur,
             envoyeur:req.body.envoyeur,TitreAnnonce:req.body.Titre}) //je cherche si une conv existe deja ou non 
             .then((user)=>{
@@ -19,15 +20,13 @@ module.exports = {
                     res.json("OK"); //rep front
                 }else{ //si une conv
                     console.log('deja');
-                    console.log(req.body.Message[0].message)
                     const mess=new Message({ //creation du message
                         message: req.body.Message[0].message,
                         Date:req.body.Message[0].Date,
                         aEnvoye:req.body.Message[0].aEnvoye,
                     })
-                   console.log(mess)
-                   Conv.updateOne(
-                       {receveur:req.body.receveur, 
+                    Conv.updateOne(
+                        {receveur:req.body.receveur, 
                         envoyeur:req.body.envoyeur,
                         TitreAnnonce:req.body.Titre},  //recherche la conv avec ces info la
                         {
@@ -37,10 +36,9 @@ module.exports = {
                     }).then(() => {
                         console.log('add to user')
                         res.json("OK") 
-                    }) 
+                    })
                 }
             })
-       
     },
     Getconv(req,res){ //recherche de conversation
         Conv.findOne({receveur:req.body.receveur,

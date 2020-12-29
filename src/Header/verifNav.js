@@ -24,9 +24,6 @@ else{
 
   deco.addEventListener('click',()=>{
     sessionStorage.removeItem('Token');
-    
-    const alert=document.querySelector('.deco');
-    alert.style.display="block"
     connexion.style.display="block";
     profil.style.display="none";
     annonce.style.display="none";

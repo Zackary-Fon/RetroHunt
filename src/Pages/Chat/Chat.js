@@ -30,6 +30,7 @@ const Chat = ({match}) =>{
             const local={ //recup du session Storage
                 token: sessionStorage.Token
             }
+            document.getElementById('token').value=sessionStorage.Token;
             const loc=sessionStorage;
             if (loc.length <1 && loc.Token == undefined){ //si pas connecter 
                 document.location.href="/ConnexionInscription" //redirection pour se conneecter ou s inscrire
@@ -109,6 +110,7 @@ const Chat = ({match}) =>{
             <h3 id="titre"></h3>
             <input type="hidden" id="Receveur"></input>
             <input type="hidden" id="envoyeur"></input>
+            <input type="hidden" id="token"></input>
             <input type="hidden" id="idAnn"></input>
         </div>
         <div  id="chat">

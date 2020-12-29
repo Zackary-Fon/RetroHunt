@@ -50,6 +50,7 @@ window.addEventListener("keydown", (eve)=> {
         receveur:document.getElementById('Receveur').value,
         Titre:document.getElementById('titre').innerHTML,
         IdAnn:document.getElementById('idAnn').value,
+        token:document.getElementById('token').value,
         Message:[{message:document.getElementById('message').value,aEnvoye:document.getElementById('envoyeur').value,
     Date:date}]
     }
