@@ -47,7 +47,6 @@ const Product = ({match}) => {
                                 <p>Etat :{produit.Etat}</p>
                                 <p>Vendeur : {produit.PseudoVendeur}</p>
                                 <p>Description :<br></br> {produit.Description}</p>
-                                
                             </div>
                             
                         </div>

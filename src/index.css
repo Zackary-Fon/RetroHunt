@@ -10,7 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* position: relative; */
-  background: radial-gradient(#281761, #181B41, #181B41, #402183, #321575);
+  background: #10002b !important;
   min-height: 100vh;
 }
 
