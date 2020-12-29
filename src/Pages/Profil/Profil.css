@@ -115,12 +115,20 @@ a{
 }
 
 .annonce_title{
-    margin-top: 5%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color:white;
+    text-decoration: none;
 }
 
 .infos{
     font-size: 1.4em;
 }
+
+
 
 /* 
 .contain{

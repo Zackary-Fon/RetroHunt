@@ -21,6 +21,9 @@ const fetche=()=>{  //Envoi annonce modifier a la bdd
             },body:js}
         fetch(URL, config) 
         .then(response => response.json().then((response)=>{
+            if(response =="OK"){
+                document.location.href="/Profil"
+            }
             console.log(response)
     }))
 })

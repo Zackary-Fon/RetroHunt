@@ -49,9 +49,11 @@ const fetcha=()=>{
                     .then(response => response.json().then((json) => {
                         if (json.length >0){ //si j ai des annonces
                             p.setAttribute('href',"/Annonce/"+title);
+                            p.setAttribute('class',"annonce_title")
                             p.innerHTML="Mes Annonces";
-                        }else{ //si j een ai pas
+                        }else{ //si j en ai pas
                         p.setAttribute('href',"/DeposerAnnonce");
+                        p.setAttribute('class',"annonce_title")
                         p.innerHTML=" Deposer votre première Annonces";
                         }  
                     }))
@@ -69,6 +71,7 @@ const fetcha=()=>{
                         if (json.length >=0) //si j ai des conversations
                         {
                         conv.innerHTML="Mes Conversations";
+                        conv.setAttribute('class',"annonce_title")
                         conv.setAttribute('href',"/Conv/"+title);
                         }  
                     }))

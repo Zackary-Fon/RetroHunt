@@ -17,9 +17,9 @@ module.exports = {  //exportation du controller pour annonce
                     const thumb = [] //creation tableau thumbnail
                     for (const file of files) { //Pour chaque fichier dans mon files
                         const {path} = file //jee créee un objet qui prend le file
-                        const  newPath =  cloudinary.uploader.upload(path, {
+                        const  newPath = await cloudinary.uploader.upload(path, {
                             width: 300,height: 400}) //j envoiee a cloudinary la photo et je la redimension
-                        const thumbnail =  cloudinary.uploader.upload(path, {
+                        const thumbnail = await cloudinary.uploader.upload(path, {
                             width: 250,height: 250}) //j envoie la miniature a cloudinary redimensionné
                         urls.push(newPath.secure_url) //je meet dans url l'url scure que cloudniary m envoie
                         thumb.push(thumbnail.secure_url) //je met dans thumb l url secure des miniaturee
@@ -97,6 +97,7 @@ module.exports = {  //exportation du controller pour annonce
         )
             .then((user)=>{
                 console.log(user)
+                res.json('OK')
             })
     },
 
