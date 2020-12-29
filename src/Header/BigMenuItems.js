@@ -1,7 +1,7 @@
 const BigMenuItems = [
     {
         id: 0,
-        title: 'Jeux',
+        title: 'Tous les jeux',
         path:"/Categorie/:title",
         className: 'dropdown-link'
     },
@@ -70,79 +70,7 @@ const BigMenuItems = [
         title: 'Atari',
         path:"/Categorie/:title",
         className: 'dropdown-link'
-    },
-    {
-        id: 12,
-        title: 'Consoles',
-        path:"/Categorie/:title",
-        className: 'dropdown-link2'
-    },
-    {
-        id: 13,
-        title: 'Playstation 1',
-        path:"/Categorie/:title",
-        className: 'dropdown-link2'
-    },
-    {
-        id: 14,
-        title: 'Playstation 2',
-        path:"/Categorie/:title",
-        className: 'dropdown-link'
-    },
-    {
-        id: 15,
-        title: 'Xbox',
-        path:"/Categorie/:title",
-        className: 'dropdown-link'
-    },
-    {
-        id: 16,
-        title: 'Gamecube',
-        path:"/Categorie/:title",
-        className: 'dropdown-link'
-    },
-    {
-        id: 17,
-        title: 'Nintendo 64',
-        path:"/Categorie/:title",
-        className: 'dropdown-link'
-    },
-    {
-        id: 18,
-        title: 'Nes',
-        path:"/Categorie/:title",
-        className: 'dropdown-link'
-    },
-    {
-        id: 19,
-        title: 'Gameboy',
-        path:"/Categorie/:title",
-        className: 'dropdown-link'
-    },
-    {
-        id: 20,
-        title: 'Super Nes',
-        path:"/Categorie/:title",
-        className: 'dropdown-link'
-    },
-    {
-        id: 21,
-        title: 'MegaDrive',
-        path:"/Categorie/:title",
-        className: 'dropdown-link'
-    },
-    {
-        id: 22,
-        title: 'Neo Geo',
-        path:"/Categorie/:title",
-        className: 'dropdown-link'
-    },
-    {
-        id: 23,
-        title: 'Atari',
-        path:"/Categorie/:title",
-        className: 'dropdown-link'
-    },
+    }
 ]
 //pas ouf ouf les paths
 

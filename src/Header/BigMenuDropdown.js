@@ -29,13 +29,7 @@ const BigMenuDropdown = ()=>{
         }
     });
 
-    const secondColumn = BigMenuItems.map((any, index)=> {
-        if (index > 12 ){
-            return (
-                    <Link key={any.id} to={`/Categorie/${any.title}`}>{any.title}</Link>
-            )
-        }
-    });
+    
 
 {/* <div className="column-dropdown" key={any.id}>
 </div> */}
@@ -46,10 +40,7 @@ return (
             <h4>{titleGames}</h4>
             {thirstColumn}
         </div>
-        <div className="column-dropdown" >
-            <h4>{titleConsoles}</h4>
-            {secondColumn}
-        </div>
+        
     </>
 );
 }
